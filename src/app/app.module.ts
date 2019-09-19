@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DataDefinitionService } from 'src/core/service/data-definition/data-definition.service';
+import { DataDefinitionService } from './core/service/data-definition/data-definition.service';
 
 @NgModule({
   declarations: [
