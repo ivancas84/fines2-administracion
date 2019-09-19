@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { DataDefinitionService } from 'src/core/service/data-definition/data-definition.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DataDefinitionService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
