@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { ShowComponent } from '../../core/component/show/show.component';
 import { ActivatedRoute } from '@angular/router';
+import { ShowComponent } from 'src/app/core/component/show/show.component';
 import { DataDefinitionService } from 'src/app/core/service/data-definition/data-definition.service';
 
+
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
+  selector: 'app-sede-show',
+  templateUrl: './sede-show.component.html',
 })
-export class TestComponent extends ShowComponent {
+export class SedeShowComponent extends ShowComponent {
 
   constructor(protected dd: DataDefinitionService, protected route: ActivatedRoute) {
     super(dd, route);
