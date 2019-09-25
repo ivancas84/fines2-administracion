@@ -5,7 +5,6 @@ export class _SedeDataDefinition extends DataDefinition {
   entity: string = 'sede';
 
   storage(row: { [index: string]: any }){
-    console.log(row);
     if(!row) return;
     if(('dependencia_' in row)
     && ('tipo_sede_' in row['dependencia_'])
