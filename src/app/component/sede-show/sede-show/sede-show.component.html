@@ -1,1 +1,2 @@
 <app-sede-table [data$]="data$" [sync]="sync" (orderChange)="orderChange($event)"></app-sede-table>
+<app-pagination [page]="display.page" [size]="display.size" [collectionSize$]="collectionSize$" (pageChange)="pageChange($event)"></app-pagination>

@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { 
   NgbDateAdapter, 
   NgbTimeAdapter,
   NgbCollapseModule, 
-  NgbDropdownModule
+  NgbDropdownModule,
+  NgbPaginationModule
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,19 +26,23 @@ import { NgbIsoDateAdapter } from './core/service/ng-bootstrap/ngb-iso-date-adap
 import { NgbStringTimeAdapter } from './core/service/ng-bootstrap/ngb-string-time-adapter';
 
 import { MenuComponent } from './component/menu/menu.component';
+import { SedeSearchComponent } from './component/sede-show/sede-search/sede-search.component';
 import { SedeShowComponent } from './component/sede-show/sede-show/sede-show.component';
 import { SedeTableComponent } from './component/sede-show/sede-table/sede-table.component';
+import { PaginationComponent } from '@component/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LabelPipe, ToDatePipe, SiNoPipe,
-    SedeShowComponent, SedeTableComponent
+    PaginationComponent,
+    SedeShowComponent, SedeTableComponent, SedeSearchComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
-    NgbCollapseModule, NgbDropdownModule
+    ReactiveFormsModule,
+    NgbCollapseModule, NgbDropdownModule, NgbPaginationModule
   ],
   providers: [
     DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 

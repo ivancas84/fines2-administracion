@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ShowComponent } from 'src/app/core/component/show/show.component';
-import { DataDefinitionService } from 'src/app/core/service/data-definition/data-definition.service';
-
+import { DataDefinitionService } from '@service/data-definition/data-definition.service';
+import { ShowComponent } from '@component/show/show.component';
 
 @Component({
   selector: 'app-sede-show',
@@ -10,13 +9,14 @@ import { DataDefinitionService } from 'src/app/core/service/data-definition/data
 })
 export class SedeShowComponent extends ShowComponent {
 
+  entity: string = "sede";
+
   constructor(
     protected dd: DataDefinitionService, 
     protected route: ActivatedRoute, 
     protected router: Router
   ) {
     super(dd, route, router);
-    this.entity = "sede";
   }
 
 }
