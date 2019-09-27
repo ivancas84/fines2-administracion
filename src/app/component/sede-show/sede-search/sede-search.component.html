@@ -4,9 +4,64 @@
       <span>Opciones</span>
     </ng-template>
     <ng-template ngbPanelContent>
-        <form [formGroup]="searchForm" novalidate (ngSubmit)="onSubmit()" >
-            <div formArrayName="filters">
+      <form [formGroup]="searchForm" novalidate (ngSubmit)="onSubmit()" >
+        <div formArrayName="filters">
+          <div class="form-row align-items-center" *ngFor="let filter of filters.controls; let i=index" [formGroupName]="i">
+            <div class="col-xs-4">
+              <select class="form-control form-control-sm" formControlName="field">
+                <option value="">--Campo--</option>
+                <option value="id">Sede</option>
+                <option value="numero">Numero</option>
+                <option value="nombre">Nombre</option>
+                <option value="organizacion">Organizacion</option>
+                <option value="observaciones">Observaciones</option>
+                <option value="alta">Alta</option>
+                <option value="baja">Baja</option>
+                <option value="usuario">Usuario</option>
+                <option value="dependencia">Dependencia</option>
+                <option value="domicilio">Domicilio</option>
+                <option value="coordinador">Coordinador</option>
+              </select>
             </div>
+
+            <div class="col-xs-2" [ngSwitch]="f(i)" >   
+              
+              <!-- id -->
+              <select *ngSwitchCase="'id'" class="form-control form-control-sm" formControlName="option">
+                <option value="=">=</option>
+                <option value="!=">&ne;</option>
+              </select>
+
+              <!-- nombre -->
+              <select *ngSwitchCase="'nombre'" class="form-control form-control-sm" formControlName="option">
+                <option value="=~">=~</option>
+                <option value="=">=</option>
+                <option value="!=">&ne;</option>
+                <option value="<=">&le;</option>
+                <option value=">=">&ge;</option>
+              </select>
+
+            </div>
+
+            <div class="col-xs-4" [ngSwitch]="f(i)" >   
+              <!-- id -->
+              <app-filter-typeahead *ngSwitchCase="'id'" [entity]="'sede'" [filter]="filter" ></app-filter-typeahead>
+
+              <!-- nombre -->
+              <input *ngSwitchCase="'nombre'" class="form-control form-control-sm" formControlName="value">
+            </div>
+
+            <div class="col-xs-2">
+                <button type="button" class="btn btn-danger btn-sm" (click)="removeFilter(i)"><span class="oi oi-x"></span></button>
+            </div>
+          </div>
+        </div> <!-- formArrayName="filters" -->
+        <div class="form-row">
+          <div class="col">
+            <button type="button" class="btn btn-info btn-sm" (click)="addFilter()"><span class="oi oi-layers"></span></button>
+            <button type="submit" class="btn btn-primary btn-sm"><span class="oi oi-magnifying-glass"></span></button>
+          </div>
+        </div>
       </form>
     </ng-template>
   </ngb-panel>
