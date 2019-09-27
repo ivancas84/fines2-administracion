@@ -4,8 +4,10 @@
       <span>Opciones</span>
     </ng-template>
     <ng-template ngbPanelContent>
-      <!--form [formGroup]="searchForm" novalidate (ngSubmit)="onSubmit()" >
-      </form-->
+        <form [formGroup]="searchForm" novalidate (ngSubmit)="onSubmit()" >
+            <div formArrayName="filters">
+            </div>
+      </form>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

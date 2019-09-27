@@ -8,7 +8,8 @@ import {
   NgbTimeAdapter,
   NgbCollapseModule, 
   NgbDropdownModule,
-  NgbPaginationModule
+  NgbPaginationModule,
+  NgbAccordionModule
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +43,7 @@ import { PaginationComponent } from '@component/pagination/pagination.component'
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
     ReactiveFormsModule,
-    NgbCollapseModule, NgbDropdownModule, NgbPaginationModule
+    NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule,
   ],
   providers: [
     DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
