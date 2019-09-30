@@ -272,7 +272,7 @@ export class _ComisionDataDefinition extends DataDefinition {
 
     if (row["semestre"]) ret = ret.trim() + " " + row["semestre"];
 
-    if(row.division) ret = ret.trim() + " " + dd.labelGet("division", row.division);
+    if(row.division) ret = ret.trim() + " " + dd.label("division", row.division);
     return ret.trim();
   }
 }

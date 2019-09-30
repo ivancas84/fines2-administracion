@@ -32,6 +32,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 import { NgbIsoDateAdapter } from '@service/ng-bootstrap/ngb-iso-date-adapter';
 import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
 import { ParserService } from '@service/parser/parser.service';
+import { TestComponent } from '@component/test/test.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ParserService } from '@service/parser/parser.service';
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
+    TestComponent,
     FilterTypeaheadComponent
   ],
   imports: [

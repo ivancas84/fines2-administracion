@@ -21,8 +21,8 @@ export class _CargaHorariaDataDefinition extends DataDefinition {
 
   label (row: { [index: string]: any }, dd: DataDefinitionService): string {
     let ret = "";
-    if(row.asignatura) ret = ret.trim() + " " + dd.labelGet("asignatura", row.asignatura);
-    if(row.plan) ret = ret.trim() + " " + dd.labelGet("plan", row.plan);
+    if(row.asignatura) ret = ret.trim() + " " + dd.label("asignatura", row.asignatura);
+    if(row.plan) ret = ret.trim() + " " + dd.label("plan", row.plan);
     return ret.trim();
   }
 }

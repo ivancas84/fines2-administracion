@@ -391,7 +391,7 @@ export class _TomaDataDefinition extends DataDefinition {
 
     if (row["fecha_desde"]) ret = ret.trim() + " " + this.parser.dateFormat(this.parser.date(row["fecha_desde"]), 'd/m/Y');
 
-    if(row.profesor) ret = ret.trim() + " " + dd.labelGet("id_persona", row.profesor);
+    if(row.profesor) ret = ret.trim() + " " + dd.label("id_persona", row.profesor);
     return ret.trim();
   }
 }
