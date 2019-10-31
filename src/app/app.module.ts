@@ -33,6 +33,8 @@ import { NgbIsoDateAdapter } from '@service/ng-bootstrap/ngb-iso-date-adapter';
 import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
 import { ParserService } from '@service/parser/parser.service';
 import { TestComponent } from '@component/test/test.component';
+import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { TestComponent } from '@component/test/test.component';
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     TestComponent,
-    FilterTypeaheadComponent
+    FilterTypeaheadComponent,
+    ModalConfirmComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
