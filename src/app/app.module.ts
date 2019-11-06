@@ -34,6 +34,7 @@ import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adap
 import { ParserService } from '@service/parser/parser.service';
 import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
+import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.co
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
+    SedeAdminComponent,
     TestComponent,
     FilterTypeaheadComponent,
     ModalConfirmComponent,
