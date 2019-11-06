@@ -35,6 +35,7 @@ import { ParserService } from '@service/parser/parser.service';
 import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
+import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
-    SedeAdminComponent,
+    SedeAdminComponent, SedeFieldsetComponent,
     TestComponent,
     FilterTypeaheadComponent,
     ModalConfirmComponent,
