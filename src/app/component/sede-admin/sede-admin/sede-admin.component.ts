@@ -16,6 +16,10 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
 
   readonly entity: string = "sede";
 
+  sync: any = {
+    sede:null
+  }
+
   constructor(
     protected fb: FormBuilder, 
     protected route: ActivatedRoute, 

@@ -36,6 +36,7 @@ import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
+import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeFieldsetComponent,
     TestComponent,
-    FilterTypeaheadComponent,
+    FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,
   ],
   imports: [
