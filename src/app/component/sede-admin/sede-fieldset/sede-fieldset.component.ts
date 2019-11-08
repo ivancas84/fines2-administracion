@@ -22,21 +22,17 @@ export class SedeFieldsetComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
 
-  initDependencia(sede){ //asignar al storage la dependencia
+  /*initDependencia(sede){ //asignar al storage la dependencia
     if(!sede) return of(null);
     else if(!sede.dependencia) return of(null)
     else return this.dd.getOrNull("sede",sede.dependencia);
-  }
+  }*/
 
-  initData(){
+  /*initData(){
     this.data$.subscribe(
-      response => { 
-        this.initDependencia(response).subscribe(
-          () => { this.fieldset.reset(response); }
-        )
-      }
+      response => { this.fieldset.reset(response); }
     );
-  }
+  }*/
 
   formGroup(){
     let fg: FormGroup = this.fb.group({
