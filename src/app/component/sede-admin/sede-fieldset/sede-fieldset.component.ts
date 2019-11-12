@@ -3,7 +3,10 @@ import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { of } from 'rxjs';
+import { forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Display } from '@class/display';
+import { isEmptyObject } from '@function/is-empty-object.function';
 
 
 @Component({
@@ -22,17 +25,48 @@ export class SedeFieldsetComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
 
+  initOptions(){
+    if(this.dd.isSync('dependencia', this.sync)){
+      let obs = [];
+      var ob = this.dd.all('tipo_sede', new Display);
+      obs.push(ob);
+    
+      this.options = forkJoin(obs).pipe(
+        map(
+          options => ({'tipo_sede': options[0],})
+        )
+      )
+    }
+  }
+
   /*initDependencia(sede){ //asignar al storage la dependencia
     if(!sede) return of(null);
     else if(!sede.dependencia) return of(null)
     else return this.dd.getOrNull("sede",sede.dependencia);
   }*/
 
-  /*initData(){
+  initData(){    
     this.data$.subscribe(
-      response => { this.fieldset.reset(response); }
+      response => {
+        if(!isEmptyObject(response)) {
+          var obs = [];
+          
+          if(this.dd.isSync('dependencia', this.sync) && response.dependencia) {
+            var ob = this.dd.getOrNull("sede",response.dependencia);
+            obs.push(ob);
+          }
+
+          if(this.dd.isSync('domicilio', this.sync) && response.domicilio) {
+            var ob = this.dd.getOrNull("domicilio",response.domicilio);
+            obs.push(ob);
+          }
+
+          if(obs.length){ forkJoin(obs).subscribe( () => this.fieldset.reset(response) ); } 
+          else { this.fieldset.reset(response); }
+        }
+      }
     );
-  }*/
+  }
 
   formGroup(){
     let fg: FormGroup = this.fb.group({
