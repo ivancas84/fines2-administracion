@@ -25,7 +25,7 @@ export class SedeFieldsetComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
 
-  initOptions(){
+  initOptions(): void {
     if(this.dd.isSync('dependencia', this.sync)){
       let obs = [];
       var ob = this.dd.all('tipo_sede', new Display);
@@ -33,7 +33,11 @@ export class SedeFieldsetComponent extends FieldsetComponent {
     
       this.options = forkJoin(obs).pipe(
         map(
-          options => ({'tipo_sede': options[0],})
+          options => {
+            var opt = {};
+            opt["tipo_sede"] = options[0];
+            return opt;
+          }          
         )
       )
     }

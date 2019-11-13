@@ -11,7 +11,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 @Component({
     selector: 'app-sede-admin',
     templateUrl: './sede-admin.component.html',
-  })
+})
 export class SedeAdminComponent extends AdminComponent implements OnInit {
 
   readonly entity: string = "sede";
