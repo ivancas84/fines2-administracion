@@ -37,6 +37,8 @@ import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.co
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
+import { SedeDomicilioAdminComponent } from '@component/sede-admin/sede-domicilio-admin/sede-domicilio-admin.component';
+import { DomicilioFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-fieldset.component';
 
 
 @NgModule({
@@ -46,7 +48,7 @@ import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fields
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
-    SedeAdminComponent, SedeFieldsetComponent,
+    SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, 
     TestComponent,
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,

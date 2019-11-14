@@ -72,7 +72,7 @@ export class SedeFieldsetComponent extends FieldsetComponent {
     );
   }
 
-  formGroup(){
+  formGroup(): FormGroup{
     let fg: FormGroup = this.fb.group({
       id:'',
       numero: ['', {
