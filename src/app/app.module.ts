@@ -39,6 +39,7 @@ import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-
 import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
 import { SedeDomicilioAdminComponent } from '@component/sede-admin/sede-domicilio-admin/sede-domicilio-admin.component';
 import { DomicilioFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-fieldset.component';
+import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-table/coordinador-table.component';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { DomicilioFieldsetComponent } from '@component/sede-admin/domicilio-fiel
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
-    SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, 
+    SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, CoordinadorTableComponent,
     TestComponent,
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,

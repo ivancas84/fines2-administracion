@@ -3,6 +3,7 @@
 
   <app-sede-fieldset [form]="adminForm" [sync]="sync.sede" [data$]="data$"></app-sede-fieldset>
   <app-domicilio-fieldset [form]="adminForm" [sync]="sync.domicilio" [data$]="domicilio$"></app-domicilio-fieldset>
+  <app-coordinador-table [sync]="sync.coordinador_" [data$]="coordinador_$" ></app-coordinador-table>
 
   <button type="submit" class="btn btn-primary">Aceptar</button>&nbsp;
   <button type="button" class="btn btn-secondary" (click)="back()"><span class="oi oi-arrow-thick-left" title="Volver"></span></button>

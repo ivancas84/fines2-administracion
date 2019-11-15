@@ -10,6 +10,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 import { ReplaySubject, Observable, of } from 'rxjs';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { first } from 'rxjs/operators';
+import { Display } from '@class/display';
 
 @Component({
     selector: 'app-sede-domicilio-admin',
@@ -22,9 +23,11 @@ export class SedeDomicilioAdminComponent extends AdminComponent implements OnIni
   sync: any = {
     sede:{domicilio:false},
     domicilio:{},
+    coordinador_:{sede:false},
   }
 
   domicilio$ = new ReplaySubject();
+  coordinador_$ = new ReplaySubject();
 
   constructor(
     protected fb: FormBuilder, 
@@ -52,6 +55,7 @@ export class SedeDomicilioAdminComponent extends AdminComponent implements OnIni
     if(isEmptyObject(params)) {
       this.data$.next(null);
       this.domicilio$.next(null);
+      this.coordinador_$.next(null);
       return;
     } 
 
@@ -64,6 +68,13 @@ export class SedeDomicilioAdminComponent extends AdminComponent implements OnIni
           domicilio => {this.domicilio$.next(domicilio);},
           error => {console.log(error)}
         );
+
+        this.setCoordinador_(response).subscribe(
+          coordinador_ => {
+            console.log(coordinador_);
+            this.coordinador_$.next(coordinador_);},
+          error => {console.log(error)}
+        );
       }
     ); 
   }
@@ -71,6 +82,14 @@ export class SedeDomicilioAdminComponent extends AdminComponent implements OnIni
   setDomicilio(sede): Observable<any> {
     if (!sede || !sede.domicilio) return of(null);
     return this.dd.getOrNull("domicilio", sede.domicilio);
+  }
+
+  setCoordinador_(sede): Observable<any> {
+    console.log(sede);
+    if (!sede || !sede.id) return of(null);
+    var d: Display = new Display;
+    d.condition.push(["sede", "=", sede.id]);
+    return this.dd.all("coordinador", d);
   }
 
 }
