@@ -35,11 +35,13 @@ import { ParserService } from '@service/parser/parser.service';
 import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
-import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
 import { SedeDomicilioAdminComponent } from '@component/sede-admin/sede-domicilio-admin/sede-domicilio-admin.component';
 import { DomicilioFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-fieldset.component';
 import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-table/coordinador-table.component';
+import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
+import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
+import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-fieldset/tipo-sede-fieldset.component';
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-tab
     PaginationComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, CoordinadorTableComponent,
+    TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TestComponent,
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,

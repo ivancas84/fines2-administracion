@@ -6,11 +6,6 @@ export class _DomicilioDataDefinition extends DataDefinition {
 
   storage(row: { [index: string]: any }){
     if(!row) return;
-    if(('sededom_' in row)
-    ){
-      this.stg.setItem('sede' + row['sededom_'].id, row['sededom_']);
-      delete row['sededom_'];
-    }
     this.stg.setItem("domicilio" + row.id, row);
   }
 

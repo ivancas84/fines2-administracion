@@ -6,80 +6,26 @@ export class _SedeDataDefinition extends DataDefinition {
 
   storage(row: { [index: string]: any }){
     if(!row) return;
-    if(('dependencia_' in row)
-    && ('tipo_sede_' in row['dependencia_'])
+    if(('domicilio_' in row)
     ){
-      this.stg.setItem('tipo_sede' + row['dependencia_']['tipo_sede_'].id, row['dependencia_']['tipo_sede_']);
-      delete row['dependencia_']['tipo_sede_'];
-    }
-    if(('dependencia_' in row)
-    && ('domicilio_' in row['dependencia_'])
-    ){
-      this.stg.setItem('domicilio' + row['dependencia_']['domicilio_'].id, row['dependencia_']['domicilio_']);
-      delete row['dependencia_']['domicilio_'];
-    }
-    if(('dependencia_' in row)
-    && ('coordinador_' in row['dependencia_'])
-    && ('alumper_' in row['dependencia_']['coordinador_'])
-    ){
-      this.stg.setItem('alumno' + row['dependencia_']['coordinador_']['alumper_'].id, row['dependencia_']['coordinador_']['alumper_']);
-      delete row['dependencia_']['coordinador_']['alumper_'];
-    }
-    if(('dependencia_' in row)
-    && ('coordinador_' in row['dependencia_'])
-    ){
-      this.stg.setItem('id_persona' + row['dependencia_']['coordinador_'].id, row['dependencia_']['coordinador_']);
-      delete row['dependencia_']['coordinador_'];
-    }
-    if(('dependencia_' in row)
-    && ('referente_' in row['dependencia_'])
-    && ('alumper_' in row['dependencia_']['referente_'])
-    ){
-      this.stg.setItem('alumno' + row['dependencia_']['referente_']['alumper_'].id, row['dependencia_']['referente_']['alumper_']);
-      delete row['dependencia_']['referente_']['alumper_'];
-    }
-    if(('dependencia_' in row)
-    && ('referente_' in row['dependencia_'])
-    ){
-      this.stg.setItem('id_persona' + row['dependencia_']['referente_'].id, row['dependencia_']['referente_']);
-      delete row['dependencia_']['referente_'];
-    }
-    if(('dependencia_' in row)
-    ){
-      this.stg.setItem('sede' + row['dependencia_'].id, row['dependencia_']);
-      delete row['dependencia_'];
+      this.stg.setItem('domicilio' + row['domicilio_'].id, row['domicilio_']);
+      delete row['domicilio_'];
     }
     if(('tipo_sede_' in row)
     ){
       this.stg.setItem('tipo_sede' + row['tipo_sede_'].id, row['tipo_sede_']);
       delete row['tipo_sede_'];
     }
-    if(('domicilio_' in row)
+    if(('centro_educativo_' in row)
+    && ('domicilio_' in row['centro_educativo_'])
     ){
-      this.stg.setItem('domicilio' + row['domicilio_'].id, row['domicilio_']);
-      delete row['domicilio_'];
+      this.stg.setItem('domicilio' + row['centro_educativo_']['domicilio_'].id, row['centro_educativo_']['domicilio_']);
+      delete row['centro_educativo_']['domicilio_'];
     }
-    if(('coordinador_' in row)
-    && ('alumper_' in row['coordinador_'])
+    if(('centro_educativo_' in row)
     ){
-      this.stg.setItem('alumno' + row['coordinador_']['alumper_'].id, row['coordinador_']['alumper_']);
-      delete row['coordinador_']['alumper_'];
-    }
-    if(('coordinador_' in row)
-    ){
-      this.stg.setItem('id_persona' + row['coordinador_'].id, row['coordinador_']);
-      delete row['coordinador_'];
-    }
-    if(('referente_' in row)
-    && ('alumper_' in row['referente_'])
-    ){
-      this.stg.setItem('alumno' + row['referente_']['alumper_'].id, row['referente_']['alumper_']);
-      delete row['referente_']['alumper_'];
-    }
-    if(('referente_' in row)
-    ){
-      this.stg.setItem('id_persona' + row['referente_'].id, row['referente_']);
-      delete row['referente_'];
+      this.stg.setItem('centro_educativo' + row['centro_educativo_'].id, row['centro_educativo_']);
+      delete row['centro_educativo_'];
     }
     this.stg.setItem("sede" + row.id, row);
   }
