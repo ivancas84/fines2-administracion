@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="isSync('dependencia')" class="form-group row">
+  <div class="form-group row">
     <label class="col-sm-2 col-form-label">Dependencia</label>
     <div class="col-sm-10">
       <app-fieldset-typeahead  [fieldset]="fieldset" [entityName]="'sede'" [fieldName]="'dependencia'"></app-fieldset-typeahead>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="isSync('tipo_sede')" class="form-group form-row">
+  <div class="form-group form-row">
     <label class="col-sm-2 col-form-label">Tipo Sede</label>
     <div class="col-sm-10">
       <select class="form-control" formControlName="tipo_sede" [ngClass]="{'is-invalid':(tipoSede.invalid && (tipoSede.dirty || tipoSede.touched))}">
@@ -52,7 +52,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="isSync('domicilio')" class="form-group row">
+  <div class="form-group row">
     <label class="col-sm-2 col-form-label">Domicilio</label>
     <div class="col-sm-10">
       <app-fieldset-typeahead [fieldset]="fieldset" [entityName]="'domicilio'" [fieldName]="'domicilio'"></app-fieldset-typeahead>

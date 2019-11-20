@@ -20,12 +20,6 @@ export class SedeDomicilioAdminComponent extends AdminComponent implements OnIni
 
   readonly entity: string = "sede";
 
-  sync: any = {
-    sede:{domicilio:false},
-    domicilio:{},
-    coordinador_:{sede:false},
-  }
-
   domicilio$ = new ReplaySubject();
   coordinador_$ = new ReplaySubject();
 
