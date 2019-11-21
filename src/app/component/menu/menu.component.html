@@ -13,6 +13,17 @@
         <a class="nav-link dropdown-toggle" id="dropdownVer" ngbDropdownToggle>Ver</a>
         <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownVer">
           <a class="dropdown-item" routerLink="/sede-show" routerLinkActive="active" title="Ver Sedes" (click)="toggleMenu()">Sedes</a>          
+          <a class="dropdown-item" routerLink="/centro-educativo-show" routerLinkActive="active" title="Ver Centros Educativos" (click)="toggleMenu()">Centro Educativo</a>          
+          <a class="dropdown-item" routerLink="/tipo-sede-show" routerLinkActive="active" title="Ver Tipo Sedes" (click)="toggleMenu()">Tipo Sede</a>          
+        </div>
+      </div>  
+      
+      <div class="nav-item dropdown" ngbDropdown >
+        <a class="nav-link dropdown-toggle" id="dropdownVer" ngbDropdownToggle>Nuevo</a>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownVer">
+          <a class="dropdown-item" routerLink="/sede-admin" routerLinkActive="active" title="Nueva Sede" (click)="toggleMenu()">Sede</a>
+          <a class="dropdown-item" routerLink="/centro-educativo-admin" routerLinkActive="active" title="Nuevo Centro Educativo" (click)="toggleMenu()">Centro Educativo</a>
+          <a class="dropdown-item" routerLink="/tipo-sede-admin" routerLinkActive="active" title="Nuevo Tipo Sede" (click)="toggleMenu()">Tipo Sede</a>
         </div>
       </div>      
     </div>

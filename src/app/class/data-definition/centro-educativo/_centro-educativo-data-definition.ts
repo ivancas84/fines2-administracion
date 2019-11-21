@@ -14,4 +14,10 @@ export class _CentroEducativoDataDefinition extends DataDefinition {
     this.stg.setItem("centro_educativo" + row.id, row);
   }
 
+  label (row: { [index: string]: any }, dd: DataDefinitionService): string {
+    let ret = "";
+    if (row["nombre"]) ret = ret.trim() + " " + row["nombre"];
+
+    return ret.trim();
+  }
 }

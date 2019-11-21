@@ -44,6 +44,11 @@ import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-adm
 import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-fieldset/tipo-sede-fieldset.component';
 import { TipoSedeShowComponent } from '@component/tipo-sede-show/tipo-sede-show/tipo-sede-show.component';
 import { TipoSedeTableComponent } from '@component/tipo-sede-show/tipo-sede-table/tipo-sede-table.component';
+import { CentroEducativoAdminComponent } from '@component/centro-educativo-admin/centro-educativo-admin/centro-educativo-admin.component';
+import { CentroEducativoFieldsetComponent } from '@component/centro-educativo-admin/centro-educativo-fieldset/centro-educativo-fieldset.component';
+import { DomicilioCeFieldsetComponent } from '@component/centro-educativo-admin/domicilio-ce-fieldset/domicilio-ce-fieldset.component';
+import { CentroEducativoShowComponent } from '@component/centro-educativo-show/centro-educativo-show/centro-educativo-show.component';
+import { CentroEducativoTableComponent } from '@component/centro-educativo-show/centro-educativo-table/centro-educativo-table.component';
 
 
 @NgModule({
@@ -52,6 +57,8 @@ import { TipoSedeTableComponent } from '@component/tipo-sede-show/tipo-sede-tabl
     MenuComponent,
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
+    CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
+    CentroEducativoShowComponent, CentroEducativoTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, CoordinadorTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
