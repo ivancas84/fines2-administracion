@@ -42,6 +42,8 @@ import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-tab
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
 import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-fieldset/tipo-sede-fieldset.component';
+import { TipoSedeShowComponent } from '@component/tipo-sede-show/tipo-sede-show/tipo-sede-show.component';
+import { TipoSedeTableComponent } from '@component/tipo-sede-show/tipo-sede-table/tipo-sede-table.component';
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, CoordinadorTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
+    TipoSedeShowComponent, TipoSedeTableComponent,
     TestComponent,
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,
