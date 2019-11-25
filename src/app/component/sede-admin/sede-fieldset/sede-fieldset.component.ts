@@ -44,6 +44,8 @@ export class SedeFieldsetComponent extends FieldsetComponent {
   initData(): void {
     this.data$.subscribe(
       response => {
+        this.setDefaultValues();
+
         if(!isEmptyObject(response)) {
           var obs = [];
 
@@ -60,7 +62,7 @@ export class SedeFieldsetComponent extends FieldsetComponent {
           if(obs.length){ forkJoin(obs).subscribe( () => this.fieldset.reset(response) ); } 
           else { this.fieldset.reset(response); }
         }
-      }
+      } 
     );
   }
 

@@ -10,10 +10,10 @@ import { FieldsetOptionalComponent } from '@component/fieldset-optional/fieldset
 import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 
 @Component({
-  selector: 'app-domicilio-fieldset',
-  templateUrl: './domicilio-fieldset.component.html',
+  selector: 'app-domicilio-s-fieldset',
+  templateUrl: './domicilio-s-fieldset.component.html',
 })
-export class DomicilioFieldsetComponent extends FieldsetOptionalComponent {
+export class DomicilioSFieldsetComponent extends FieldsetOptionalComponent {
 
   entityName: string = 'domicilio';
   fieldsetName: string = 'domicilio';

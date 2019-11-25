@@ -7,6 +7,9 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 import { MessageService } from '@service/message/message.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
+import { ReplaySubject, Observable, of } from 'rxjs';
+import { isEmptyObject } from '@function/is-empty-object.function';
+import { first } from 'rxjs/operators';
 
 @Component({
     selector: 'app-sede-admin',
@@ -15,10 +18,8 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 export class SedeAdminComponent extends AdminComponent implements OnInit {
 
   readonly entity: string = "sede";
+  domicilio$ = new ReplaySubject();
 
-  sync: any = {
-    sede:null
-  }
 
   constructor(
     protected fb: FormBuilder, 
@@ -33,4 +34,38 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     super(fb, route, router, location, dd, message, validators, storage);
   }
 
+  setDataFromStorage(formValues: any): void {
+    var d = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
+    this.data$.next(d); 
+   
+    var d = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
+    this.domicilio$.next(d);
+  }
+ 
+
+  setDataFromParams(params: any): void {
+    if(isEmptyObject(params)) {
+      this.data$.next(null);
+      this.domicilio$.next(null);
+      return;
+    }
+  
+    this.dd.uniqueOrNull(this.entity, params).pipe(first()).subscribe(
+      response => {
+        if (response) this.data$.next(response);
+        else this.data$.next(params);
+  
+        this.setDomicilio(response).subscribe(
+          domicilio => {this.domicilio$.next(domicilio);},
+          error => {console.log(error)}
+        );
+      }
+    );
+  }
+
+  setDomicilio(obj): Observable<any> {
+    if (!obj || !obj.domicilio) return of(null);
+    return this.dd.getOrNull("domicilio", obj.domicilio);
+  }
+ 
 }

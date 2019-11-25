@@ -58,7 +58,7 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
           error => {console.log(error)}
         );
       }
-    ); 
+    );
   }
 
   setDomicilio(obj): Observable<any> {

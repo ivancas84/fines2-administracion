@@ -36,8 +36,6 @@ import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
-import { SedeDomicilioAdminComponent } from '@component/sede-admin/sede-domicilio-admin/sede-domicilio-admin.component';
-import { DomicilioFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-fieldset.component';
 import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-table/coordinador-table.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
@@ -49,6 +47,7 @@ import { CentroEducativoFieldsetComponent } from '@component/centro-educativo-ad
 import { DomicilioCeFieldsetComponent } from '@component/centro-educativo-admin/domicilio-ce-fieldset/domicilio-ce-fieldset.component';
 import { CentroEducativoShowComponent } from '@component/centro-educativo-show/centro-educativo-show/centro-educativo-show.component';
 import { CentroEducativoTableComponent } from '@component/centro-educativo-show/centro-educativo-table/centro-educativo-table.component';
+import { DomicilioSFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-s-fieldset.component';
 
 
 @NgModule({
@@ -60,7 +59,7 @@ import { CentroEducativoTableComponent } from '@component/centro-educativo-show/
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
-    SedeAdminComponent, SedeDomicilioAdminComponent, SedeFieldsetComponent, DomicilioFieldsetComponent, CoordinadorTableComponent,
+    SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, CoordinadorTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
     TestComponent,
