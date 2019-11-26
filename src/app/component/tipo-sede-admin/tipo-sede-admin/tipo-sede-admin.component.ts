@@ -7,6 +7,7 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 import { MessageService } from '@service/message/message.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
 
 @Component({
   selector: 'app-tipo-sede-admin',
@@ -22,11 +23,11 @@ export class TipoSedeAdminComponent extends AdminComponent implements OnInit {
     protected router: Router, 
     protected location: Location, 
     protected dd: DataDefinitionService, 
-    protected message: MessageService, 
+    protected toast: ToastService, 
     protected validators: ValidatorsService,
     protected storage: SessionStorageService, 
   ) {
-    super(fb, route, router, location, dd, message, validators, storage);
+    super(fb, route, router, location, dd, toast, validators, storage);
   }
 
 }

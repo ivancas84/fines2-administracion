@@ -10,6 +10,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 import { ReplaySubject, Observable, of } from 'rxjs';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { first } from 'rxjs/operators';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
 
 @Component({
     selector: 'app-sede-admin',
@@ -27,11 +28,11 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     protected router: Router, 
     protected location: Location, 
     protected dd: DataDefinitionService, 
-    protected message: MessageService, 
+    protected toast: ToastService, 
     protected validators: ValidatorsService,
     protected storage: SessionStorageService, 
   ) {
-    super(fb, route, router, location, dd, message, validators, storage);
+    super(fb, route, router, location, dd, toast, validators, storage);
   }
 
   setDataFromStorage(formValues: any): void {

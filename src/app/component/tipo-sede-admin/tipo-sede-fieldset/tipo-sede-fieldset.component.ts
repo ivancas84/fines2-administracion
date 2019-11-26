@@ -14,8 +14,8 @@ import { isEmptyObject } from '@function/is-empty-object.function';
 })
 export class TipoSedeFieldsetComponent extends FieldsetComponent {
 
-  entityName: string = 'tipo_sede';
-  fieldsetName: string = 'tipo_sede';
+  readonly entityName: string = 'tipo_sede';
+  readonly fieldsetName: string = 'tipo_sede';
 
   constructor(
     protected fb: FormBuilder, 

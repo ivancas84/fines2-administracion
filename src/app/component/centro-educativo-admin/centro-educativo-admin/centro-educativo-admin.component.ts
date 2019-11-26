@@ -10,6 +10,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { ReplaySubject, Observable, of } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
 
 @Component({
   selector: 'app-centro-educativo-admin',
@@ -26,11 +27,11 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
     protected router: Router, 
     protected location: Location, 
     protected dd: DataDefinitionService, 
-    protected message: MessageService, 
+    protected toast: ToastService, 
     protected validators: ValidatorsService,
     protected storage: SessionStorageService, 
   ) {
-    super(fb, route, router, location, dd, message, validators, storage);
+    super(fb, route, router, location, dd, toast, validators, storage);
   }
 
   setDataFromStorage(formValues: any): void {

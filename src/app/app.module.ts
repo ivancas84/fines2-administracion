@@ -11,6 +11,7 @@ import {
   NgbPaginationModule,
   NgbAccordionModule,
   NgbTypeaheadModule,
+  NgbToastModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,6 +49,10 @@ import { DomicilioCeFieldsetComponent } from '@component/centro-educativo-admin/
 import { CentroEducativoShowComponent } from '@component/centro-educativo-show/centro-educativo-show/centro-educativo-show.component';
 import { CentroEducativoTableComponent } from '@component/centro-educativo-show/centro-educativo-table/centro-educativo-table.component';
 import { DomicilioSFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-s-fieldset.component';
+import { MessageService } from '@service/message/message.service';
+import { MessagesComponent } from '@component/messages/messages.component';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
+import { ToastsComponent } from '@component/toasts/toasts.component';
 
 
 @NgModule({
@@ -56,6 +61,7 @@ import { DomicilioSFieldsetComponent } from '@component/sede-admin/domicilio-fie
     MenuComponent,
     LabelPipe, ToDatePipe, SiNoPipe,
     PaginationComponent,
+    MessagesComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
@@ -65,14 +71,16 @@ import { DomicilioSFieldsetComponent } from '@component/sede-admin/domicilio-fie
     TestComponent,
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,
+    ToastsComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
     ReactiveFormsModule,
-    NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule
+    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule
   ],
   providers: [
-    DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
+    MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
+    ToastService,
     {provide: NgbDateAdapter, useClass: NgbIsoDateAdapter}, 
     {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter}
   ],
