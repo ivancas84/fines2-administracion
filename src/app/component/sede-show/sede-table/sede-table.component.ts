@@ -8,10 +8,7 @@ import { DataDefinitionService } from 'src/app/core/service/data-definition/data
 })
 export class SedeTableComponent extends TableComponent {
 
-  constructor(protected dd: DataDefinitionService) {
-    super(dd);
-    this.entity = 'sede';
-  }
+  readonly entity = 'sede';
 
 }
 

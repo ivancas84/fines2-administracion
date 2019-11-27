@@ -5,7 +5,7 @@
           <tr>
             <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('numero')">Número</button></th>
             <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('nombre')">Nombre</button></th>
-            <th *ngIf="isSync('domicilio')"><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('dom_calle', 'dom_entre', 'dom_localidad')">Domicilio</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('dom_calle', 'dom_entre', 'dom_localidad')">Domicilio</button></th>
             <th>Opciones</th>
             </tr>
         </thead>
@@ -13,7 +13,7 @@
           <tr *ngFor="let row of (data$ | async); let i = index">
               <td><div>{{row.numero}}</div></td>
               <td><div>{{row.nombre}}</div></td>
-              <td *ngIf="isSync('domicilio')">{{row.domicilio | label:"domicilio"}}</td>
+              <td>{{row.domicilio | label:"domicilio"}}</td>
               <td>
               <a class="btn btn-warning btn-sm" [routerLink]="['/sede-admin']" [queryParams]="{id:row.id}"><span class="oi oi-pencil"></span></a>
             </td>

@@ -43,6 +43,7 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
   }
 
   setDataFromParams(params: any): void {
+    console.log(params);
     if(isEmptyObject(params)) {
       this.data$.next(null);
       this.domicilio$.next(null);
