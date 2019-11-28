@@ -30,7 +30,10 @@ export class _SedeDataDefinition extends DataDefinition {
     this.stg.setItem("sede" + row.id, row);
   }
 
-  label (row: { [index: string]: any }, dd: DataDefinitionService): string {
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
     let ret = "";
     if (row["numero"]) ret = ret.trim() + " " + row["numero"];
 

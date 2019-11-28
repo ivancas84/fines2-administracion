@@ -9,7 +9,10 @@ export class _DomicilioDataDefinition extends DataDefinition {
     this.stg.setItem("domicilio" + row.id, row);
   }
 
-  label (row: { [index: string]: any }, dd: DataDefinitionService): string {
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
     let ret = "";
     if (row["calle"]) ret = ret.trim() + " " + row["calle"];
 

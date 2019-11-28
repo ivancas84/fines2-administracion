@@ -9,7 +9,10 @@ export class _TipoSedeDataDefinition extends DataDefinition {
     this.stg.setItem("tipo_sede" + row.id, row);
   }
 
-  label (row: { [index: string]: any }, dd: DataDefinitionService): string {
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
     let ret = "";
     if (row["descripcion"]) ret = ret.trim() + " " + row["descripcion"];
 
