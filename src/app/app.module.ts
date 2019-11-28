@@ -53,7 +53,8 @@ import { MessageService } from '@service/message/message.service';
 import { MessagesComponent } from '@component/messages/messages.component';
 import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { ToastsComponent } from '@component/toasts/toasts.component';
-
+import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
+import { PersonaFieldsetComponent } from '@component/persona-admin/persona-fieldset/persona-fieldset.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { ToastsComponent } from '@component/toasts/toasts.component';
     MessagesComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
+    PersonaAdminComponent, PersonaFieldsetComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, CoordinadorTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
