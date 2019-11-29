@@ -32,7 +32,7 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
       }],
       apellidos: ['', {
       }],
-      apodo: ['', {
+      fecha_nacimiento: ['', {
       }],
       numero_documento: ['', {
         validators: Validators.required,
@@ -45,6 +45,8 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
       }],
       genero: ['', {
       }],
+      apodo: ['', {
+      }],
     });
     return fg;
   }
@@ -52,11 +54,12 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
   get id() { return this.fieldset.get('id')}
   get nombres() { return this.fieldset.get('nombres')}
   get apellidos() { return this.fieldset.get('apellidos')}
-  get apodo() { return this.fieldset.get('apodo')}
+  get fechaNacimiento() { return this.fieldset.get('fecha_nacimiento')}
   get numeroDocumento() { return this.fieldset.get('numero_documento')}
   get cuil() { return this.fieldset.get('cuil')}
   get email() { return this.fieldset.get('email')}
   get genero() { return this.fieldset.get('genero')}
+  get apodo() { return this.fieldset.get('apodo')}
   get alta() { return this.fieldset.get('alta')}
 
 }

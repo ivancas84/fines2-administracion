@@ -12,6 +12,7 @@ import {
   NgbAccordionModule,
   NgbTypeaheadModule,
   NgbToastModule,
+  NgbDatepickerModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,6 +56,8 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { ToastsComponent } from '@component/toasts/toasts.component';
 import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
 import { PersonaFieldsetComponent } from '@component/persona-admin/persona-fieldset/persona-fieldset.component';
+import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
+import { PersonaTableComponent } from '@component/persona-show/persona-table/persona-table.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,7 @@ import { PersonaFieldsetComponent } from '@component/persona-admin/persona-field
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
+    PersonaShowComponent, PersonaTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, CoordinadorTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
@@ -78,7 +82,7 @@ import { PersonaFieldsetComponent } from '@component/persona-admin/persona-field
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
     ReactiveFormsModule,
-    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule
+    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule, NgbDatepickerModule
   ],
   providers: [
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 

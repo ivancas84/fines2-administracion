@@ -8,6 +8,7 @@ import { TipoSedeShowComponent } from '@component/tipo-sede-show/tipo-sede-show/
 import { CentroEducativoAdminComponent } from '@component/centro-educativo-admin/centro-educativo-admin/centro-educativo-admin.component';
 import { CentroEducativoShowComponent } from '@component/centro-educativo-show/centro-educativo-show/centro-educativo-show.component';
 import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
+import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
 
 const routes: Routes = [
   { path: 'test', component: TestComponent, pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },
   { path: 'tipo-sede-admin', component: TipoSedeAdminComponent, pathMatch: 'full' },
+  { path: 'persona-show', component: PersonaShowComponent, pathMatch: 'full' },
   { path: 'persona-admin', component: PersonaAdminComponent, pathMatch: 'full' },
 ];
  

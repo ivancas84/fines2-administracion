@@ -11,11 +11,6 @@ export class _DesignacionDataDefinition extends DataDefinition {
       this.stg.setItem('cargo' + row['cargo_'].id, row['cargo_']);
       delete row['cargo_'];
     }
-    if(('persona_' in row)
-    ){
-      this.stg.setItem('persona' + row['persona_'].id, row['persona_']);
-      delete row['persona_'];
-    }
     if(('sede_' in row)
     && ('domicilio_' in row['sede_'])
     ){
