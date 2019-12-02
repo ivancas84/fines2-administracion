@@ -41,6 +41,11 @@ export class _DesignacionDataDefinition extends DataDefinition {
       this.stg.setItem('sede' + row['sede_'].id, row['sede_']);
       delete row['sede_'];
     }
+    if(('persona_' in row)
+    ){
+      this.stg.setItem('persona' + row['persona_'].id, row['persona_']);
+      delete row['persona_'];
+    }
     this.stg.setItem("designacion" + row.id, row);
   }
 

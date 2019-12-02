@@ -13,6 +13,7 @@ import {
   NgbTypeaheadModule,
   NgbToastModule,
   NgbDatepickerModule,
+  NgbDateParserFormatter,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,6 +59,9 @@ import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/pe
 import { PersonaFieldsetComponent } from '@component/persona-admin/persona-fieldset/persona-fieldset.component';
 import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
 import { PersonaTableComponent } from '@component/persona-show/persona-table/persona-table.component';
+import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
+import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-admin.component';
+import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/cargo-fieldset.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +72,7 @@ import { PersonaTableComponent } from '@component/persona-show/persona-table/per
     MessagesComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
+    CargoAdminComponent, CargoFieldsetComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
@@ -88,7 +93,9 @@ import { PersonaTableComponent } from '@component/persona-show/persona-table/per
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
     ToastService,
     {provide: NgbDateAdapter, useClass: NgbIsoDateAdapter}, 
-    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter}
+    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter},
+    {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}
+
   ],
   bootstrap: [AppComponent]
 })
