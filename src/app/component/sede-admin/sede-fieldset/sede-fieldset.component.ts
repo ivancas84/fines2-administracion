@@ -49,11 +49,6 @@ export class SedeFieldsetComponent extends FieldsetComponent {
         if(!isEmptyObject(response)) {
           var obs = [];
 
-          if(response.domicilio) {
-            var ob = this.dd.getOrNull("domicilio",response.domicilio);
-            obs.push(ob);
-          }
-
           if(response.centro_educativo) {
             var ob = this.dd.getOrNull("centro_educativo",response.centro_educativo);
             obs.push(ob);

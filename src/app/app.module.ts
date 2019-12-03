@@ -39,7 +39,6 @@ import { TestComponent } from '@component/test/test.component';
 import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
-import { CoordinadorTableComponent } from '@component/sede-admin/coordinador-table/coordinador-table.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
 import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-fieldset/tipo-sede-fieldset.component';
@@ -64,6 +63,7 @@ import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-ad
 import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/cargo-fieldset.component';
 import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
 import { DesignacionFieldsetComponent } from '@component/designacion-admin/designacion-fieldset/designacion-fieldset.component';
+import { DesignacionTableComponent } from '@component/sede-admin/designacion-table/designacion-table.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +79,7 @@ import { DesignacionFieldsetComponent } from '@component/designacion-admin/desig
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
-    SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, CoordinadorTableComponent,
+    SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
     TestComponent,

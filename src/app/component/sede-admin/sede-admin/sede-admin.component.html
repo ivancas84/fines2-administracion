@@ -3,6 +3,7 @@
 
   <app-sede-fieldset [form]="adminForm" [data$]="data$"></app-sede-fieldset>
   <app-domicilio-s-fieldset [form]="adminForm" [data$]="domicilio$"></app-domicilio-s-fieldset>
+  <app-designacion-table [data$]="designacion_$"></app-designacion-table>
 
   <button type="submit" class="btn btn-primary">Aceptar</button>&nbsp;
   <button type="button" class="btn btn-secondary" (click)="back()"><span class="oi oi-arrow-thick-left" title="Volver"></span></button>

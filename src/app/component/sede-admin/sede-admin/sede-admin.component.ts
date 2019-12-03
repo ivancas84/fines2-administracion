@@ -4,13 +4,13 @@ import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
-import { MessageService } from '@service/message/message.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { ReplaySubject, Observable, of } from 'rxjs';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { first } from 'rxjs/operators';
 import { ToastService } from '@service/ng-bootstrap/toast.service';
+import { Display } from '@class/display';
 
 @Component({
     selector: 'app-sede-admin',
@@ -20,6 +20,8 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
 
   readonly entity: string = "sede";
   domicilio$ = new ReplaySubject();
+  designacion_$ = new ReplaySubject();
+
 
 
   constructor(
@@ -36,11 +38,13 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
   }
 
   setDataFromStorage(formValues: any): void {
-    var d = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
-    this.data$.next(d); 
-   
-    var d = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
-    this.domicilio$.next(d);
+    var sede = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
+    this.data$.next(sede); 
+    
+    var domicilio = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
+    this.domicilio$.next(domicilio);
+
+    this.setDesignacion_(sede);
   }
  
 
@@ -48,6 +52,7 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     if(isEmptyObject(params)) {
       this.data$.next(null);
       this.domicilio$.next(null);
+      this.designacion_$.next(null);
       return;
     }
   
@@ -60,6 +65,9 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
           domicilio => {this.domicilio$.next(domicilio);},
           error => {console.log(error)}
         );
+
+        this.setDesignacion_(response);
+ 
       }
     );
   }
@@ -68,5 +76,21 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     if (!obj || !obj.domicilio) return of(null);
     return this.dd.getOrNull("domicilio", obj.domicilio);
   }
+
+  setDesignacion_(sede): any {
+    console.log(sede);
+    this.setDes_(sede).subscribe(
+      designacion_ => { this.designacion_$.next(designacion_);},
+      error => {console.log(error)}
+    );
+  }
+  
+  protected setDes_(sede): Observable<any> {
+    if (!sede || !sede.id) return of(null);
+    var d: Display = new Display;
+    d.condition.push(["sede", "=", sede.id]);
+    return this.dd.all("designacion", d);
+  }
+ 
  
 }

@@ -4,7 +4,6 @@ import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
-import { MessageService } from '@service/message/message.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
@@ -43,7 +42,6 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
   }
 
   setDataFromParams(params: any): void {
-    console.log(params);
     if(isEmptyObject(params)) {
       this.data$.next(null);
       this.domicilio$.next(null);
