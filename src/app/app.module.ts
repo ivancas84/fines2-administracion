@@ -62,6 +62,8 @@ import { PersonaTableComponent } from '@component/persona-show/persona-table/per
 import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
 import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-admin.component';
 import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/cargo-fieldset.component';
+import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
+import { DesignacionFieldsetComponent } from '@component/designacion-admin/designacion-fieldset/designacion-fieldset.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/ca
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     CargoAdminComponent, CargoFieldsetComponent,
+    DesignacionAdminComponent, DesignacionFieldsetComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,

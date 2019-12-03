@@ -24,16 +24,30 @@ export class DesignacionFieldsetComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
 
+  initOptions(): void {
+    let obs = [];      
+
+    var ob = this.dd.all('cargo', new Display);
+    obs.push(ob);
+
+    this.options = forkJoin(obs).pipe(
+      map(
+        options => {
+          var o = {};
+          o['cargo'] = options[0];
+          return o;
+        }
+      )
+    );
+  }
+
   initData(): void {
     this.data$.subscribe(
       response => {
+        this.setDefaultValues();
+
         if(!isEmptyObject(response)) {
           var obs = [];
-
-          if(response.cargo) {
-            var ob = this.dd.getOrNull("cargo",response.cargo);
-            obs.push(ob);
-          }
 
           if(response.sede) {
             var ob = this.dd.getOrNull("sede",response.sede);
@@ -54,14 +68,18 @@ export class DesignacionFieldsetComponent extends FieldsetComponent {
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({
-      id:'',
-      cargo: ['', {
-        validators: [Validators.required, this.validators.typeaheadSelection('cargo')],
+      id:null,
+      desde: [null, {
       }],
-      sede: ['', {
+      hasta: [null, {
+      }],
+      cargo: [null, {
+        validators: Validators.required,
+      }],
+      sede: [null, {
         validators: [Validators.required, this.validators.typeaheadSelection('sede')],
       }],
-      persona: ['', {
+      persona: [null, {
         validators: [Validators.required, this.validators.typeaheadSelection('persona')],
       }],
     });
@@ -69,8 +87,9 @@ export class DesignacionFieldsetComponent extends FieldsetComponent {
   }
 
   get id() { return this.fieldset.get('id')}
+  get desde() { return this.fieldset.get('desde')}
+  get hasta() { return this.fieldset.get('hasta')}
   get alta() { return this.fieldset.get('alta')}
-  get baja() { return this.fieldset.get('baja')}
   get cargo() { return this.fieldset.get('cargo')}
   get sede() { return this.fieldset.get('sede')}
   get persona() { return this.fieldset.get('persona')}

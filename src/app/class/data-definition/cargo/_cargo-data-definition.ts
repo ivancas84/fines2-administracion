@@ -9,4 +9,13 @@ export class _CargoDataDefinition extends DataDefinition {
     this.stg.setItem("cargo" + row.id, row);
   }
 
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
+    let ret = "";
+    if (row["descripcion"]) ret = ret.trim() + " " + row["descripcion"];
+
+    return ret.trim();
+  }
 }

@@ -10,12 +10,14 @@ import { CentroEducativoShowComponent } from '@component/centro-educativo-show/c
 import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
 import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
 import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-admin.component';
+import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
 
 const routes: Routes = [
   { path: 'test', component: TestComponent, pathMatch: 'full' },
   { path: 'cargo-admin', component: CargoAdminComponent, pathMatch: 'full' },
   { path: 'centro-educativo-admin', component: CentroEducativoAdminComponent, pathMatch: 'full' },
   { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
+  { path: 'designacion-admin', component: DesignacionAdminComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },
