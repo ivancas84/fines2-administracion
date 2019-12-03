@@ -22,12 +22,12 @@
       <div class="input-group">
         <input class="form-control" placeholder="dd/mm/yyyy" ngbDatepicker #fechaNacimiento_="ngbDatepicker" formControlName="fecha_nacimiento" [ngClass]="{'is-invalid':(fechaNacimiento.invalid && (fechaNacimiento.dirty || fechaNacimiento.touched))}">
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="fechaNacimiento_.toggle()" type="button">
-                <span title="Calendario" class="oi oi-calendar"></span>
-            </button>
-            <button class="btn btn-outline-secondary" (click)="fechaNacimiento.setValue(null)" type="button">
-                <span title="Limpiar" class="oi oi-reload"></span>
-            </button>
+          <button class="btn btn-outline-secondary" (click)="fechaNacimiento_.toggle()" type="button">
+            <span title="Calendario" class="oi oi-calendar"></span>
+          </button>
+          <button class="btn btn-outline-secondary" (click)="fechaNacimiento.setValue(null)" type="button">
+            <span title="Limpiar" class="oi oi-reload"></span>
+          </button>
         </div>
       </div>
       <div class="text-danger" *ngIf="(fechaNacimiento.touched || fechaNacimiento.dirty) && fechaNacimiento.invalid">
