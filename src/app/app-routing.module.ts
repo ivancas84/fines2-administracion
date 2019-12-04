@@ -15,9 +15,10 @@ import { PlanAdminComponent } from '@component/plan-admin/plan-admin/plan-admin.
 import { PlanShowComponent } from '@component/plan-show/plan-show/plan-show.component';
 import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
 import { ComisionShowComponent } from '@component/comision-show/comision-show/comision-show.component';
+import { AsignaturaAdminComponent } from '@component/asignatura-admin/asignatura-admin/asignatura-admin.component';
 
 const routes: Routes = [
-  { path: 'test', component: TestComponent, pathMatch: 'full' },
+  { path: 'asignatura-admin', component: AsignaturaAdminComponent, pathMatch: 'full' },
   { path: 'cargo-admin', component: CargoAdminComponent, pathMatch: 'full' },
   { path: 'centro-educativo-admin', component: CentroEducativoAdminComponent, pathMatch: 'full' },
   { path: 'comision-admin', component: ComisionAdminComponent, pathMatch: 'full' },
