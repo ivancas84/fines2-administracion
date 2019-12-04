@@ -4,11 +4,15 @@ import { SessionStorageService } from 'src/app/core/service/storage/session-stor
 import { ParserService } from 'src/app/core/service/parser/parser.service';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
+import { AsignaturaDataDefinition } from 'src/app/class/data-definition/asignatura/asignatura-data-definition';
+import { CargaHorariaDataDefinition } from 'src/app/class/data-definition/carga-horaria/carga-horaria-data-definition';
 import { CargoDataDefinition } from 'src/app/class/data-definition/cargo/cargo-data-definition';
 import { CentroEducativoDataDefinition } from 'src/app/class/data-definition/centro-educativo/centro-educativo-data-definition';
+import { ComisionDataDefinition } from 'src/app/class/data-definition/comision/comision-data-definition';
 import { DesignacionDataDefinition } from 'src/app/class/data-definition/designacion/designacion-data-definition';
 import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio/domicilio-data-definition';
 import { PersonaDataDefinition } from 'src/app/class/data-definition/persona/persona-data-definition';
+import { PlanDataDefinition } from 'src/app/class/data-definition/plan/plan-data-definition';
 import { SedeDataDefinition } from 'src/app/class/data-definition/sede/sede-data-definition';
 import { TipoSedeDataDefinition } from 'src/app/class/data-definition/tipo-sede/tipo-sede-data-definition';
 
@@ -21,11 +25,15 @@ export class DataDefinitionLoaderService {
 
   get(name: string): DataDefinition {
     switch(name) {
+      case "asignatura": { return new AsignaturaDataDefinition(this.stg, this.parser); }
+      case "carga_horaria": { return new CargaHorariaDataDefinition(this.stg, this.parser); }
       case "cargo": { return new CargoDataDefinition(this.stg, this.parser); }
       case "centro_educativo": { return new CentroEducativoDataDefinition(this.stg, this.parser); }
+      case "comision": { return new ComisionDataDefinition(this.stg, this.parser); }
       case "designacion": { return new DesignacionDataDefinition(this.stg, this.parser); }
       case "domicilio": { return new DomicilioDataDefinition(this.stg, this.parser); }
       case "persona": { return new PersonaDataDefinition(this.stg, this.parser); }
+      case "plan": { return new PlanDataDefinition(this.stg, this.parser); }
       case "sede": { return new SedeDataDefinition(this.stg, this.parser); }
       case "tipo_sede": { return new TipoSedeDataDefinition(this.stg, this.parser); }
     }

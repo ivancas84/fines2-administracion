@@ -19,9 +19,11 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LabelPipe } from './core/pipe/label.pipe';
-import { ToDatePipe } from './core/pipe/to-date.pipe';
-import { SiNoPipe } from './core/pipe/si-no.pipe';
+import { LabelPipe } from '@pipe/label.pipe';
+import { ToDatePipe } from '@pipe/to-date.pipe';
+import { SiNoPipe } from '@pipe/si-no.pipe';
+import { SummaryPipe } from '@pipe/summary.pipe';
+
 
 import { PaginationComponent } from '@component/pagination/pagination.component';
 import { FilterTypeaheadComponent } from '@component/filter-typeahead/filter-typeahead.component';
@@ -64,18 +66,31 @@ import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/ca
 import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
 import { DesignacionFieldsetComponent } from '@component/designacion-admin/designacion-fieldset/designacion-fieldset.component';
 import { DesignacionTableComponent } from '@component/sede-admin/designacion-table/designacion-table.component';
+import { PlanAdminComponent } from '@component/plan-admin/plan-admin/plan-admin.component';
+import { PlanFieldsetComponent } from '@component/plan-admin/plan-fieldset/plan-fieldset.component';
+import { PlanShowComponent } from '@component/plan-show/plan-show/plan-show.component';
+import { PlanTableComponent } from '@component/plan-show/plan-table/plan-table.component';
+import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
+import { ComisionFieldsetComponent } from '@component/comision-admin/comision-fieldset/comision-fieldset.component';
+import { ComisionShowComponent } from '@component/comision-show/comision-show/comision-show.component';
+import { ComisionTableComponent } from '@component/comision-show/comision-table/comision-table.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    LabelPipe, ToDatePipe, SiNoPipe,
+    LabelPipe, ToDatePipe, SiNoPipe, SummaryPipe,
     PaginationComponent,
     MessagesComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     CargoAdminComponent, CargoFieldsetComponent,
+    ComisionAdminComponent, ComisionFieldsetComponent,
+    ComisionShowComponent, ComisionTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
+    PlanAdminComponent, PlanFieldsetComponent,
+    PlanShowComponent, PlanTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,

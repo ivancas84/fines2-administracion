@@ -11,17 +11,25 @@ import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/pe
 import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
 import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-admin.component';
 import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
+import { PlanAdminComponent } from '@component/plan-admin/plan-admin/plan-admin.component';
+import { PlanShowComponent } from '@component/plan-show/plan-show/plan-show.component';
+import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
+import { ComisionShowComponent } from '@component/comision-show/comision-show/comision-show.component';
 
 const routes: Routes = [
   { path: 'test', component: TestComponent, pathMatch: 'full' },
   { path: 'cargo-admin', component: CargoAdminComponent, pathMatch: 'full' },
   { path: 'centro-educativo-admin', component: CentroEducativoAdminComponent, pathMatch: 'full' },
+  { path: 'comision-admin', component: ComisionAdminComponent, pathMatch: 'full' },
+  { path: 'comision-show', component: ComisionShowComponent, pathMatch: 'full' },
   { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
   { path: 'designacion-admin', component: DesignacionAdminComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },
   { path: 'tipo-sede-admin', component: TipoSedeAdminComponent, pathMatch: 'full' },
+  { path: 'plan-admin', component: PlanAdminComponent, pathMatch: 'full' },
+  { path: 'plan-show', component: PlanShowComponent, pathMatch: 'full' },
   { path: 'persona-show', component: PersonaShowComponent, pathMatch: 'full' },
   { path: 'persona-admin', component: PersonaAdminComponent, pathMatch: 'full' },
 ];

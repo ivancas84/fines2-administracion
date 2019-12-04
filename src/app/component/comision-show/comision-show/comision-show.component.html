@@ -1,0 +1,3 @@
+<!-- app-comision-search [display]="display" (changeSearch)="changeSearch($event)"></app-comision-search -->
+<app-comision-table [data$]="data$" (changeData)="orderChange($event)"></app-comision-table>
+<app-pagination [page]="display.page" [size]="display.size" [collectionSize$]="collectionSize$" (pageChange)="pageChange($event)"></app-pagination>

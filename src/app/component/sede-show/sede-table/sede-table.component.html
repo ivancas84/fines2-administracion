@@ -11,8 +11,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of (data$ | async); let i = index">
-              <td><div>{{row.numero}}</div></td>
-              <td><div>{{row.nombre}}</div></td>
+              <td>{{row.numero}}</td>
+              <td>{{row.nombre}}</td>
               <td>{{row.domicilio | label:"domicilio"}}</td>
               <td>
               <a class="btn btn-warning btn-sm" [routerLink]="['/sede-admin']" [queryParams]="{id:row.id}"><span class="oi oi-pencil"></span></a>
