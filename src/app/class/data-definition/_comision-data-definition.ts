@@ -1,4 +1,4 @@
-import { SedeDataDefinition } from '@class/data-definition/sede/sede-data-definition';
+import { SedeDataDefinition } from '@class/data-definition/sede-data-definition';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
 export class _ComisionDataDefinition extends DataDefinition {

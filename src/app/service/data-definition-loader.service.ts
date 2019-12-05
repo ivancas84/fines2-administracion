@@ -4,17 +4,17 @@ import { SessionStorageService } from 'src/app/core/service/storage/session-stor
 import { ParserService } from 'src/app/core/service/parser/parser.service';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
-import { AsignaturaDataDefinition } from 'src/app/class/data-definition/asignatura/asignatura-data-definition';
-import { CargaHorariaDataDefinition } from 'src/app/class/data-definition/carga-horaria/carga-horaria-data-definition';
-import { CargoDataDefinition } from 'src/app/class/data-definition/cargo/cargo-data-definition';
-import { CentroEducativoDataDefinition } from 'src/app/class/data-definition/centro-educativo/centro-educativo-data-definition';
-import { ComisionDataDefinition } from 'src/app/class/data-definition/comision/comision-data-definition';
-import { DesignacionDataDefinition } from 'src/app/class/data-definition/designacion/designacion-data-definition';
-import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio/domicilio-data-definition';
-import { PersonaDataDefinition } from 'src/app/class/data-definition/persona/persona-data-definition';
-import { PlanDataDefinition } from 'src/app/class/data-definition/plan/plan-data-definition';
-import { SedeDataDefinition } from 'src/app/class/data-definition/sede/sede-data-definition';
-import { TipoSedeDataDefinition } from 'src/app/class/data-definition/tipo-sede/tipo-sede-data-definition';
+import { AsignaturaDataDefinition } from 'src/app/class/data-definition/asignatura-data-definition';
+import { CargaHorariaDataDefinition } from 'src/app/class/data-definition/carga-horaria-data-definition';
+import { CargoDataDefinition } from 'src/app/class/data-definition/cargo-data-definition';
+import { CentroEducativoDataDefinition } from 'src/app/class/data-definition/centro-educativo-data-definition';
+import { ComisionDataDefinition } from 'src/app/class/data-definition/comision-data-definition';
+import { DesignacionDataDefinition } from 'src/app/class/data-definition/designacion-data-definition';
+import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio-data-definition';
+import { PersonaDataDefinition } from 'src/app/class/data-definition/persona-data-definition';
+import { PlanDataDefinition } from 'src/app/class/data-definition/plan-data-definition';
+import { SedeDataDefinition } from 'src/app/class/data-definition/sede-data-definition';
+import { TipoSedeDataDefinition } from 'src/app/class/data-definition/tipo-sede-data-definition';
 
 @Injectable({
   providedIn: 'root'

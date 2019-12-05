@@ -76,6 +76,8 @@ import { ComisionAdminComponent } from '@component/comision-admin/comision-admin
 import { ComisionFieldsetComponent } from '@component/comision-admin/comision-fieldset/comision-fieldset.component';
 import { ComisionShowComponent } from '@component/comision-show/comision-show/comision-show.component';
 import { ComisionTableComponent } from '@component/comision-show/comision-table/comision-table.component';
+import { CargaHorariaAdminComponent } from '@component/carga-horaria-admin/carga-horaria-admin/carga-horaria-admin.component';
+import { CargaHorariaFieldsetComponent } from '@component/carga-horaria-admin/carga-horaria-fieldset/carga-horaria-fieldset.component';
 
 
 @NgModule({
@@ -86,9 +88,10 @@ import { ComisionTableComponent } from '@component/comision-show/comision-table/
     PaginationComponent,
     MessagesComponent,
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
+    CargaHorariaAdminComponent, CargaHorariaFieldsetComponent,
+    CargoAdminComponent, CargoFieldsetComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
-    CargoAdminComponent, CargoFieldsetComponent,
     ComisionAdminComponent, ComisionFieldsetComponent,
     ComisionShowComponent, ComisionTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
