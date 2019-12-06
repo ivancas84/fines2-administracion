@@ -78,6 +78,7 @@ import { ComisionShowComponent } from '@component/comision-show/comision-show/co
 import { ComisionTableComponent } from '@component/comision-show/comision-table/comision-table.component';
 import { CargaHorariaAdminComponent } from '@component/carga-horaria-admin/carga-horaria-admin/carga-horaria-admin.component';
 import { CargaHorariaFieldsetComponent } from '@component/carga-horaria-admin/carga-horaria-fieldset/carga-horaria-fieldset.component';
+import { PersonaSearchComponent } from '@component/persona-show/persona-search/persona-search.component';
 
 
 @NgModule({
@@ -98,7 +99,7 @@ import { CargaHorariaFieldsetComponent } from '@component/carga-horaria-admin/ca
     PlanAdminComponent, PlanFieldsetComponent,
     PlanShowComponent, PlanTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
-    PersonaShowComponent, PersonaTableComponent,
+    PersonaShowComponent, PersonaTableComponent, PersonaSearchComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
