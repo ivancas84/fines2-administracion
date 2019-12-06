@@ -1,0 +1,3 @@
+<!-- app-asignatura-search [condition]="display.condition" (conditionChange)="conditionChange($event)"></app-asignatura-search -->
+<app-asignatura-table [data$]="data$" (changeData)="orderChange($event)"></app-asignatura-table>
+<app-pagination [page]="display.page" [size]="display.size" [collectionSize$]="collectionSize$" (pageChange)="pageChange($event)"></app-pagination>
