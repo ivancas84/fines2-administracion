@@ -79,6 +79,13 @@ import { ComisionTableComponent } from '@component/comision-show/comision-table/
 import { CargaHorariaAdminComponent } from '@component/carga-horaria-admin/carga-horaria-admin/carga-horaria-admin.component';
 import { CargaHorariaFieldsetComponent } from '@component/carga-horaria-admin/carga-horaria-fieldset/carga-horaria-fieldset.component';
 import { PersonaSearchComponent } from '@component/persona-show/persona-search/persona-search.component';
+import { AsignaturaShowComponent } from '@component/asignatura-show/asignatura-show/asignatura-show.component';
+import { AsignaturaTableComponent } from '@component/asignatura-show/asignatura-table/asignatura-table.component';
+import { CargaHorariaShowComponent } from '@component/carga-horaria-show/carga-horaria-show/carga-horaria-show.component';
+import { CargaHorariaTableComponent } from '@component/carga-horaria-show/carga-horaria-table/carga-horaria-table.component';
+import { CargaHorariaSearchComponent } from '@component/carga-horaria-show/carga-horaria-search/carga-horaria-search.component';
+import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
+import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/curso-fieldset.component';
 
 
 @NgModule({
@@ -89,12 +96,15 @@ import { PersonaSearchComponent } from '@component/persona-show/persona-search/p
     PaginationComponent,
     MessagesComponent,
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
+    AsignaturaShowComponent, AsignaturaTableComponent,
+    CargaHorariaShowComponent, CargaHorariaTableComponent, CargaHorariaSearchComponent,
     CargaHorariaAdminComponent, CargaHorariaFieldsetComponent,
     CargoAdminComponent, CargoFieldsetComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent,
     ComisionShowComponent, ComisionTableComponent,
+    CursoAdminComponent, CursoFieldsetComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
     PlanAdminComponent, PlanFieldsetComponent,
     PlanShowComponent, PlanTableComponent,
