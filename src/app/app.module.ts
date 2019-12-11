@@ -86,6 +86,7 @@ import { CargaHorariaTableComponent } from '@component/carga-horaria-show/carga-
 import { CargaHorariaSearchComponent } from '@component/carga-horaria-show/carga-horaria-search/carga-horaria-search.component';
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/curso-fieldset.component';
+import { ValidatorsService } from '@service/validators/validators.service';
 
 
 @NgModule({
@@ -126,7 +127,7 @@ import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/cu
   ],
   providers: [
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
-    ToastService,
+    ToastService, ValidatorsService,
     {provide: NgbDateAdapter, useClass: NgbIsoDateAdapter}, 
     {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter},
     {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}

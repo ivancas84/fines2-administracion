@@ -75,7 +75,6 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
         validators: Validators.required,
       }],
       anio: [null, {
-        validators: Validators.required,
       }],
       semestre: [null, {
       }],
@@ -83,9 +82,9 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
       }],
       autorizada: false,
       apertura: false,
-      publicar: false,
+      publicada: false,
       fecha_anio: [null, {
-        validators: Validators.required,
+        validators: [Validators.required, this.validators.minYear('2000'), this.validators.year()],
       }],
       fecha_semestre: [null, {
         validators: Validators.required,
@@ -113,7 +112,7 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
   get comentario() { return this.fieldset.get('comentario')}
   get autorizada() { return this.fieldset.get('autorizada')}
   get apertura() { return this.fieldset.get('apertura')}
-  get publicar() { return this.fieldset.get('publicar')}
+  get publicada() { return this.fieldset.get('publicada')}
   get fechaAnio() { return this.fieldset.get('fecha_anio')}
   get fechaSemestre() { return this.fieldset.get('fecha_semestre')}
   get observaciones() { return this.fieldset.get('observaciones')}
