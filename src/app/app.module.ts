@@ -87,6 +87,8 @@ import { CargaHorariaSearchComponent } from '@component/carga-horaria-show/carga
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/curso-fieldset.component';
 import { ValidatorsService } from '@service/validators/validators.service';
+import { ComisionCardComponent } from '@component/comision-detail/comision-card/comision-card.component';
+import { ComisionDetailComponent } from '@component/comision-detail/comision-detail/comision-detail.component';
 
 
 @NgModule({
@@ -105,6 +107,7 @@ import { ValidatorsService } from '@service/validators/validators.service';
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent,
     ComisionShowComponent, ComisionTableComponent,
+    ComisionDetailComponent, ComisionCardComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
     PlanAdminComponent, PlanFieldsetComponent,

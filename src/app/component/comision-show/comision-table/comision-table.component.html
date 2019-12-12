@@ -1,5 +1,7 @@
+  
+    <ng-template #loading>No se han encontrado registros...</ng-template>
 
-    <div class="table-responsive">
+    <div *ngIf="load$ | async; else loading" class="table-responsive">
       <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
