@@ -9,6 +9,8 @@ import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { first } from 'rxjs/operators';
+import { Observable, of, ReplaySubject } from 'rxjs';
+import { Display } from '@class/display';
 
 @Component({
   selector: 'app-comision-admin',
@@ -17,6 +19,7 @@ import { first } from 'rxjs/operators';
 export class ComisionCursoAdminComponent extends AdminComponent implements OnInit {
 
   readonly entity: string = "comision";
+  curso_$ = new ReplaySubject();
 
   constructor(
     protected fb: FormBuilder, 
@@ -31,15 +34,30 @@ export class ComisionCursoAdminComponent extends AdminComponent implements OnIni
     super(fb, route, router, location, dd, toast, validators, storage);
   }
 
+  setCur_(comision): Observable<any> {
+    if (!comision || !comision.id) return of(null);
+    var d: Display = new Display;
+    d.condition.push(["comision", "=", comision.id]);
+    return this.dd.all("curso", d);
+  }
+ 
+  setCurso_(comision){
+    this.setCur_(comision).subscribe(
+      curso_ => { this.curso_$.next(curso_);},
+      error => {console.log(error)}
+    ); 
+  }
+
   setDataFromStorage(formValues: any): void {
     var d = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
     this.data$.next(d);
-    this.curso();   
+    this.setCurso_(d);
   }
 
   setDataFromParams(params: any): void {
     if(isEmptyObject(params)) {
       this.data$.next(null);
+      this.curso_$.next(null);
       return;
     } 
 
@@ -47,6 +65,7 @@ export class ComisionCursoAdminComponent extends AdminComponent implements OnIni
       response => {
         if (response) this.data$.next(response);
         else this.data$.next(params);
+        this.setCurso_(response);
       }
     ); 
   }
