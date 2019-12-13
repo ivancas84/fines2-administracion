@@ -10,9 +10,7 @@ export class ComisionCardComponent extends CardComponent {
 
   readonly entityName: string = "comision";
 
-  constructor(    
-    protected dd: DataDefinitionService,
-  ) {
+  constructor(protected dd: DataDefinitionService) {
     super(dd);
   }
 
