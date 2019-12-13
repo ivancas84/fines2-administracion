@@ -41,9 +41,12 @@
               <td><a [routerLink]="['/plan-show']" [queryParams]="{id:row.plan}" >{{row.plan | label:'plan'}}</a></td>
               <td><a [routerLink]="['/comision-show']" [queryParams]="{id:row.comision_siguiente}" >{{row.comision_siguiente | label:'comision'}}</a></td>
               <td>
-              <a class="btn btn-warning btn-sm" [routerLink]="['/comision-admin']" [queryParams]="{id:row.id}" ><span class="oi oi-pencil" title="Modificar"></span></a>
-              <!-- button class="btn btn-danger btn-sm" type="button" (click)="delete(i)"><span class="oi oi-trash" title="Eliminar"></span></button -->
-            </td>
+                <a class="btn btn-info btn-sm" [routerLink]="['/comision-detail']" [queryParams]="{id:row.id}" ><span class="oi oi-eye" title="Detalle"></span></a>
+                
+                <a class="btn btn-warning btn-sm" [routerLink]="['/comision-admin']" [queryParams]="{id:row.id}" ><span class="oi oi-pencil" title="Modificar"></span></a>
+                <!-- button class="btn btn-danger btn-sm" type="button" (click)="delete(i)"><span class="oi oi-trash" title="Eliminar"></span></button -->
+
+              </td>
           </tr>
         </tbody>
       </table>
