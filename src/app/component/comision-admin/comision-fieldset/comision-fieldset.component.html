@@ -18,8 +18,6 @@
       <input class="form-control" type="text" formControlName="division"  [ngClass]="{'is-invalid':(division.invalid && (division.dirty || division.touched))}">
       <div class="text-danger" *ngIf="(division.touched || division.dirty) && division.invalid">
         <div *ngIf="division.errors.required">Debe completar valor</div>
-        <div *ngIf="division.errors.notUnique">Ya existe</div>
-
       </div>
     </div>
   </div>
@@ -86,7 +84,6 @@
         <div *ngIf="fechaAnio.errors.nonNumeric">Ingrese sólo números</div>
         <div *ngIf="fechaAnio.errors.notYear">No es un año válido</div>    
         <div *ngIf="fechaAnio.errors.minYear">Valor no permitido</div>
-        <div *ngIf="fechaAnio.errors.notUnique">Ya existe</div>
       </div>
     </div>
   </div>
@@ -118,7 +115,6 @@
       <div class="text-danger" *ngIf="(sede.touched || sede.dirty) && sede.invalid">
         <div *ngIf="sede.errors.required">Debe completar valor</div>
         <div *ngIf="(sede.touched && sede.errors.unselected)">Valor no seleccionado</div>
-        <div *ngIf="sede.errors.notUnique">Ya existe</div>
       </div>
     </div>
   </div>
@@ -142,5 +138,8 @@
         <div *ngIf="(comisionSiguiente.touched && comisionSiguiente.errors.unselected)">Valor no seleccionado</div>
       </div>
     </div>
+  </div>
+  <div class="text-danger" *ngIf="fieldset.errors">
+    <div *ngIf="fieldset.errors.notUnique">El valor ya se encuentra utilizado: <a routerLink="/comision-admin" [queryParams]="{'id':fieldset.errors.notUnique}">Cargar</a></div>
   </div>
 </fieldset>
