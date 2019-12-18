@@ -30,11 +30,15 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
     var ob = this.dd.all('plan', new Display);
     obs.push(ob);
 
+    var ob = this.dd.all('modalidad', new Display);
+    obs.push(ob);
+
     this.options = forkJoin(obs).pipe(
       map(
         options => {
           var o = {};
           o['plan'] = options[0];
+          o['modalidad'] = options[1];
           return o;
         }
       )
@@ -96,11 +100,14 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
       plan: [null, {
         validators: [Validators.required],
       }],
+      modalidad: [null, {
+        validators: [Validators.required],
+      }],
       comision_siguiente: [null, {
         validators: [this.validators.typeaheadSelection('comision')],
       }],
     }, {
-      asyncValidators: [this.validators.uniqueMultiple('comision', ['division', 'sede'])],
+      asyncValidators: [this.validators.uniqueMultiple('comision', ['division', 'sede', 'anio', 'semestre'])],
     });
     return fg;
   }
@@ -120,6 +127,7 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
   get alta() { return this.fieldset.get('alta')}
   get sede() { return this.fieldset.get('sede')}
   get plan() { return this.fieldset.get('plan')}
+  get modalidad() { return this.fieldset.get('modalidad')}
   get comisionSiguiente() { return this.fieldset.get('comision_siguiente')}
 
 }

@@ -22,6 +22,7 @@ import { CargaHorariaShowComponent } from '@component/carga-horaria-show/carga-h
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { ComisionDetailComponent } from '@component/comision-detail/comision-detail/comision-detail.component';
 import { ModalidadAdminComponent } from '@component/modalidad-admin/modalidad-admin/modalidad-admin.component';
+import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-curso-admin/comision-curso-admin.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'carga-horaria-show', component: CargaHorariaShowComponent, pathMatch: 'full' },
   { path: 'curso-admin', component: CursoAdminComponent, pathMatch: 'full' },
   { path: 'comision-admin', component: ComisionAdminComponent, pathMatch: 'full' },
+  { path: 'comision-curso-admin', component: ComisionCursoAdminComponent, pathMatch: 'full' },
   { path: 'comision-show', component: ComisionShowComponent, pathMatch: 'full' },
   { path: 'comision-detail', component: ComisionDetailComponent, pathMatch: 'full' },
   { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },

@@ -1,4 +1,3 @@
-import { AdminComponent } from '@component/admin/admin.component';
 import { OnInit, Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -7,16 +6,14 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
-import { isEmptyObject } from '@function/is-empty-object.function';
-import { first } from 'rxjs/operators';
 import { Observable, of, ReplaySubject } from 'rxjs';
-import { Display } from '@class/display';
+import { ComisionAdminComponent } from '../comision-admin/comision-admin.component';
 
 @Component({
-  selector: 'app-comision-admin',
-  templateUrl: './comision-admin.component.html',
+  selector: 'app-comision-curso-admin',
+  templateUrl: '../comision-admin/comision-admin.component.html',
 })
-export class ComisionCursoAdminComponent extends AdminComponent implements OnInit {
+export class ComisionCursoAdminComponent extends ComisionAdminComponent implements OnInit {
 
   readonly entity: string = "comision";
 
