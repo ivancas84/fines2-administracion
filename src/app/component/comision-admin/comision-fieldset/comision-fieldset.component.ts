@@ -72,7 +72,7 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
       turno: [null, {
       }],
       division: [null, {
-        validators: [Validators.required],      
+        validators: [Validators.required],
       }],
       anio: [null, {
       }],
@@ -84,16 +84,14 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
       apertura: false,
       publicada: false,
       fecha_anio: [null, {
-        validators: [Validators.required, this.validators.minYear('2000'), this.validators.year()],
+        validators: [this.validators.minYear('2000'), this.validators.year()],
       }],
       fecha_semestre: [null, {
-        validators: [Validators.required],
       }],
       observaciones: [null, {
       }],
       sede: [null, {
         validators: [this.validators.typeaheadSelection('sede'), Validators.required],
-        // asyncValidators: [this.validators.uniqueMultiple('comision', ['division', 'fecha_anio', 'sede'])],
       }],
       plan: [null, {
         validators: [Validators.required],
@@ -102,7 +100,7 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
         validators: [this.validators.typeaheadSelection('comision')],
       }],
     }, {
-      asyncValidators: [this.validators.uniqueMultiple('comision', ['division', 'fecha_anio', 'sede'])],
+      asyncValidators: [this.validators.uniqueMultiple('comision', ['division', 'sede'])],
     });
     return fg;
   }

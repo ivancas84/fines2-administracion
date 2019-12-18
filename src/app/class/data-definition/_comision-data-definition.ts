@@ -41,6 +41,11 @@ export class _ComisionDataDefinition extends DataDefinition {
       this.stg.setItem('plan' + row['plan_'].id, row['plan_']);
       delete row['plan_'];
     }
+    if(('modalidad_' in row)
+    ){
+      this.stg.setItem('modalidad' + row['modalidad_'].id, row['modalidad_']);
+      delete row['modalidad_'];
+    }
     if(('comision_siguiente_' in row)
     && ('sede_' in row['comision_siguiente_'])
     && ('domicilio_' in row['comision_siguiente_']['sede_'])
@@ -81,6 +86,12 @@ export class _ComisionDataDefinition extends DataDefinition {
     ){
       this.stg.setItem('plan' + row['comision_siguiente_']['plan_'].id, row['comision_siguiente_']['plan_']);
       delete row['comision_siguiente_']['plan_'];
+    }
+    if(('comision_siguiente_' in row)
+    && ('modalidad_' in row['comision_siguiente_'])
+    ){
+      this.stg.setItem('modalidad' + row['comision_siguiente_']['modalidad_'].id, row['comision_siguiente_']['modalidad_']);
+      delete row['comision_siguiente_']['modalidad_'];
     }
     if(('comision_siguiente_' in row)
     ){

@@ -21,6 +21,7 @@ import { AsignaturaShowComponent } from '@component/asignatura-show/asignatura-s
 import { CargaHorariaShowComponent } from '@component/carga-horaria-show/carga-horaria-show/carga-horaria-show.component';
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { ComisionDetailComponent } from '@component/comision-detail/comision-detail/comision-detail.component';
+import { ModalidadAdminComponent } from '@component/modalidad-admin/modalidad-admin/modalidad-admin.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'comision-detail', component: ComisionDetailComponent, pathMatch: 'full' },
   { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
   { path: 'designacion-admin', component: DesignacionAdminComponent, pathMatch: 'full' },
+  { path: 'modalidad-admin', component: ModalidadAdminComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },

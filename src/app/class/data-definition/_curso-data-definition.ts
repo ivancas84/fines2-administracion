@@ -47,6 +47,12 @@ export class _CursoDataDefinition extends DataDefinition {
       delete row['comision_']['plan_'];
     }
     if(('comision_' in row)
+    && ('modalidad_' in row['comision_'])
+    ){
+      this.stg.setItem('modalidad' + row['comision_']['modalidad_'].id, row['comision_']['modalidad_']);
+      delete row['comision_']['modalidad_'];
+    }
+    if(('comision_' in row)
     && ('comision_siguiente_' in row['comision_'])
     && ('sede_' in row['comision_']['comision_siguiente_'])
     && ('domicilio_' in row['comision_']['comision_siguiente_']['sede_'])
@@ -92,6 +98,13 @@ export class _CursoDataDefinition extends DataDefinition {
     ){
       this.stg.setItem('plan' + row['comision_']['comision_siguiente_']['plan_'].id, row['comision_']['comision_siguiente_']['plan_']);
       delete row['comision_']['comision_siguiente_']['plan_'];
+    }
+    if(('comision_' in row)
+    && ('comision_siguiente_' in row['comision_'])
+    && ('modalidad_' in row['comision_']['comision_siguiente_'])
+    ){
+      this.stg.setItem('modalidad' + row['comision_']['comision_siguiente_']['modalidad_'].id, row['comision_']['comision_siguiente_']['modalidad_']);
+      delete row['comision_']['comision_siguiente_']['modalidad_'];
     }
     if(('comision_' in row)
     && ('comision_siguiente_' in row['comision_'])
