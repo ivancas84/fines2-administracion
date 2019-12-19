@@ -92,6 +92,8 @@ import { ComisionDetailComponent } from '@component/comision-detail/comision-det
 import { ModalidadAdminComponent } from '@component/modalidad-admin/modalidad-admin/modalidad-admin.component';
 import { ModalidadFieldsetComponent } from '@component/modalidad-admin/modalidad-fieldset/modalidad-fieldset.component';
 import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-curso-admin/comision-curso-admin.component';
+import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.component';
+import { CursoTableComponent } from '@component/curso-show/curso-table/curso-table.component';
 
 
 @NgModule({
@@ -112,6 +114,7 @@ import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-
     ComisionShowComponent, ComisionTableComponent,
     ComisionDetailComponent, ComisionCardComponent,
     CursoAdminComponent, CursoFieldsetComponent,
+    CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
     ModalidadAdminComponent, ModalidadFieldsetComponent,
     PlanAdminComponent, PlanFieldsetComponent,
