@@ -32,7 +32,7 @@ export class ComisionCursoAdminComponent extends ComisionAdminComponent implemen
 
     
   persist(): Observable<any> {
-    return this.dd.persist("comision_curso", this.serverData())
+    return this.dd.persist("comision_cursos", this.serverData())
   }
 
 
