@@ -5,13 +5,10 @@
     </ng-template>
     <ng-template ngbPanelContent>
       <form [formGroup]="searchForm" novalidate (ngSubmit)="onSubmit()" >
-          
+
+        <app-sede-search-aux [form]="searchForm" [data$]="aux$"></app-sede-search-aux>
 
         <div formArrayName="filters">
-          
-
-
-
           <div class="form-row align-items-center" *ngFor="let filter of filters.controls; let i=index" [formGroupName]="i">
 
 

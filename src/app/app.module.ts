@@ -94,6 +94,7 @@ import { ModalidadFieldsetComponent } from '@component/modalidad-admin/modalidad
 import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-curso-admin/comision-curso-admin.component';
 import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.component';
 import { CursoTableComponent } from '@component/curso-show/curso-table/curso-table.component';
+import { SedeSearchAuxComponent } from '@component/sede-show/sede-search-aux/sede-search-aux.component';
 
 
 @NgModule({
@@ -121,7 +122,7 @@ import { CursoTableComponent } from '@component/curso-show/curso-table/curso-tab
     PlanShowComponent, PlanTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent, PersonaSearchComponent,
-    SedeShowComponent, SedeTableComponent, SedeSearchComponent,
+    SedeShowComponent, SedeTableComponent, SedeSearchComponent, SedeSearchAuxComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,

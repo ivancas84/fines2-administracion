@@ -5,6 +5,8 @@ import { SearchComponent } from '@component/search/search.component';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { forkJoin } from 'rxjs';
+import { Display } from '@class/display';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sede-search',
@@ -13,20 +15,30 @@ import { forkJoin } from 'rxjs';
 export class SedeSearchComponent extends SearchComponent {
   readonly entityName = 'sede';
 
-  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router)  {
+  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router) {
     super(fb, dd, router);
   }
 
-  createForm(){
-    this.searchForm = this.fb.group({
-      anio: [''],
-      semestre: [''],
-      clasificacion: [''],
-      dependencia: [''],
-      filters: this.fb.array([]),
-    })
+
+
+  initOptions(): void {
+    let obs = [];      
+
+    var ob = this.dd.all('modalidad', new Display);
+    obs.push(ob);
+
+    this.options = forkJoin(obs).pipe(
+      map(
+        options => {
+          var o = {};
+          o['modalidad'] = options[0];
+          return o;
+        }
+      )
+    );
   }
-  initData() {
+
+  /*initData() {
     var obs = [];
  
     for(let i = 0; i < this.condition.length; i++){
@@ -48,5 +60,6 @@ export class SedeSearchComponent extends SearchComponent {
     }
     if(obs.length){ forkJoin(obs).subscribe( () => this.initForm() ); }
     else { this.initForm() }
-  }
+  }*/
+
 }
