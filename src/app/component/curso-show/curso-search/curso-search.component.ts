@@ -17,7 +17,7 @@ export class CursoSearchComponent extends SearchComponent {
     super(fb, dd, router);
   }
 
-  initData() {
+  /*initData() {
     var obs = [];
  
     for(let i = 0; i < this.condition.length; i++){
@@ -39,5 +39,5 @@ export class CursoSearchComponent extends SearchComponent {
     }
     if(obs.length){ forkJoin(obs).subscribe( () => this.initForm() ); }
     else { this.initForm() }
-  }
+  }*/
 }

@@ -18,48 +18,27 @@ export class SedeSearchComponent extends SearchComponent {
   constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router) {
     super(fb, dd, router);
   }
-
-
-
-  initOptions(): void {
-    let obs = [];      
-
-    var ob = this.dd.all('modalidad', new Display);
-    obs.push(ob);
-
-    this.options = forkJoin(obs).pipe(
-      map(
-        options => {
-          var o = {};
-          o['modalidad'] = options[0];
-          return o;
-        }
-      )
-    );
-  }
-
-  /*initData() {
+  initFilters(condition) {
     var obs = [];
  
-    for(let i = 0; i < this.condition.length; i++){
-      if((this.condition[i][0] == "id") && !isEmptyObject(this.condition[i][2])) {
-        var ob = this.dd.getOrNull(this.entityName,this.condition[i][2]);
+    for(let i = 0; i < condition.length; i++){
+      if((condition[i][0] == "id") && !isEmptyObject(condition[i][2])) {
+        var ob = this.dd.getOrNull(this.entityName,condition[i][2]);
         obs.push(ob);
       }
 
-      if((this.condition[i][0] == "domicilio") && !isEmptyObject(this.condition[i][2])) {     
-        var ob = this.dd.getOrNull("domicilio",this.condition[i][2]);
+      if((condition[i][0] == "domicilio") && !isEmptyObject(condition[i][2])) {     
+        var ob = this.dd.getOrNull("domicilio",condition[i][2]);
         obs.push(ob);
       }
 
-      if((this.condition[i][0] == "centro_educativo") && !isEmptyObject(this.condition[i][2])) {     
-        var ob = this.dd.getOrNull("centro_educativo",this.condition[i][2]);
+      if((condition[i][0] == "centro_educativo") && !isEmptyObject(condition[i][2])) {     
+        var ob = this.dd.getOrNull("centro_educativo",condition[i][2]);
         obs.push(ob);
       }
 
     }
-    if(obs.length){ forkJoin(obs).subscribe( () => this.initForm() ); }
-    else { this.initForm() }
-  }*/
+    return obs;
+  }
 
 }

@@ -14,7 +14,7 @@ import { ValidatorsService } from '@service/validators/validators.service';
 })
 export class SedeSearchAuxComponent extends FieldsetComponent {
   readonly entityName = 'sede';
-  readonly fieldsetName: string = 'aux';
+  readonly fieldsetName: string = 'sede';
 
   constructor(
     protected fb: FormBuilder, 
@@ -23,16 +23,6 @@ export class SedeSearchAuxComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
   
-  formGroup() {
-    let fg: FormGroup = this.fb.group({
-      anio: [null],
-      semestre: [null],
-      modalidad: [null],
-      centro_educativo: [null],
-    });
-    return fg;
-  }
-
   initOptions(): void {
     let obs = [];      
 
@@ -53,8 +43,6 @@ export class SedeSearchAuxComponent extends FieldsetComponent {
   initData(): void {
     this.data$.subscribe(
       response => {
-        this.setDefaultValues();
-
         if(!isEmptyObject(response)) {
           var obs = [];
 
@@ -68,6 +56,16 @@ export class SedeSearchAuxComponent extends FieldsetComponent {
         }
       } 
     );
+  }
+
+  formGroup() {
+    let fg: FormGroup = this.fb.group({
+      anio: [null],
+      semestre: [null],
+      modalidad: [null],
+      centro_educativo: [null],
+    });
+    return fg;
   }
 
 }
