@@ -29,7 +29,6 @@ import { PaginationComponent } from '@component/pagination/pagination.component'
 import { FilterTypeaheadComponent } from '@component/filter-typeahead/filter-typeahead.component';
 import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
 import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
-import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-search.component';
 import { MenuComponent } from '@component/menu/menu.component';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
@@ -94,7 +93,10 @@ import { ModalidadFieldsetComponent } from '@component/modalidad-admin/modalidad
 import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-curso-admin/comision-curso-admin.component';
 import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.component';
 import { CursoTableComponent } from '@component/curso-show/curso-table/curso-table.component';
-import { SedeSearchAuxComponent } from '@component/sede-show/sede-search-aux/sede-search-aux.component';
+import { SedeSearchConditionComponent } from '@component/sede-show/sede-search/sede-search-condition/sede-search-condition.component';
+import { SedeSearchParamsComponent } from '@component/sede-show/sede-search/sede-search-params/sede-search-params.component';
+import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-search/sede-search.component';
+import { SearchAllComponent } from '@component/search-all/search-all.component';
 
 
 @NgModule({
@@ -102,6 +104,7 @@ import { SedeSearchAuxComponent } from '@component/sede-show/sede-search-aux/sed
     AppComponent,
     MenuComponent,
     LabelPipe, ToDatePipe, SiNoPipe, SummaryPipe,
+    SearchAllComponent,
     PaginationComponent,
     MessagesComponent,
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
@@ -122,7 +125,7 @@ import { SedeSearchAuxComponent } from '@component/sede-show/sede-search-aux/sed
     PlanShowComponent, PlanTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
     PersonaShowComponent, PersonaTableComponent, PersonaSearchComponent,
-    SedeShowComponent, SedeTableComponent, SedeSearchComponent, SedeSearchAuxComponent,
+    SedeShowComponent, SedeTableComponent, SedeSearchComponent, SedeSearchParamsComponent, SedeSearchConditionComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,

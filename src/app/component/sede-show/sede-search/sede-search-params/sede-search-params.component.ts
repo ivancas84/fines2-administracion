@@ -2,19 +2,18 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
+import { ValidatorsService } from '@service/validators/validators.service';
+import { SearchParamsComponent } from '@component/search-params/search-params.component';
 import { forkJoin } from 'rxjs';
 import { Display } from '@class/display';
 import { map } from 'rxjs/operators';
-import { FieldsetComponent } from '@component/fieldset/fieldset.component';
-import { ValidatorsService } from '@service/validators/validators.service';
 
 @Component({
-  selector: 'app-sede-search-aux',
-  templateUrl: './sede-search-aux.component.html',
+  selector: 'app-sede-search-params',
+  templateUrl: './sede-search-params.component.html',
 })
-export class SedeSearchAuxComponent extends FieldsetComponent {
+export class SedeSearchParamsComponent extends SearchParamsComponent {
   readonly entityName = 'sede';
-  readonly fieldsetName: string = 'sede';
 
   constructor(
     protected fb: FormBuilder, 

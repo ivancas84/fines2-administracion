@@ -13,8 +13,8 @@ import { forkJoin } from 'rxjs';
 export class AsignaturaSearchComponent extends SearchComponent {
   entity = 'asignatura';
 
-  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router)  {
-    super(fb, dd, router);
+  constructor(protected fb: FormBuilder)  {
+    super(fb);
   }
 
 }

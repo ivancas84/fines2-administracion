@@ -1,24 +1,21 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { SearchComponent } from '@component/search/search.component';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
-import { forkJoin } from 'rxjs';
-import { Display } from '@class/display';
-import { map } from 'rxjs/operators';
+import { SearchConditionComponent } from '@component/search-condition/search-condition.component';
 
 @Component({
-  selector: 'app-sede-search',
-  templateUrl: './sede-search.component.html',
+  selector: 'app-sede-search-condition',
+  templateUrl: './sede-search-condition.component.html',
 })
-export class SedeSearchComponent extends SearchComponent {
+export class SedeSearchConditionComponent extends SearchConditionComponent {
   readonly entityName = 'sede';
 
-  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router) {
-    super(fb, dd, router);
+  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService) {
+    super(fb, dd);
   }
-  initFilters(condition) {
+  
+  initFilters(condition: Array<any>) {
     var obs = [];
  
     for(let i = 0; i < condition.length; i++){

@@ -13,8 +13,8 @@ import { forkJoin } from 'rxjs';
 export class PersonaSearchComponent extends SearchComponent {
   entity = 'persona';
 
-  constructor(protected fb: FormBuilder, protected dd: DataDefinitionService, protected router: Router)  {
-    super(fb, dd, router);
+  constructor(protected fb: FormBuilder)  {
+    super(fb);
   }
 
 }
