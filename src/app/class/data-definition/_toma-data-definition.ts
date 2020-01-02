@@ -41,6 +41,14 @@ export class _TomaDataDefinition extends DataDefinition {
     if(('curso_' in row)
     && ('comision_' in row['curso_'])
     && ('sede_' in row['curso_']['comision_'])
+    && ('coordinador_' in row['curso_']['comision_']['sede_'])
+    ){
+      this.stg.setItem('persona' + row['curso_']['comision_']['sede_']['coordinador_'].id, row['curso_']['comision_']['sede_']['coordinador_']);
+      delete row['curso_']['comision_']['sede_']['coordinador_'];
+    }
+    if(('curso_' in row)
+    && ('comision_' in row['curso_'])
+    && ('sede_' in row['curso_']['comision_'])
     ){
       this.stg.setItem('sede' + row['curso_']['comision_']['sede_'].id, row['curso_']['comision_']['sede_']);
       delete row['curso_']['comision_']['sede_'];
@@ -95,6 +103,15 @@ export class _TomaDataDefinition extends DataDefinition {
     ){
       this.stg.setItem('centro_educativo' + row['curso_']['comision_']['comision_siguiente_']['sede_']['centro_educativo_'].id, row['curso_']['comision_']['comision_siguiente_']['sede_']['centro_educativo_']);
       delete row['curso_']['comision_']['comision_siguiente_']['sede_']['centro_educativo_'];
+    }
+    if(('curso_' in row)
+    && ('comision_' in row['curso_'])
+    && ('comision_siguiente_' in row['curso_']['comision_'])
+    && ('sede_' in row['curso_']['comision_']['comision_siguiente_'])
+    && ('coordinador_' in row['curso_']['comision_']['comision_siguiente_']['sede_'])
+    ){
+      this.stg.setItem('persona' + row['curso_']['comision_']['comision_siguiente_']['sede_']['coordinador_'].id, row['curso_']['comision_']['comision_siguiente_']['sede_']['coordinador_']);
+      delete row['curso_']['comision_']['comision_siguiente_']['sede_']['coordinador_'];
     }
     if(('curso_' in row)
     && ('comision_' in row['curso_'])

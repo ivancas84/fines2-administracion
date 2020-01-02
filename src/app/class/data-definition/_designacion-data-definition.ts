@@ -36,6 +36,12 @@ export class _DesignacionDataDefinition extends DataDefinition {
       delete row['sede_']['centro_educativo_'];
     }
     if(('sede_' in row)
+    && ('coordinador_' in row['sede_'])
+    ){
+      this.stg.setItem('persona' + row['sede_']['coordinador_'].id, row['sede_']['coordinador_']);
+      delete row['sede_']['coordinador_'];
+    }
+    if(('sede_' in row)
     ){
       this.stg.setItem('sede' + row['sede_'].id, row['sede_']);
       delete row['sede_'];
