@@ -9,7 +9,7 @@ import { ShowComponent } from '@component/show/show.component';
 })
 export class PersonaShowComponent extends ShowComponent {
 
-  entity: string = "persona";
+  readonly entityName: string = "persona";
 
   constructor(
     protected dd: DataDefinitionService, 
