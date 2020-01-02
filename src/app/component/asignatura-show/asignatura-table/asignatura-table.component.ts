@@ -8,7 +8,7 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 })
 export class AsignaturaTableComponent extends TableComponent {
 
-  readonly entity = 'asignatura';
+  readonly entityName: string = "asignatura";
 
 }
 

@@ -97,6 +97,7 @@ import { SedeSearchConditionComponent } from '@component/sede-show/sede-search/s
 import { SedeSearchParamsComponent } from '@component/sede-show/sede-search/sede-search-params/sede-search-params.component';
 import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-search/sede-search.component';
 import { SearchAllComponent } from '@component/search-all/search-all.component';
+import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura-search/asignatura-search.component';
 
 
 @NgModule({
@@ -108,7 +109,7 @@ import { SearchAllComponent } from '@component/search-all/search-all.component';
     PaginationComponent,
     MessagesComponent,
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
-    AsignaturaShowComponent, AsignaturaTableComponent,
+    AsignaturaShowComponent, AsignaturaTableComponent, AsignaturaSearchComponent,
     CargaHorariaShowComponent, CargaHorariaTableComponent, CargaHorariaSearchComponent,
     CargaHorariaAdminComponent, CargaHorariaFieldsetComponent,
     CargoAdminComponent, CargoFieldsetComponent,
