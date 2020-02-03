@@ -108,6 +108,10 @@ import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura
     SearchAllComponent,
     PaginationComponent,
     MessagesComponent,
+    FilterTypeaheadComponent, FieldsetTypeaheadComponent,
+    ModalConfirmComponent,
+    ToastsComponent,
+
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
     AsignaturaShowComponent, AsignaturaTableComponent, AsignaturaSearchComponent,
     CargaHorariaShowComponent, CargaHorariaTableComponent, CargaHorariaSearchComponent,
@@ -130,10 +134,7 @@ import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
-    TestComponent,
-    FilterTypeaheadComponent, FieldsetTypeaheadComponent,
-    ModalConfirmComponent,
-    ToastsComponent
+    TestComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

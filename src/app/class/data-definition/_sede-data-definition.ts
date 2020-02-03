@@ -27,6 +27,12 @@ export class _SedeDataDefinition extends DataDefinition {
       delete row['centro_educativo_'];
     }
     if(('coordinador_' in row)
+    && ('domicilio_' in row['coordinador_'])
+    ){
+      this.stg.setItem('domicilio' + row['coordinador_']['domicilio_'].id, row['coordinador_']['domicilio_']);
+      delete row['coordinador_']['domicilio_'];
+    }
+    if(('coordinador_' in row)
     ){
       this.stg.setItem('persona' + row['coordinador_'].id, row['coordinador_']);
       delete row['coordinador_'];

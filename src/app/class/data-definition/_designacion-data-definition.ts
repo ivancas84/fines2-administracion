@@ -37,6 +37,13 @@ export class _DesignacionDataDefinition extends DataDefinition {
     }
     if(('sede_' in row)
     && ('coordinador_' in row['sede_'])
+    && ('domicilio_' in row['sede_']['coordinador_'])
+    ){
+      this.stg.setItem('domicilio' + row['sede_']['coordinador_']['domicilio_'].id, row['sede_']['coordinador_']['domicilio_']);
+      delete row['sede_']['coordinador_']['domicilio_'];
+    }
+    if(('sede_' in row)
+    && ('coordinador_' in row['sede_'])
     ){
       this.stg.setItem('persona' + row['sede_']['coordinador_'].id, row['sede_']['coordinador_']);
       delete row['sede_']['coordinador_'];
@@ -45,6 +52,12 @@ export class _DesignacionDataDefinition extends DataDefinition {
     ){
       this.stg.setItem('sede' + row['sede_'].id, row['sede_']);
       delete row['sede_'];
+    }
+    if(('persona_' in row)
+    && ('domicilio_' in row['persona_'])
+    ){
+      this.stg.setItem('domicilio' + row['persona_']['domicilio_'].id, row['persona_']['domicilio_']);
+      delete row['persona_']['domicilio_'];
     }
     if(('persona_' in row)
     ){

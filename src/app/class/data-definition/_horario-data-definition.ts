@@ -1,7 +1,7 @@
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
-export class _TomaDataDefinition extends DataDefinition {
-  entity: string = 'toma';
+export class _HorarioDataDefinition extends DataDefinition {
+  entity: string = 'horario';
 
   storage(row: { [index: string]: any }){
     if(!row) return;
@@ -194,29 +194,12 @@ export class _TomaDataDefinition extends DataDefinition {
       this.stg.setItem('curso' + row['curso_'].id, row['curso_']);
       delete row['curso_'];
     }
-    if(('docente_' in row)
-    && ('domicilio_' in row['docente_'])
+    if(('dia_' in row)
     ){
-      this.stg.setItem('domicilio' + row['docente_']['domicilio_'].id, row['docente_']['domicilio_']);
-      delete row['docente_']['domicilio_'];
+      this.stg.setItem('dia' + row['dia_'].id, row['dia_']);
+      delete row['dia_'];
     }
-    if(('docente_' in row)
-    ){
-      this.stg.setItem('persona' + row['docente_'].id, row['docente_']);
-      delete row['docente_'];
-    }
-    if(('reemplazo_' in row)
-    && ('domicilio_' in row['reemplazo_'])
-    ){
-      this.stg.setItem('domicilio' + row['reemplazo_']['domicilio_'].id, row['reemplazo_']['domicilio_']);
-      delete row['reemplazo_']['domicilio_'];
-    }
-    if(('reemplazo_' in row)
-    ){
-      this.stg.setItem('persona' + row['reemplazo_'].id, row['reemplazo_']);
-      delete row['reemplazo_'];
-    }
-    this.stg.setItem("toma" + row.id, row);
+    this.stg.setItem("horario" + row.id, row);
   }
 
 }

@@ -5,6 +5,11 @@ export class _PersonaDataDefinition extends DataDefinition {
 
   storage(row: { [index: string]: any }){
     if(!row) return;
+    if(('domicilio_' in row)
+    ){
+      this.stg.setItem('domicilio' + row['domicilio_'].id, row['domicilio_']);
+      delete row['domicilio_'];
+    }
     this.stg.setItem("persona" + row.id, row);
   }
 
