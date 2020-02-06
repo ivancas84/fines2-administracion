@@ -22,24 +22,29 @@ import { AppComponent } from './app.component';
 import { LabelPipe } from '@pipe/label.pipe';
 import { ToDatePipe } from '@pipe/to-date.pipe';
 import { SiNoPipe } from '@pipe/si-no.pipe';
+import { StoragePipe } from '@pipe/storage.pipe';
 import { SummaryPipe } from '@pipe/summary.pipe';
-
-
+import { SearchAllComponent } from '@component/search-all/search-all.component';
 import { PaginationComponent } from '@component/pagination/pagination.component';
+import { MessagesComponent } from '@component/messages/messages.component';
 import { FilterTypeaheadComponent } from '@component/filter-typeahead/filter-typeahead.component';
-import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
-import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
-import { MenuComponent } from '@component/menu/menu.component';
+import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
+import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
+import { ToastsComponent } from '@component/toasts/toasts.component';
+import { MessageService } from '@service/message/message.service';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
-import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
+import { ValidatorsService } from '@service/validators/validators.service';
 import { NgbIsoDateAdapter } from '@service/ng-bootstrap/ngb-iso-date-adapter';
 import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
+import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
 import { ParserService } from '@service/parser/parser.service';
-import { TestComponent } from '@component/test/test.component';
-import { ModalConfirmComponent } from '@component/modal-confirm/modal-confirm.component';
+
+import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
+import { MenuComponent } from '@component/menu/menu.component';
+
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
-import { FieldsetTypeaheadComponent } from '@component/fieldset-typeahead/fieldset-typeahead.component';
 import { AsignaturaAdminComponent } from '@component/asignatura-admin/asignatura-admin/asignatura-admin.component';
 import { AsignaturaFieldsetComponent } from '@component/asignatura-admin/asignatura-fieldset/asignatura-fieldset.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
@@ -53,15 +58,10 @@ import { DomicilioCeFieldsetComponent } from '@component/centro-educativo-admin/
 import { CentroEducativoShowComponent } from '@component/centro-educativo-show/centro-educativo-show/centro-educativo-show.component';
 import { CentroEducativoTableComponent } from '@component/centro-educativo-show/centro-educativo-table/centro-educativo-table.component';
 import { DomicilioSFieldsetComponent } from '@component/sede-admin/domicilio-fieldset/domicilio-s-fieldset.component';
-import { MessageService } from '@service/message/message.service';
-import { MessagesComponent } from '@component/messages/messages.component';
-import { ToastService } from '@service/ng-bootstrap/toast.service';
-import { ToastsComponent } from '@component/toasts/toasts.component';
 import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
 import { PersonaFieldsetComponent } from '@component/persona-admin/persona-fieldset/persona-fieldset.component';
 import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
 import { PersonaTableComponent } from '@component/persona-show/persona-table/persona-table.component';
-import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
 import { CargoAdminComponent } from '@component/cargo-admin/cargo-admin/cargo-admin.component';
 import { CargoFieldsetComponent } from '@component/cargo-admin/cargo-fieldset/cargo-fieldset.component';
 import { DesignacionAdminComponent } from '@component/designacion-admin/designacion-admin/designacion-admin.component';
@@ -85,7 +85,6 @@ import { CargaHorariaTableComponent } from '@component/carga-horaria-show/carga-
 import { CargaHorariaSearchComponent } from '@component/carga-horaria-show/carga-horaria-search/carga-horaria-search.component';
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/curso-fieldset.component';
-import { ValidatorsService } from '@service/validators/validators.service';
 import { ComisionCardComponent } from '@component/comision-detail/comision-card/comision-card.component';
 import { ComisionDetailComponent } from '@component/comision-detail/comision-detail/comision-detail.component';
 import { ModalidadAdminComponent } from '@component/modalidad-admin/modalidad-admin/modalidad-admin.component';
@@ -96,18 +95,22 @@ import { CursoTableComponent } from '@component/curso-show/curso-table/curso-tab
 import { SedeSearchConditionComponent } from '@component/sede-show/sede-search/sede-search-condition/sede-search-condition.component';
 import { SedeSearchParamsComponent } from '@component/sede-show/sede-search/sede-search-params/sede-search-params.component';
 import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-search/sede-search.component';
-import { SearchAllComponent } from '@component/search-all/search-all.component';
 import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura-search/asignatura-search.component';
-
+import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
+import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    LabelPipe, ToDatePipe, SiNoPipe, SummaryPipe,
+    LabelPipe, ToDatePipe, SiNoPipe, SummaryPipe, StoragePipe,
     SearchAllComponent,
     PaginationComponent,
     MessagesComponent,
+    FilterTypeaheadComponent, FieldsetTypeaheadComponent,
+    ModalConfirmComponent,
+    ToastsComponent,
+
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
     AsignaturaShowComponent, AsignaturaTableComponent, AsignaturaSearchComponent,
     CargaHorariaShowComponent, CargaHorariaTableComponent, CargaHorariaSearchComponent,
@@ -130,10 +133,6 @@ import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
-    TestComponent,
-    FilterTypeaheadComponent, FieldsetTypeaheadComponent,
-    ModalConfirmComponent,
-    ToastsComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

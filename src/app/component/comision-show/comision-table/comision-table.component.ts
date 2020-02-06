@@ -10,41 +10,10 @@ import { forkJoin } from 'rxjs';
 })
 export class ComisionTableComponent extends TableComponent {
 
-  readonly entity = 'comision';
+  readonly entityName = 'comision';
 
   constructor(protected dd: DataDefinitionService) {
     super();
   }
 
-  ngOnInit(): void {
-    this.data$.subscribe(
-      response => {
-        if(!isEmptyObject(response)) {
-          var obs = [];
-          var idsSede = [];
-          var idsCs = [];
-
-          for(var i in response){
-            if(response[i].sede) idsSede.push(response[i].sede);              
-            if(response[i].comision_siguiente) idsCs.push(response[i].comision_siguiente);              
-          }
-
-          if(idsSede.length) {
-            var ob = this.dd.getAll("sede",idsSede);
-            obs.push(ob);
-          }
-
-          if(idsCs.length) {
-            var ob = this.dd.getAll("comision",idsCs);
-            obs.push(ob);
-          }
-          
-          if(obs.length){ forkJoin(obs).subscribe( () => this.load$.next(true)) } 
-          else { this.load$.next(true) }
-        }
-      }
-    );
-  }
-
 }
-

@@ -10,40 +10,10 @@ import { forkJoin } from 'rxjs';
 })
 export class CursoTableComponent extends TableComponent {
 
-  readonly entity = 'curso';
+  readonly entityName = 'curso';
 
   constructor(protected dd: DataDefinitionService) {
     super();
-  }
-
-  ngOnInit(): void {
-    this.data$.subscribe(
-      response => {
-        if(!isEmptyObject(response)) {
-          var obs = [];
-          var idsComision = [];    
-          var idsCargaHoraria = [];    
-
-          for(var i in response){
-            if(response[i].comision) idsComision.push(response[i].comision);
-            if(response[i].carga_horaria) idsCargaHoraria.push(response[i].carga_horaria);
-          }
-
-          if(idsComision.length) {
-            var ob = this.dd.getAll("comision",idsComision);
-            obs.push(ob);
-          }
-
-          if(idsCargaHoraria.length) {
-            var ob = this.dd.getAll("carga_horaria",idsCargaHoraria);
-            obs.push(ob);
-          }
-
-          if(obs.length){ forkJoin(obs).subscribe( () => this.load$.next(true)) } 
-          else { this.load$.next(true) }
-        }
-      }
-    );
   }
 
 }
