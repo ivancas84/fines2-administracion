@@ -24,6 +24,7 @@ import { ComisionDetailComponent } from '@component/comision-detail/comision-det
 import { ModalidadAdminComponent } from '@component/modalidad-admin/modalidad-admin/modalidad-admin.component';
 import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-curso-admin/comision-curso-admin.component';
 import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.component';
+import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'plan-show', component: PlanShowComponent, pathMatch: 'full' },
   { path: 'persona-show', component: PersonaShowComponent, pathMatch: 'full' },
   { path: 'persona-admin', component: PersonaAdminComponent, pathMatch: 'full' },
+  { path: 'crear-comisiones', component: CrearComisionesComponent, pathMatch: 'full' },
 ];
  
 @NgModule({

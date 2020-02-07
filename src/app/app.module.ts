@@ -98,6 +98,7 @@ import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-searc
 import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura-search/asignatura-search.component';
 import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
 import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
+import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.c
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
+    CrearComisionesComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
