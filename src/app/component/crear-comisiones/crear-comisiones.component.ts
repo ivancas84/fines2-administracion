@@ -63,6 +63,9 @@ export class CrearComisionesComponent implements OnInit{
       modalidad: [null, {
         validators: [Validators.required],
       }],
+      centro_educativo: [null, {
+        validators: [this.validators.typeaheadSelection('centro_educativo'), Validators.required],
+      }],
     });
   }
 
@@ -87,6 +90,8 @@ export class CrearComisionesComponent implements OnInit{
   get fechaAnio() { return this.form.get('fecha_anio')}
   get fechaSemestre() { return this.form.get('fecha_semestre')}
   get modalidad() { return this.form.get('modalidad')}
+  get centroEducativo() { return this.form.get('centro_educativo')}
+
 
   back() { this.location.back(); }
 
@@ -111,10 +116,13 @@ export class CrearComisionesComponent implements OnInit{
 
     } else {
       var s = this.persist().subscribe(
-        logs => {
-          this.toast.showSuccess("Registro realizado");
+        response => {          
+          if(response.hasOwnProperty("message")) this.toast.showSuccess(response.message);
+          else this.toast.showSuccess("Registro realizado");
         },
-        error => { this.toast.showDanger(JSON.stringify(error)); }
+        error => { 
+          console.log(error);
+          this.toast.showDanger(JSON.stringify(error.error)); }
       );
       this.subscriptions.add(s);
     }
