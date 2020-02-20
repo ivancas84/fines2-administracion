@@ -95,14 +95,7 @@ export class CrearComisionesComponent implements OnInit{
 
   back() { this.location.back(); }
 
-  persist(): Observable<any> {
-    /**
-     * persistencia
-     * Se define un metodo independiente para facilitar la redefinicion
-     */
-  
-    return this.dd.persist("comisiones_siguientes", this.form.value);
-  }
+
 
 
   onSubmit(): void {
@@ -115,7 +108,13 @@ export class CrearComisionesComponent implements OnInit{
       this.toast.showInfo("Verificar formulario");
 
     } else {
-      var s = this.persist().subscribe(
+      /**
+       * se ejecuta a traves de un script ya que la persistencia genera gran cantidad de logs.
+       */
+      window.open("http://localhost/fines2-estructura/script/test.php?fecha_anio="+ this.fechaAnio.value, "_blank");
+      /*
+      var s = this.dd.persist("comisiones_siguientes", this.form.value);
+.subscribe(
         response => {          
           if(response.hasOwnProperty("message")) this.toast.showSuccess(response.message);
           else this.toast.showSuccess("Registro realizado");
@@ -124,10 +123,9 @@ export class CrearComisionesComponent implements OnInit{
           console.log(error);
           this.toast.showDanger(JSON.stringify(error.error)); }
       );
-      this.subscriptions.add(s);
+      this.subscriptions.add(s);*/
     }
   }
   
-
   ngOnDestroy () { this.subscriptions.unsubscribe() }
 }
