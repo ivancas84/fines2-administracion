@@ -40,7 +40,7 @@ export class SedeSearchParamsComponent extends SearchParamsComponent {
   }
 
   initData(): void {
-    this.data$.subscribe(
+    this.params$.subscribe(
       response => {
         if(!isEmptyObject(response)) {
           var obs = [];
