@@ -34,7 +34,7 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
   }
 
   setDataFromStorage(formValues: any): void {
-    var d = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
+    var d = formValues.hasOwnProperty(this.entityName)? formValues[this.entityName] : null;
     this.data$.next(d);  
     
     var d = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
@@ -48,7 +48,7 @@ export class CentroEducativoAdminComponent extends AdminComponent implements OnI
       return;
     } 
 
-    this.dd.uniqueOrNull(this.entity, params).pipe(first()).subscribe(
+    this.dd.uniqueOrNull(this.entityName, params).pipe(first()).subscribe(
       response => {
         if (response) this.data$.next(response);
         else this.data$.next(params);

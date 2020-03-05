@@ -38,7 +38,7 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
   }
 
   setDataFromStorage(formValues: any): void {
-    var sede = formValues.hasOwnProperty(this.entity)? formValues[this.entity] : null;
+    var sede = formValues.hasOwnProperty(this.entityName)? formValues[this.entityName] : null;
     this.data$.next(sede); 
     
     var domicilio = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
@@ -56,7 +56,7 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
       return;
     }
   
-    this.dd.uniqueOrNull(this.entity, params).pipe(first()).subscribe(
+    this.dd.uniqueOrNull(this.entityName, params).pipe(first()).subscribe(
       response => {
         if (response) this.data$.next(response);
         else this.data$.next(params);
