@@ -14,7 +14,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 })
 export class AsignaturaAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "asignatura";
+  readonly entityName: string = "asignatura";
 
   constructor(
     protected fb: FormBuilder, 

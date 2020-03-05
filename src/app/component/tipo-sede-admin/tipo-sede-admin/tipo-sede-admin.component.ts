@@ -15,7 +15,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 })
 export class TipoSedeAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "tipo_sede";
+  readonly entityName: string = "tipo_sede";
 
   constructor(
     protected fb: FormBuilder, 

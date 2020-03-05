@@ -17,7 +17,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 })
 export class CentroEducativoAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "centro_educativo";
+  readonly entityName: string = "centro_educativo";
   domicilio$ = new ReplaySubject();
 
   constructor(

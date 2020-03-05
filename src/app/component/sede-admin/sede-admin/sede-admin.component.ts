@@ -18,7 +18,7 @@ import { Display } from '@class/display';
 })
 export class SedeAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "sede";
+  readonly entityName: string = "sede";
   domicilio$ = new ReplaySubject();
   designacion_$ = new ReplaySubject();
 

@@ -14,7 +14,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 })
 export class CargaHorariaAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "carga_horaria";
+  readonly entityName: string = "carga_horaria";
 
   constructor(
     protected fb: FormBuilder, 

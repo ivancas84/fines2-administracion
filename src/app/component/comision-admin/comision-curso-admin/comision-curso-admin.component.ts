@@ -15,7 +15,7 @@ import { ComisionAdminComponent } from '../comision-admin/comision-admin.compone
 })
 export class ComisionCursoAdminComponent extends ComisionAdminComponent implements OnInit {
 
-  readonly entity: string = "comision";
+  readonly entityName: string = "comision";
 
   constructor(
     protected fb: FormBuilder, 

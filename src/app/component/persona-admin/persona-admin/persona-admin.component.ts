@@ -14,7 +14,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 })
 export class PersonaAdminComponent extends AdminComponent implements OnInit {
 
-  readonly entity: string = "persona";
+  readonly entityName: string = "persona";
 
   constructor(
     protected fb: FormBuilder, 
