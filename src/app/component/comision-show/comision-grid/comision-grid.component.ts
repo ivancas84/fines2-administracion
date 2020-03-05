@@ -5,15 +5,15 @@ import { isEmptyObject } from '@function/is-empty-object.function';
 import { forkJoin } from 'rxjs';
 
 @Component({
-  selector: 'app-comision-table',
-  templateUrl: './comision-table.component.html',
+  selector: 'app-comision-grid',
+  templateUrl: './comision-grid.component.html',
 })
-export class ComisionTableComponent extends ShowElementComponent {
+export class ComisionGridComponent extends ShowElementComponent {
 
   readonly entityName = 'comision';
 
   constructor(protected dd: DataDefinitionService) {
-    super();
+    super(); 
   }
 
 }

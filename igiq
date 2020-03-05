@@ -197,16 +197,16 @@
 [1m+++ b/src/app/component/sede-show/sede-table/sede-table.component.ts[m
 [36m@@ -1,7 +1,8 @@[m
  import { Component } from '@angular/core';[m
-[31m-import { TableComponent } from 'src/app/core/component/table/table.component';[m
+[31m-import { ShowElementComponent } from 'src/app/core/component/table/table.component';[m
 [31m-import { DataDefinitionService } from 'src/app/core/service/data-definition/data-definition.service';[m
-[32m+[m[32mimport { TableComponent } from '@component/table/table.component';[m
+[32m+[m[32mimport { ShowElementComponent } from '@component/table/table.component';[m
 [32m+[m[32mimport { DataDefinitionService } from '@service/data-definition/data-definition.service';[m
  import { isEmptyObject } from '@function/is-empty-object.function';[m
 [32m+[m[32mimport { forkJoin } from 'rxjs';[m
  [m
  @Component({[m
    selector: 'app-sede-table',[m
-[36m@@ -11,23 +12,45 @@[m [mexport class SedeTableComponent extends TableComponent {[m
+[36m@@ -11,23 +12,45 @@[m [mexport class SedeTableComponent extends ShowElementComponent {[m
  [m
    readonly entity = 'sede';[m
  [m

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableComponent } from '@component/table/table.component';
+import { ShowElementComponent } from '@component/show-element/show-element.component';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { forkJoin } from 'rxjs';
@@ -8,7 +8,7 @@ import { forkJoin } from 'rxjs';
   selector: 'app-sede-table',
   templateUrl: './sede-table.component.html',
 })
-export class SedeTableComponent extends TableComponent {
+export class SedeTableComponent extends ShowElementComponent {
 
   readonly entityName = 'sede';
 

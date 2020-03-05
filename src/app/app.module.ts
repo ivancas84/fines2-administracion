@@ -99,6 +99,7 @@ import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura
 import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
 import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
 import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
+import { ComisionGridComponent } from '@component/comision-show/comision-grid/comision-grid.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +121,7 @@ import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comi
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
-    ComisionShowComponent, ComisionTableComponent,
+    ComisionShowComponent, ComisionTableComponent, ComisionGridComponent,
     ComisionDetailComponent, ComisionCardComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,

@@ -12,6 +12,7 @@ import { ComisionDataDefinition } from 'src/app/class/data-definition/comision-d
 import { CursoDataDefinition } from 'src/app/class/data-definition/curso-data-definition';
 import { DesignacionDataDefinition } from 'src/app/class/data-definition/designacion-data-definition';
 import { DiaDataDefinition } from 'src/app/class/data-definition/dia-data-definition';
+import { DistribucionHorariaDataDefinition } from 'src/app/class/data-definition/distribucion-horaria-data-definition';
 import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio-data-definition';
 import { HorarioDataDefinition } from 'src/app/class/data-definition/horario-data-definition';
 import { ModalidadDataDefinition } from 'src/app/class/data-definition/modalidad-data-definition';
@@ -38,6 +39,7 @@ export class DataDefinitionLoaderService {
       case "curso": { return new CursoDataDefinition(this.stg, this.parser); }
       case "designacion": { return new DesignacionDataDefinition(this.stg, this.parser); }
       case "dia": { return new DiaDataDefinition(this.stg, this.parser); }
+      case "distribucion_horaria": { return new DistribucionHorariaDataDefinition(this.stg, this.parser); }
       case "domicilio": { return new DomicilioDataDefinition(this.stg, this.parser); }
       case "horario": { return new HorarioDataDefinition(this.stg, this.parser); }
       case "modalidad": { return new ModalidadDataDefinition(this.stg, this.parser); }
