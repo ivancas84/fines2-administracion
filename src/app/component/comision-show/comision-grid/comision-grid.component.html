@@ -7,7 +7,6 @@
       <h5 >{{row.id | label:'comision'}} <span *ngIf="row.apertura">(APERTURA)</span></h5>
           <small><a [routerLink]="['/sede-show']" [queryParams]="{id:row.sede}" >{{row.sede | label:'sede'}}</a></small>
           <br><small><a [routerLink]="['/plan-show']" [queryParams]="{id:row.plan}" >{{row.plan | label:'plan'}}</a></small>
-          <br><small><a [routerLink]="['/modalidad-show']" [queryParams]="{id:row.modalidad}" >{{row.modalidad | label:'modalidad'}}</a></small>
           <br><small><a [routerLink]="['/comision-show']" [queryParams]="{id:row.comision_siguiente}" >{{row.comision_siguiente | label:'comision'}}</a></small>
     </div>
     <div class="col-md">

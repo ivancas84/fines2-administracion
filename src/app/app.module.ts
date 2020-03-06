@@ -74,7 +74,6 @@ import { PlanTableComponent } from '@component/plan-show/plan-table/plan-table.c
 import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
 import { ComisionFieldsetComponent } from '@component/comision-admin/comision-fieldset/comision-fieldset.component';
 import { ComisionShowComponent } from '@component/comision-show/comision-show/comision-show.component';
-import { ComisionTableComponent } from '@component/comision-show/comision-table/comision-table.component';
 import { CargaHorariaAdminComponent } from '@component/carga-horaria-admin/carga-horaria-admin/carga-horaria-admin.component';
 import { CargaHorariaFieldsetComponent } from '@component/carga-horaria-admin/carga-horaria-fieldset/carga-horaria-fieldset.component';
 import { PersonaSearchComponent } from '@component/persona-show/persona-search/persona-search.component';
@@ -100,6 +99,8 @@ import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.comp
 import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
 import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
 import { ComisionGridComponent } from '@component/comision-show/comision-grid/comision-grid.component';
+import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
+import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +122,7 @@ import { ComisionGridComponent } from '@component/comision-show/comision-grid/co
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
-    ComisionShowComponent, ComisionTableComponent, ComisionGridComponent,
+    ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
     ComisionDetailComponent, ComisionCardComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
