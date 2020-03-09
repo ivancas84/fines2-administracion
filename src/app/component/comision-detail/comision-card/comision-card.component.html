@@ -1,3 +1,4 @@
+<div class="container">
 <div *ngIf="data$ | async as comision" class="card">
   <div class="card-header">
     Comision {{comision.id | label:"comision"}}
@@ -5,7 +6,7 @@
     
   <div class="card-body">
     <dl class="row">
-        <dt class="col-sm-3 ">Sede</dt>
+        <dt class="col-sm-3">Sede</dt>
         <dd class="col-sm-9">{{comision.sede | label:"sede"}}</dd>
           
         <dt class="col-sm-3 ">Plan</dt>
@@ -27,4 +28,5 @@
         <dd class="col-sm-9">{{comision.apertura | siNo}}</dd>
       </dl>
     </div>
+</div>
 </div>

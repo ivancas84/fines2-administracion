@@ -41,8 +41,6 @@ export class ComisionGridComponent extends ShowElementComponent implements OnIni
   ngOnInit(): void {
     this.data$.subscribe(
       comisiones => {
-        console.log(comisiones.length);
-
         if(comisiones && comisiones.length){
           console.log(comisiones.length);
           var idsComisiones = arrayColumn(comisiones,"id");

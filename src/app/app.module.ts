@@ -102,6 +102,7 @@ import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comi
 import { ComisionGridComponent } from '@component/comision-show/comision-grid/comision-grid.component';
 import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
 import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
+import { ComisionCursoGridComponent } from '@component/comision-detail/comision-curso-grid/comision-curso-grid.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +125,7 @@ import { ComisionSearchParamsComponent } from '@component/comision-show/comision
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
-    ComisionDetailComponent, ComisionCardComponent,
+    ComisionDetailComponent, ComisionCardComponent, ComisionCursoGridComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
