@@ -102,8 +102,9 @@ import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comi
 import { ComisionGridComponent } from '@component/comision-show/comision-grid/comision-grid.component';
 import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
 import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
-import { ComisionCursoGridComponent } from '@component/comision-detail/comision-curso-grid/comision-curso-grid.component';
 import { ComisionHorarioGridComponent } from '@component/comision-detail/comision-horario-grid/comision-horario-grid.component';
+import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
+import { HorarioFieldsetComponent } from '@component/horario-admin/horario-fieldset/horario-fieldset.component';
 
 @NgModule({
   declarations: [
@@ -126,10 +127,11 @@ import { ComisionHorarioGridComponent } from '@component/comision-detail/comisio
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
-    ComisionDetailComponent, ComisionCardComponent, ComisionCursoGridComponent, ComisionHorarioGridComponent,
+    ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
+    HorarioAdminComponent, HorarioFieldsetComponent,
     ModalidadAdminComponent, ModalidadFieldsetComponent,
     PlanAdminComponent, PlanFieldsetComponent,
     PlanShowComponent, PlanTableComponent,
