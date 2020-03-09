@@ -103,6 +103,7 @@ import { ComisionGridComponent } from '@component/comision-show/comision-grid/co
 import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
 import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
 import { ComisionCursoGridComponent } from '@component/comision-detail/comision-curso-grid/comision-curso-grid.component';
+import { ComisionHorarioGridComponent } from '@component/comision-detail/comision-horario-grid/comision-horario-grid.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,7 @@ import { ComisionCursoGridComponent } from '@component/comision-detail/comision-
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
-    ComisionDetailComponent, ComisionCardComponent, ComisionCursoGridComponent,
+    ComisionDetailComponent, ComisionCardComponent, ComisionCursoGridComponent, ComisionHorarioGridComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,

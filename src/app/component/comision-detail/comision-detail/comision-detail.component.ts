@@ -41,9 +41,9 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
         if(comision) {
           console.log(comision["id"]);
           var d = new Display();
-          d.setParams({"comision":comision["id"]})
-          console.log(d)
-          this.curso$ = this.dd.all("curso", d);
+          d.setParams({"cur_comision":comision["id"]});
+          d.order = {"dia_dia":"asc", "hora_inicio":"asc"};
+          this.curso$ = this.dd.all("horario", d);
         }
       }
     )

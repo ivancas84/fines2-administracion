@@ -1,0 +1,18 @@
+
+<ng-template #loading>No se han encontrado registros...</ng-template>
+
+<div *ngIf="((data$ | async) && (data$ | async).length) ; else loading" class="container">
+  <div *ngFor="let row of (data$ | async); let i = index" class="row align-items-center border">
+    <div class="col-md-4">
+      <h5>{{row.curso_.carga_horaria_.asignatura_.nombre}}</h5>
+      <small>{{row.curso_.carga_horaria_.horas_catedra}} horas cátedra</small>
+      <br><small>{{row.curso_.carga_horaria_.anio}}/{{row.curso_.carga_horaria_.semestre}} {{row.curso_.carga_horaria_.plan_.orientacion}} {{row.curso_.carga_horaria_.plan_.resolucion}}</small>          
+    </div>
+    <div class="col-md-4">
+{{row.dia_.dia}} {{row.hora_inicio | toTime | date:"HH:mm"}} {{row.hora_fin | toTime | date:"HH:mm"}} 
+    </div>
+    <div class="col-md">
+      <a class="btn btn-primary" [routerLink]="['/horario-admin']" [queryParams]="{id:row.id}" >Modificar</a>
+    </div>
+  </div>
+</div>
