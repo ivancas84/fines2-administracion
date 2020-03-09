@@ -23,31 +23,6 @@ export class ComisionShowComponent extends ShowComponent {
   }
 
 
-  initData(){
-    if(this.mode == "reload")
-      this.getCount().pipe(first()).subscribe(
-        count => { 
-          if(this.collectionSize$.value != count) this.collectionSize$.next(count); 
-        }
-      );
-
-    this.getData().pipe(first()).subscribe(
-      rows => { 
-        var idComisiones = arrayColumn(rows, "id");
-
-        this.dd.data("horarios_comision",JSON.stringify(idComisiones)).subscribe(
-          horarios => {
-            horarios = arrayCombineKey(horarios, "comision")
-            console.log(horarios);
-          }
-        );
-        this.data$.next(rows); 
-      }
-    );
-
-    this.mode = "reload";
-  }
-
 
 }
 

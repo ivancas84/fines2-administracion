@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 
 import { LabelPipe } from '@pipe/label.pipe';
 import { ToDatePipe } from '@pipe/to-date.pipe';
+import { ToTimePipe } from '@pipe/to-time.pipe';
 import { SiNoPipe } from '@pipe/si-no.pipe';
 import { StoragePipe } from '@pipe/storage.pipe';
 import { SummaryPipe } from '@pipe/summary.pipe';
@@ -106,7 +107,7 @@ import { ComisionSearchParamsComponent } from '@component/comision-show/comision
   declarations: [
     AppComponent,
     MenuComponent,
-    LabelPipe, ToDatePipe, SiNoPipe, SummaryPipe, StoragePipe,
+    LabelPipe, ToDatePipe, ToTimePipe, SiNoPipe, SummaryPipe, StoragePipe,
     SearchAllComponent,
     PaginationComponent,
     MessagesComponent,
