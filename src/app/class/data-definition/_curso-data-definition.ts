@@ -1,3 +1,5 @@
+import { ComisionDataDefinition } from '@class/data-definition/comision-data-definition';
+import { CargaHorariaDataDefinition } from '@class/data-definition/carga-horaria-data-definition';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
 export class _CursoDataDefinition extends DataDefinition {
@@ -173,4 +175,21 @@ export class _CursoDataDefinition extends DataDefinition {
     this.stg.setItem("curso" + rowCloned.id, rowCloned);
   }
 
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
+    let ret = "";
+    if (row["horario"]) ret = ret.trim() + " " + row["horario"];
+
+    if(row.comision) {
+      var e = new ComisionDataDefinition(this.stg, this.parser);
+      ret = ret.trim() + " " + e.label(row.comision);
+    }
+    if(row.carga_horaria) {
+      var e = new CargaHorariaDataDefinition(this.stg, this.parser);
+      ret = ret.trim() + " " + e.label(row.carga_horaria);
+    }
+    return ret.trim();
+  }
 }

@@ -12,4 +12,13 @@ export class _DiaDataDefinition extends DataDefinition {
     this.stg.setItem("dia" + rowCloned.id, rowCloned);
   }
 
+  label (id: string | number): string {
+    var row = this.stg.getItem(this.entity + id);
+    if(!row) return null;
+
+    let ret = "";
+    if (row["dia"]) ret = ret.trim() + " " + row["dia"];
+
+    return ret.trim();
+  }
 }

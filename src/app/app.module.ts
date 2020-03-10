@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { 
   NgbDateAdapter, 
-  NgbTimeAdapter,
   NgbCollapseModule, 
   NgbDropdownModule,
   NgbPaginationModule,
@@ -14,6 +13,8 @@ import {
   NgbToastModule,
   NgbDatepickerModule,
   NgbDateParserFormatter,
+  NgbTimepickerModule,
+  NgbTimeAdapter,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,9 +39,9 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
 import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { NgbIsoDateAdapter } from '@service/ng-bootstrap/ngb-iso-date-adapter';
-import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
 import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
 import { ParserService } from '@service/parser/parser.service';
+import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
 
 import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
 import { MenuComponent } from '@component/menu/menu.component';
@@ -141,18 +142,19 @@ import { HorarioFieldsetComponent } from '@component/horario-admin/horario-field
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
-    CrearComisionesComponent
+    CrearComisionesComponent,
+    
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
     ReactiveFormsModule,
-    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule, NgbDatepickerModule
+    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule, NgbDatepickerModule, NgbTimepickerModule
   ],
   providers: [
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
     ToastService, ValidatorsService,
     {provide: NgbDateAdapter, useClass: NgbIsoDateAdapter}, 
-    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter},
+    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter}, 
     {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}
 
   ],
