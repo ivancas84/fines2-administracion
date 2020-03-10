@@ -23,6 +23,23 @@ export class HorarioFieldsetComponent extends FieldsetComponent {
     super(fb, dd, validators);
   }
 
+  initOptions(): void {
+    let obs = [];      
+
+    var ob = this.dd.all('dia', new Display);
+    obs.push(ob);
+
+    this.options = forkJoin(obs).pipe(
+      map(
+        options => {
+          var o = {};
+          o['dia'] = options[0];
+          return o;
+        }
+      )
+    );
+  }
+
   initData(): void {
     this.data$.subscribe(
       response => {
