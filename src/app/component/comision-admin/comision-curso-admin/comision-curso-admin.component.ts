@@ -13,7 +13,7 @@ import { ComisionAdminComponent } from '../comision-admin/comision-admin.compone
   selector: 'app-comision-curso-admin',
   templateUrl: '../comision-admin/comision-admin.component.html',
 })
-export class ComisionCursoAdminComponent extends ComisionAdminComponent implements OnInit {
+export class ComisionCursoAdminComponent extends ComisionAdminComponent {
 
   readonly entityName: string = "comision";
 

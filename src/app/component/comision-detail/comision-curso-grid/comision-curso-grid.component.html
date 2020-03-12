@@ -1,0 +1,11 @@
+
+<ng-template #loading>No se han encontrado registros...</ng-template>
+<div *ngIf="((data$ | async) && (data$ | async).length) ; else loading" class="container">
+  <div *ngFor="let row of (data$ | async); let i = index" class="row align-items-center border">
+    <div class="col-md-4">
+      <h5>{{row.carga_horaria_.asignatura_.nombre}}</h5>
+      <small>{{row.carga_horaria_.horas_catedra}} horas cátedra</small>
+      <br><small>{{row.carga_horaria_.anio}}/{{row.carga_horaria_.semestre}} {{row.carga_horaria_.plan_.orientacion}} {{row.carga_horaria_.plan_.resolucion}}</small>          
+    </div>
+  </div>
+</div>

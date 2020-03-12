@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-comision-admin',
   templateUrl: './comision-admin.component.html',
 })
-export class ComisionAdminComponent extends AdminComponent implements OnInit {
+export class ComisionAdminComponent extends AdminComponent {
 
   readonly entityName: string = "comision";
 

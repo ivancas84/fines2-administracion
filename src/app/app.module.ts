@@ -104,6 +104,7 @@ import { ComisionGridComponent } from '@component/comision-show/comision-grid/co
 import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
 import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
 import { ComisionHorarioGridComponent } from '@component/comision-detail/comision-horario-grid/comision-horario-grid.component';
+import { ComisionCursoGridComponent } from '@component/comision-detail/comision-curso-grid/comision-curso-grid.component';
 import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
 import { HorarioFieldsetComponent } from '@component/horario-admin/horario-fieldset/horario-fieldset.component';
 
@@ -128,7 +129,7 @@ import { HorarioFieldsetComponent } from '@component/horario-admin/horario-field
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
-    ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent,
+    ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
