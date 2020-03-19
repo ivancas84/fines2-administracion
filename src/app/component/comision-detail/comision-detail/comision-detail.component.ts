@@ -50,7 +50,6 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
           this.curso_sin_horario_$ = this.curso_$.pipe(
             mergeMap(
               horario => {
-                console.log(horario);
                 var idCursos = arrayColumn(horario,  "curso");
                 var d = new Display();
                 d.order = {"ch_asi_nombre":"asc"};
