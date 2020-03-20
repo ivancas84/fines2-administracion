@@ -1,6 +1,14 @@
 <fieldset [formGroup]="fieldset">
   <div class="form-inline">
     <div class="form-group mb-2">
+      <label class="col-form-label">Número sede</label>
+      <input class="form-control" type="text" formControlName="sed_numero">
+    </div>
+    <div class="form-group mb-2">
+      <label class="col-form-label">Sede</label>
+      <app-fieldset-typeahead [fieldset]="fieldset" [entityName]="'sede'" [fieldName]="'sede'"></app-fieldset-typeahead>
+    </div>
+    <div class="form-group mb-2">
       <label class="col-form-label">Turno:</label>
       <select class="form-control" formControlName="turno">
         <option [ngValue]="null">--Turno--</option>
@@ -65,10 +73,6 @@
             <option value="1">1</option>
             <option value="2">2</option>
       </select>
-    </div>
-    <div class="form-group mb-2">
-      <label class="col-form-label">Sede</label>
-      <app-fieldset-typeahead [fieldset]="fieldset" [entityName]="'sede'" [fieldName]="'sede'"></app-fieldset-typeahead>
     </div>
     <div class="form-group mb-2">
       <label class="col-form-label">Plan:</label>

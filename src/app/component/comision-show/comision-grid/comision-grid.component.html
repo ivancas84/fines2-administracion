@@ -4,7 +4,7 @@
 <div *ngIf="((data$ | async) && (data$ | async).length) ; else loading" class="container">
   <div *ngFor="let row of (data$ | async); let i = index" class="row align-items-center border" [ngClass]="{'table-success':row.autorizada, 'table-danger':!row.autorizada}">
     <div class="col-md-4">
-      <h5>{{row.id | label:'comision'}} <span *ngIf="row.apertura">(APERTURA)</span><a [routerLink]="['/comision-detail']" [queryParams]="{id:row.id}" ><span class="oi oi-magnifying-glass"></span></a></h5>
+      <h5>{{row.id | label:'comision'}} <span *ngIf="row.apertura">(APERTURA)</span><a [routerLink]="['/comision-detail']" [queryParams]="{id:row.id}" ><span class="oi oi-magnifying-glass"></span></a><a [routerLink]="['/comision-admin']" [queryParams]="{id:row.id}" ><span class="oi oi-pencil"></span></a></h5>
       <span *ngIf="horario_$[row.id] | async as h">
         {{h.dias_dias}} {{h.hora_inicio | toTime | date:"HH:mm"}} a {{h.hora_fin | toTime | date:"HH:mm"}}
       </span>
