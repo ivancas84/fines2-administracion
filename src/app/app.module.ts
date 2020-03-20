@@ -107,6 +107,10 @@ import { ComisionHorarioGridComponent } from '@component/comision-detail/comisio
 import { ComisionCursoGridComponent } from '@component/comision-detail/comision-curso-grid/comision-curso-grid.component';
 import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
 import { HorarioFieldsetComponent } from '@component/horario-admin/horario-fieldset/horario-fieldset.component';
+import { DivisionShowComponent } from '@component/division-show/division-show/division-show.component';
+import { DivisionGridComponent } from '@component/division-show/division-grid/division-grid.component';
+import { DivisionSearchComponent } from '@component/division-show/division-search/division-search/division-search.component';
+import { DivisionSearchParamsComponent } from '@component/division-show/division-search/division-search-params/division-search-params.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +137,7 @@ import { HorarioFieldsetComponent } from '@component/horario-admin/horario-field
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
+    DivisionShowComponent, DivisionGridComponent, DivisionSearchComponent, DivisionSearchParamsComponent,
     HorarioAdminComponent, HorarioFieldsetComponent,
     ModalidadAdminComponent, ModalidadFieldsetComponent,
     PlanAdminComponent, PlanFieldsetComponent,
@@ -143,8 +148,7 @@ import { HorarioFieldsetComponent } from '@component/horario-admin/horario-field
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
-    CrearComisionesComponent,
-    
+    CrearComisionesComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

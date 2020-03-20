@@ -25,6 +25,7 @@ import { ComisionCursoAdminComponent } from '@component/comision-admin/comision-
 import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.component';
 import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
 import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
+import { DivisionShowComponent } from '@component/division-show/division-show/division-show.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'comision-detail', component: ComisionDetailComponent, pathMatch: 'full' },
   { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
   { path: 'designacion-admin', component: DesignacionAdminComponent, pathMatch: 'full' },
+  { path: 'division-show', component: DivisionShowComponent, pathMatch: 'full' },
   { path: 'horario-admin', component: HorarioAdminComponent, pathMatch: 'full' },
   { path: 'modalidad-admin', component: ModalidadAdminComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },

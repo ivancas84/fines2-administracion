@@ -12,9 +12,10 @@
       <div class="nav-item dropdown" ngbDropdown >
         <a class="nav-link dropdown-toggle" id="dropdownVer" ngbDropdownToggle>Ver</a>
         <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownVer">
+          <a class="dropdown-item" routerLink="/comision-show" routerLinkActive="active" title="Ver Comisiones" (click)="toggleMenu()">Comisión</a>
+          <a class="dropdown-item" routerLink="/division-show" routerLinkActive="active" title="Ver Divisiones" (click)="toggleMenu()">División</a>
           <a class="dropdown-item" routerLink="/sede-show" routerLinkActive="active" title="Ver Sedes" (click)="toggleMenu()">Sede</a>
           <a class="dropdown-item" routerLink="/persona-show" routerLinkActive="active" title="Ver Personas" (click)="toggleMenu()">Persona</a>
-          <a class="dropdown-item" routerLink="/comision-show" routerLinkActive="active" title="Ver Comisiones" (click)="toggleMenu()">Comisión</a>
           <a class="dropdown-item" routerLink="/curso-show" routerLinkActive="active" title="Ver Cursos" (click)="toggleMenu()">Curso</a>        
           <a class="dropdown-item" routerLink="/plan-show" routerLinkActive="active" title="Ver Planes" (click)="toggleMenu()">Plan</a>
           <a class="dropdown-item" routerLink="/centro-educativo-show" routerLinkActive="active" title="Ver Centros Educativos" (click)="toggleMenu()">Centro Educativo</a>
