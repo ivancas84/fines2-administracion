@@ -13,6 +13,7 @@ import { OnInit, Component } from '@angular/core';
 import { markAllAsTouched } from '@function/mark-all-as-touched';
 import { logValidationErrors } from '@function/log-validation-errors';
 import { Display } from '@class/display';
+import { encodeUriObject } from '@function/encodeUriObject';
 
 @Component({
   selector: 'crear-comisiones',
@@ -45,6 +46,7 @@ export class CrearComisionesComponent implements OnInit{
     protected dd: DataDefinitionService, 
     protected toast: ToastService, 
     protected validators: ValidatorsService,
+    protected storage: SessionStorageService,
   ) { }
 
   ngOnInit(): void {
@@ -63,7 +65,7 @@ export class CrearComisionesComponent implements OnInit{
       modalidad: [null, {
         validators: [Validators.required],
       }],
-      centro_educativo: [null, {
+      sed_centro_educativo: [null, {
         validators: [this.validators.typeaheadSelection('centro_educativo'), Validators.required],
       }],
     });
@@ -90,7 +92,7 @@ export class CrearComisionesComponent implements OnInit{
   get fechaAnio() { return this.form.get('fecha_anio')}
   get fechaSemestre() { return this.form.get('fecha_semestre')}
   get modalidad() { return this.form.get('modalidad')}
-  get centroEducativo() { return this.form.get('centro_educativo')}
+  get centroEducativo() { return this.form.get('sed_centro_educativo')}
 
 
   back() { this.location.back(); }
@@ -110,20 +112,11 @@ export class CrearComisionesComponent implements OnInit{
     } else {
       /**
        * se ejecuta a traves de un script ya que la persistencia genera gran cantidad de logs.
+       * No serán almacenadas como transacciones
        */
-      window.open("http://localhost/fines2-estructura/script/test.php?fecha_anio="+ this.fechaAnio.value, "_blank");
-      /*
-      var s = this.dd.persist("comisiones_siguientes", this.form.value);
-.subscribe(
-        response => {          
-          if(response.hasOwnProperty("message")) this.toast.showSuccess(response.message);
-          else this.toast.showSuccess("Registro realizado");
-        },
-        error => { 
-          console.log(error);
-          this.toast.showDanger(JSON.stringify(error.error)); }
-      );
-      this.subscriptions.add(s);*/
+      window.open("http://localhost/fines2-estructura/script/crear_comisiones.php?"+ encodeUriObject(this.form.value), "_blank");
+      this.storage.removeItemsContains(".");
+      this.toast.showInfo("Se ha ejecutado un script externo");
     }
   }
   
