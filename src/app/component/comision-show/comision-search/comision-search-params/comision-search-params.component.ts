@@ -4,7 +4,7 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 import { isEmptyObject } from '@function/is-empty-object.function';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SearchParamsComponent } from '@component/search-params/search-params.component';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Display } from '@class/display';
 import { map } from 'rxjs/operators';
 
@@ -15,6 +15,9 @@ import { map } from 'rxjs/operators';
 export class ComisionSearchParamsComponent extends SearchParamsComponent {
   readonly entityName = 'comision';
 
+  optPlan$: Observable<any>;
+  optModalidad$: Observable<any>;
+
   constructor(
     protected fb: FormBuilder, 
     protected dd: DataDefinitionService, 
@@ -22,24 +25,8 @@ export class ComisionSearchParamsComponent extends SearchParamsComponent {
   { super(fb, dd, validators); }
 
   initOptions(): void {
-    let obs = [];      
-
-    var ob = this.dd.all('plan', new Display);
-    obs.push(ob);
-
-    var ob = this.dd.all('modalidad', new Display);
-    obs.push(ob);
-
-    this.options = forkJoin(obs).pipe(
-      map(
-        options => {
-          var o = {};
-          o['plan'] = options[0];
-          o['modalidad'] = options[1];
-          return o;
-        }
-      )
-    );
+    this.optPlan$ = this.dd.all('plan', new Display);
+    this.optModalidad$ = this.dd.all('modalidad', new Display);
   }
 
   initData(): void {
