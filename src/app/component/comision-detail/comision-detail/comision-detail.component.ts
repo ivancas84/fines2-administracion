@@ -44,7 +44,7 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
         if(comision) {
           var d = new Display();
           d.setParams({"cur_comision":comision["id"]});
-          d.order = {"dia_dia":"asc", "hora_inicio":"asc"};
+          d.setOrder({"dia_dia":"asc", "hora_inicio":"asc"});
           this.curso_$ = this.dd.all("horario", d);
           
           this.curso_sin_horario_$ = this.curso_$.pipe(
@@ -52,9 +52,9 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
               horario => {
                 var idCursos = arrayColumn(horario,  "curso");
                 var d = new Display();
-                d.order = {"ch_asi_nombre":"asc"};
+                d.setOrder({"ch_asi_nombre":"asc"});
                 d.setParams({"comision":comision["id"]});
-                if(idCursos.length) d.condition = ["id","!=", idCursos]
+                if(idCursos.length) d.addCondition(["id","!=", idCursos]);
                 return this.dd.all("curso", d);
                 
             }
