@@ -121,7 +121,7 @@
     <div class="col-sm-10">
       <select class="form-control" formControlName="plan" [ngClass]="{'is-invalid':(plan.invalid && (plan.dirty || plan.touched))}">
         <option [ngValue]="null">--Plan--</option>
-        <option *ngFor="let option of (options | async)?.plan" [value]="option.id" >{{option.id | label:"plan"}}</option>
+        <option *ngFor="let option of (optPlan$ | async)" [value]="option.id" >{{option.id | label:"plan"}}</option>
       </select>
       <div class="text-danger" *ngIf="(plan.touched || plan.dirty) && plan.invalid">
         <div *ngIf="plan.errors.required">Debe completar valor</div>
@@ -133,7 +133,7 @@
     <div class="col-sm-10">
       <select class="form-control" formControlName="modalidad" [ngClass]="{'is-invalid':(modalidad.invalid && (modalidad.dirty || modalidad.touched))}">
         <option [ngValue]="null">--Modalidad--</option>
-        <option *ngFor="let option of (options | async)?.modalidad" [value]="option.id" >{{option.id | label:"modalidad"}}</option>
+        <option *ngFor="let option of (optModalidad$ | async)" [value]="option.id" >{{option.id | label:"modalidad"}}</option>
       </select>
       <div class="text-danger" *ngIf="(modalidad.touched || modalidad.dirty) && modalidad.invalid">
         <div *ngIf="modalidad.errors.required">Debe completar valor</div>

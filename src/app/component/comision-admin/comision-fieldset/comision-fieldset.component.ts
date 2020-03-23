@@ -3,7 +3,7 @@ import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Display } from '@class/display';
 import { isEmptyObject } from '@function/is-empty-object.function';
@@ -17,6 +17,9 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
   entityName: string = 'comision';
   fieldsetName: string = 'comision';
 
+  optPlan$: Observable<Array<any>>;
+  optModalidad$: Observable<Array<any>>;
+ 
   constructor(
     protected fb: FormBuilder, 
     protected dd: DataDefinitionService, 
@@ -25,24 +28,8 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
   }
 
   initOptions(): void {
-    let obs = [];      
-
-    var ob = this.dd.all('plan', new Display);
-    obs.push(ob);
-
-    var ob = this.dd.all('modalidad', new Display);
-    obs.push(ob);
-
-    this.options = forkJoin(obs).pipe(
-      map(
-        options => {
-          var o = {};
-          o['plan'] = options[0];
-          o['modalidad'] = options[1];
-          return o;
-        }
-      )
-    );
+    this.optPlan$ = this.dd.all('plan', new Display);
+    this.optModalidad$ = this.dd.all('modalidad', new Display);
   }
 
   initData(): void {
