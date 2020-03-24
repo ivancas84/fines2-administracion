@@ -32,30 +32,7 @@ export class ComisionFieldsetComponent extends FieldsetComponent {
     this.optModalidad$ = this.dd.all('modalidad', new Display);
   }
 
-  initData(): void {
-    this.data$.subscribe(
-      response => {
-        this.setDefaultValues();
-
-        if(!isEmptyObject(response)) {
-          var obs = [];
-
-          if(response.sede) {
-            var ob = this.dd.getOrNull("sede",response.sede);
-            obs.push(ob);
-          }
-
-          if(response.comision_siguiente) {
-            var ob = this.dd.getOrNull("comision",response.comision_siguiente);
-            obs.push(ob);
-          }
-
-          if(obs.length){ forkJoin(obs).subscribe( () => this.fieldset.reset(response) ); } 
-          else { this.fieldset.reset(response); }
-        }
-      }
-    );
-  }
+  
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({

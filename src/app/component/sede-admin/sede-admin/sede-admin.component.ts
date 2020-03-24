@@ -88,7 +88,7 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
   protected setDes_(sede): Observable<any> {
     if (!sede || !sede.id) return of(null);
     var d: Display = new Display;
-    d.condition.push(["sede", "=", sede.id]);
+    d.addCondition(["sede", "=", sede.id]);
     return this.dd.all("designacion", d);
   }
  

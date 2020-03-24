@@ -109,7 +109,7 @@
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Sede</label>
     <div class="col-sm-10">
-      <app-fieldset-typeahead [fieldset]="fieldset" [entityName]="'sede'" [fieldName]="'sede'"></app-fieldset-typeahead>
+      <app-fieldset-typeahead [data$]="data$" [fieldset]="fieldset" [entityName]="'sede'" [fieldName]="'sede'"></app-fieldset-typeahead>
       <div class="text-danger" *ngIf="(sede.touched || sede.dirty) && sede.invalid">
         <div *ngIf="sede.errors.required">Debe completar valor</div>
         <div *ngIf="(sede.touched && sede.errors.unselected)">Valor no seleccionado</div>
@@ -143,7 +143,7 @@
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Comision Siguiente</label>
     <div class="col-sm-10">
-      <app-fieldset-typeahead [fieldset]="fieldset" [entityName]="'comision'" [fieldName]="'comision_siguiente'"></app-fieldset-typeahead>
+      <app-fieldset-typeahead  [data$]="data$" [fieldset]="fieldset" [entityName]="'comision'" [fieldName]="'comision_siguiente'"></app-fieldset-typeahead>
       <div class="text-danger" *ngIf="(comisionSiguiente.touched || comisionSiguiente.dirty) && comisionSiguiente.invalid">
         <div *ngIf="(comisionSiguiente.touched && comisionSiguiente.errors.unselected)">Valor no seleccionado</div>
       </div>
