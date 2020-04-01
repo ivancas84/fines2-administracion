@@ -3,11 +3,11 @@
       <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('anio')">Anio</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('semestre')">Semestre</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('horas_catedra')">Horas Catedra</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('pla_orientacion', 'pla_resolucion')">Plan</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('asi_nombre')">Asignatura</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['anio'])">Anio</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['semestre'])">Semestre</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['horas_catedra'])">Horas Catedra</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['pla_orientacion', 'pla_resolucion'])">Plan</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['asi_nombre'])">Asignatura</button></th>
             <th>Opciones</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
               <td><a [routerLink]="['/asignatura-show']" [queryParams]="{id:row.asignatura}" >{{row.asignatura | label:'asignatura'}}</a></td>
               <td>
               <a class="btn btn-warning btn-sm" [routerLink]="['/carga-horaria-admin']" [queryParams]="{id:row.id}" ><span class="oi oi-pencil" title="Modificar"></span></a>
-              <!-- button class="btn btn-danger btn-sm" type="button" (click)="delete(i)"><span class="oi oi-trash" title="Eliminar"></span></button -->
+              <!-- button class="btn btn-danger btn-sm" type="button" ><span class="oi oi-trash" title="Eliminar"></span></button -->
             </td>
           </tr>
         </tbody>

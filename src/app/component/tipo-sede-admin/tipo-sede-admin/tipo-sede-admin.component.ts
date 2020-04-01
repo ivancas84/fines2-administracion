@@ -13,7 +13,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
   selector: 'app-tipo-sede-admin',
   templateUrl: './tipo-sede-admin.component.html',
 })
-export class TipoSedeAdminComponent extends AdminComponent implements OnInit {
+export class TipoSedeAdminComponent extends AdminComponent  {
 
   readonly entityName: string = "tipo_sede";
 

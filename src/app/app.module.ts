@@ -83,7 +83,6 @@ import { AsignaturaShowComponent } from '@component/asignatura-show/asignatura-s
 import { AsignaturaTableComponent } from '@component/asignatura-show/asignatura-table/asignatura-table.component';
 import { CargaHorariaShowComponent } from '@component/carga-horaria-show/carga-horaria-show/carga-horaria-show.component';
 import { CargaHorariaTableComponent } from '@component/carga-horaria-show/carga-horaria-table/carga-horaria-table.component';
-import { CargaHorariaSearchComponent } from '@component/carga-horaria-show/carga-horaria-search/carga-horaria-search.component';
 import { CursoAdminComponent } from '@component/curso-admin/curso-admin/curso-admin.component';
 import { CursoFieldsetComponent } from '@component/curso-admin/curso-fieldset/curso-fieldset.component';
 import { ComisionCardComponent } from '@component/comision-detail/comision-card/comision-card.component';
@@ -126,7 +125,7 @@ import { DivisionSearchParamsComponent } from '@component/division-show/division
 
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
     AsignaturaShowComponent, AsignaturaTableComponent, AsignaturaSearchComponent,
-    CargaHorariaShowComponent, CargaHorariaTableComponent, CargaHorariaSearchComponent,
+    CargaHorariaShowComponent, CargaHorariaTableComponent, 
     CargaHorariaAdminComponent, CargaHorariaFieldsetComponent,
     CargoAdminComponent, CargoFieldsetComponent,
     CentroEducativoAdminComponent, CentroEducativoFieldsetComponent, DomicilioCeFieldsetComponent,

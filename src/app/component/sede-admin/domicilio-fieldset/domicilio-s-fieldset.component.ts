@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
@@ -17,7 +17,7 @@ export class DomicilioSFieldsetComponent extends FieldsetOptionalComponent {
 
   entityName: string = 'domicilio';
   fieldsetName: string = 'domicilio';
-
+    
   constructor(
     protected fb: FormBuilder, 
     protected dd: DataDefinitionService, 

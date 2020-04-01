@@ -9,6 +9,8 @@ import { SearchComponent } from '@component/search/search.component';
 export class DivisionSearchComponent extends SearchComponent {
   readonly entityName = 'comision';
 
+  public optCard: boolean = false;
+
   constructor(protected fb: FormBuilder) {
     super(fb);
   }

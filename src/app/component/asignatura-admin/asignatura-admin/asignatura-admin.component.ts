@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-asignatura-admin',
   templateUrl: './asignatura-admin.component.html',
 })
-export class AsignaturaAdminComponent extends AdminComponent implements OnInit {
+export class AsignaturaAdminComponent extends AdminComponent {
 
   readonly entityName: string = "asignatura";
 

@@ -3,12 +3,12 @@
       <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('desde')">Desde</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('hasta')">Hasta</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('alta')">Alta</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('car_descripcion')">Cargo</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('sed_numero', 'sed_nombre')">Sede</button></th>
-            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order('per_nombres', 'per_apellidos', 'per_numero_documento')">Persona</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['desde'])">Desde</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['hasta'])">Hasta</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['alta'])">Alta</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['car_descripcion'])">Cargo</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['sed_numero', 'sed_nombre'])">Sede</button></th>
+            <th><button type="button" class="btn btn-link text-dark font-weight-bold" (click)="order(['per_nombres', 'per_apellidos', 'per_numero_documento'])">Persona</button></th>
             <th>Opciones</th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
               <td><a [routerLink]="['/persona-show']" [queryParams]="{id:row.persona}" >{{row.persona | label:'persona'}}</a></td>
               <td>
               <a class="btn btn-warning btn-sm" [routerLink]="['/designacion-admin']" [queryParams]="{id:row.id}" ><span class="oi oi-pencil" title="Modificar"></span></a>
-              <!-- button class="btn btn-danger btn-sm" type="button" (click)="delete(i)"><span class="oi oi-trash" title="Eliminar"></span></button -->
+              <!-- button class="btn btn-danger btn-sm" type="button" ><span class="oi oi-trash" title="Eliminar"></span></button -->
             </td>
           </tr>
         </tbody>
