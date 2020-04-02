@@ -4,16 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { 
+  NgbModule,
   NgbDateAdapter, 
-  NgbCollapseModule, 
-  NgbDropdownModule,
-  NgbPaginationModule,
-  NgbAccordionModule,
-  NgbTypeaheadModule,
-  NgbToastModule,
+  // NgbCollapseModule, 
+  // NgbDropdownModule,
+  // NgbPaginationModule,
+  // NgbAccordionModule,
+  // NgbTypeaheadModule,
+  // NgbToastModule,
   NgbDatepickerModule,
   NgbDateParserFormatter,
-  NgbTimepickerModule,
+  // NgbTimepickerModule,
   NgbTimeAdapter,
 } from '@ng-bootstrap/ng-bootstrap';
 
@@ -152,7 +153,8 @@ import { DivisionSearchParamsComponent } from '@component/division-show/division
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
     ReactiveFormsModule,
-    NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule, NgbDatepickerModule, NgbTimepickerModule
+    NgbModule
+    //NgbToastModule, NgbCollapseModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbTypeaheadModule, NgbDatepickerModule, NgbTimepickerModule
   ],
   providers: [
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
