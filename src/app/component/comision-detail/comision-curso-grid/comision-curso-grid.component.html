@@ -1,7 +1,9 @@
 
 <ng-template #loading>No se han encontrado registros...</ng-template>
-<div *ngIf="((data$ | async) && (data$ | async).length) ; else loading" class="container">
-  <div *ngFor="let row of (data$ | async); let i = index" class="row align-items-center border">
+<div *ngIf="data$ | async as data; else loading" class="container">
+<div *ngIf="data.length ; else loading" class="container">
+  
+  <div *ngFor="let row of data; let i = index" class="row align-items-center border">
     <div class="col-md-4">
       <h5>{{row.carga_horaria_.asignatura_.nombre}}</h5>
       <small>{{row.carga_horaria_.horas_catedra}} horas cátedra</small>

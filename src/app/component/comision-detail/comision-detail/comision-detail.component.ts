@@ -13,7 +13,7 @@ import { arrayColumn } from '@function/array-column';
   selector: 'app-comision-detail',
   templateUrl: './comision-detail.component.html',
 })
-export class ComisionDetailComponent extends DetailComponent implements OnInit {
+export class ComisionDetailComponent extends DetailComponent {
 
   readonly entityName: string = "comision";
 
@@ -41,13 +41,13 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
     
     this.data$.subscribe(
       comision => {     
-        if(comision) {
+        if(comision && comision.hasOwnProperty("id") && comision["id"]) {
           var d = new Display();
           d.setParams({"cur_comision":comision["id"]});
           d.setOrder({"dia_dia":"asc", "hora_inicio":"asc"});
           this.curso_$ = this.dd.all("horario", d);
           
-          this.curso_sin_horario_$ = this.curso_$.pipe(
+          /*this.curso_sin_horario_$ = this.curso_$.pipe(
             mergeMap(
               horario => {
                 var idCursos = arrayColumn(horario,  "curso");
@@ -58,7 +58,7 @@ export class ComisionDetailComponent extends DetailComponent implements OnInit {
                 return this.dd.all("curso", d);
                 
             }
-          ));
+          ));*/
 
      
 
