@@ -8,7 +8,7 @@ import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { ReplaySubject, Observable, of } from 'rxjs';
 import { isEmptyObject } from '@function/is-empty-object.function';
-import { first } from 'rxjs/operators';
+import { first, mergeMap } from 'rxjs/operators';
 import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { Display } from '@class/display';
 
@@ -16,13 +16,11 @@ import { Display } from '@class/display';
     selector: 'app-sede-admin',
     templateUrl: './sede-admin.component.html',
 })
-export class SedeAdminComponent extends AdminComponent implements OnInit {
+export class SedeAdminComponent extends AdminComponent {
 
   readonly entityName: string = "sede";
   domicilio$ = new ReplaySubject();
-  designacion_$ = new ReplaySubject();
-
-
+  designaciones$: Observable<any>;
 
   constructor(
     protected fb: FormBuilder, 
@@ -37,6 +35,29 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     super(fb, route, router, location, dd, toast, validators, storage);
   }
 
+  ngOnInit() {
+    this.subscribeValueChanges();
+    this.subscribeQueryParams();   
+    this.subscribeParams();
+    this.initDesignaciones();
+  }
+
+  initDesignaciones(){
+    this.designaciones$ = this.data$.pipe(mergeMap(
+      sede => {
+        return this.setDesignaciones(sede)
+      }
+    ))
+  }
+
+  protected setDesignaciones(sede:any): Observable<any> {
+    if (isEmptyObject(sede) || !sede["id"]) return of(null);
+    var d: Display = new Display;
+    d.addCondition(["sede", "=", sede["id"]]);
+    return this.dd.all("designacion", d);
+  }
+ 
+
   setDataFromStorage(formValues: any): void {
     var sede = formValues.hasOwnProperty(this.entityName)? formValues[this.entityName] : null;
     this.data$.next(sede); 
@@ -44,7 +65,7 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     var domicilio = formValues.hasOwnProperty("domicilio")? formValues["domicilio"] : null;
     this.domicilio$.next(domicilio);
 
-    this.setDesignacion_(sede);
+    //this.setDesignaciones_(sede);
   }
  
 
@@ -52,45 +73,38 @@ export class SedeAdminComponent extends AdminComponent implements OnInit {
     if(isEmptyObject(params)) {
       this.data$.next(null);
       this.domicilio$.next(null);
-      this.designacion_$.next(null);
+      //this.designaciones$.next(null);
       return;
     }
   
     this.dd.uniqueOrNull(this.entityName, params).pipe(first()).subscribe(
-      response => {
-        if (response) this.data$.next(response);
+      sede => {
+        if (sede) this.data$.next(sede);
         else this.data$.next(params);
   
-        this.setDomicilio(response).subscribe(
+        this.setDomicilio(sede).subscribe(
           domicilio => {this.domicilio$.next(domicilio);},
           error => {console.log(error)}
         );
 
-        this.setDesignacion_(response);
+        //this.setDesignaciones_(sede);
  
       }
     );
   }
 
-  setDomicilio(obj): Observable<any> {
-    if (!obj || !obj.domicilio) return of(null);
-    return this.dd.getOrNull("domicilio", obj.domicilio);
+  setDomicilio(sede: object): Observable<any> {
+    if (isEmptyObject(sede) || !sede["domicilio"]) return of(null);
+    return this.dd.getOrNull("domicilio", sede["domicilio"]);
   }
 
-  setDesignacion_(sede): any {
-    console.log(sede);
-    this.setDes_(sede).subscribe(
-      designacion_ => { this.designacion_$.next(designacion_);},
-      error => {console.log(error)}
-    );
-  }
+  // setDesignaciones_(sede: object): any {
+  //   this.setDes_(sede).subscribe(
+  //     designaciones => { this.designaciones$.next(designaciones) },
+  //     error => {console.log(error)}
+  //   );
+  // }
   
-  protected setDes_(sede): Observable<any> {
-    if (!sede || !sede.id) return of(null);
-    var d: Display = new Display;
-    d.addCondition(["sede", "=", sede.id]);
-    return this.dd.all("designacion", d);
-  }
  
  
 }

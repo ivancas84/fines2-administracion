@@ -2,18 +2,13 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Display } from '@class/display';
-import { isEmptyObject } from '@function/is-empty-object.function';
 import { FieldsetOptionalComponent } from '@component/fieldset-optional/fieldset-optional.component';
-import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 
 @Component({
-  selector: 'app-domicilio-s-fieldset',
-  templateUrl: './domicilio-s-fieldset.component.html',
+  selector: 'app-domicilio-sede-fieldset',
+  templateUrl: './domicilio-sede-fieldset.component.html',
 })
-export class DomicilioSFieldsetComponent extends FieldsetOptionalComponent {
+export class DomicilioSedeFieldsetComponent extends FieldsetOptionalComponent {
 
   entityName: string = 'domicilio';
   fieldsetName: string = 'domicilio';
