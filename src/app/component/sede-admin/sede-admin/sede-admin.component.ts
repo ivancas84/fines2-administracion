@@ -98,6 +98,10 @@ export class SedeAdminComponent extends AdminComponent {
     return this.dd.getOrNull("domicilio", sede["domicilio"]);
   }
 
+  serverData() {  
+    return this.adminForm.value;
+  }
+
   // setDesignaciones_(sede: object): any {
   //   this.setDes_(sede).subscribe(
   //     designaciones => { this.designaciones$.next(designaciones) },

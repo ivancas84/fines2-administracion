@@ -45,7 +45,7 @@ export class SedeFieldsetComponent extends FieldsetComponent {
       //   validators: [Validators.required, this.validators.typeaheadSelection('domicilio')],
       // }],
       tipo_sede: ['', {
-        validators: Validators.required,
+        //validators: Validators.required,
       }],
       centro_educativo: ['', {
         validators: [Validators.required, this.validators.typeaheadSelection('centro_educativo')],
