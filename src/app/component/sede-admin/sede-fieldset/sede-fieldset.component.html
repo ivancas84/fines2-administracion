@@ -30,10 +30,9 @@
     <div class="col-sm-10">
       <select class="form-control" formControlName="tipo_sede" [ngClass]="{'is-invalid':(tipoSede.invalid && (tipoSede.dirty || tipoSede.touched))}">
         <option [ngValue]="null">--Tipo Sede--</option>
-        <option *ngFor="let option of (options | async)?.tipo_sede" [value]="option.id" >{{option.id | label:"tipo_sede"}}</option>
+        <option *ngFor="let option of (optTipoSede$ | async)" [value]="option.id" >{{option.id | label:"tipo_sede"}}</option>
       </select>
       <div class="text-danger" *ngIf="(tipoSede.touched || tipoSede.dirty) && tipoSede.invalid">
-        <div *ngIf="tipoSede.errors.required">Debe completar valor</div>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Display } from '@class/display';
 import { isEmptyObject } from '@function/is-empty-object.function';
@@ -15,7 +15,8 @@ import { isEmptyObject } from '@function/is-empty-object.function';
 export class SedeFieldsetComponent extends FieldsetComponent {
 
   readonly entityName: string = 'sede';
-  readonly fieldsetName: string = 'sede';
+
+  optTipoSede$: Observable<Array<any>>;
 
   constructor(
     protected fb: FormBuilder, 
@@ -25,41 +26,9 @@ export class SedeFieldsetComponent extends FieldsetComponent {
   }
 
   initOptions(): void {
-    let obs = [];      
-
-    var ob = this.dd.all('tipo_sede', new Display);
-    obs.push(ob);
-
-    this.options = forkJoin(obs).pipe(
-      map(
-        options => {
-          var o = {};
-          o['tipo_sede'] = options[0];
-          return o;
-        }
-      )
-    );
+    this.optTipoSede$ = this.dd.all('tipo_sede', new Display);
   }
 
-  initData(): void {
-    this.data$.subscribe(
-      response => {
-        this.setDefaultValues();
-
-        if(!isEmptyObject(response)) {
-          var obs = [];
-
-          if(response.centro_educativo) {
-            var ob = this.dd.getOrNull("centro_educativo",response.centro_educativo);
-            obs.push(ob);
-          }
-
-          if(obs.length){ forkJoin(obs).subscribe( () => this.fieldset.reset(response) ); } 
-          else { this.fieldset.reset(response); }
-        }
-      } 
-    );
-  }
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({
