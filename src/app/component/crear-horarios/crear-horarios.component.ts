@@ -13,12 +13,13 @@ import { OnInit, Component } from '@angular/core';
 import { markAllAsTouched } from '@function/mark-all-as-touched';
 import { logValidationErrors } from '@function/log-validation-errors';
 import { Display } from '@class/display';
+import { encodeUriObject } from '@function/encodeUriObject';
 
 @Component({
   selector: 'crear-horarios',
   templateUrl: './crear-horarios.component.html',
 })
-export class CrearHorariosComponent implements OnInit {
+export class CrearHorariosComponent implements OnInit{
 
 
   form: FormGroup;
@@ -45,6 +46,7 @@ export class CrearHorariosComponent implements OnInit {
     protected dd: DataDefinitionService, 
     protected toast: ToastService, 
     protected validators: ValidatorsService,
+    protected storage: SessionStorageService,
   ) { }
 
   ngOnInit(): void {
@@ -63,7 +65,7 @@ export class CrearHorariosComponent implements OnInit {
       modalidad: [null, {
         validators: [Validators.required],
       }],
-      centro_educativo: [null, {
+      sed_centro_educativo: [null, {
         validators: [this.validators.typeaheadSelection('centro_educativo'), Validators.required],
       }],
     });
@@ -90,19 +92,12 @@ export class CrearHorariosComponent implements OnInit {
   get fechaAnio() { return this.form.get('fecha_anio')}
   get fechaSemestre() { return this.form.get('fecha_semestre')}
   get modalidad() { return this.form.get('modalidad')}
-  get centroEducativo() { return this.form.get('centro_educativo')}
+  get centroEducativo() { return this.form.get('sed_centro_educativo')}
 
 
   back() { this.location.back(); }
 
-  persist(): Observable<any> {
-    /**
-     * persistencia
-     * Se define un metodo independiente para facilitar la redefinicion
-     */
-  
-    return this.dd.persist("crear_horarios", this.form.value);
-  }
+
 
 
   onSubmit(): void {
@@ -115,19 +110,15 @@ export class CrearHorariosComponent implements OnInit {
       this.toast.showInfo("Verificar formulario");
 
     } else {
-      var s = this.persist().subscribe(
-        response => {          
-          if(response.hasOwnProperty("message")) this.toast.showSuccess(response.message);
-          else this.toast.showSuccess("Registro realizado");
-        },
-        error => { 
-          console.log(error);
-          this.toast.showDanger(JSON.stringify(error.error)); }
-      );
-      this.subscriptions.add(s);
+      /**
+       * se ejecuta a traves de un script ya que la persistencia genera gran cantidad de logs.
+       * No serán almacenadas como transacciones
+       */
+      window.open("http://localhost/fines2-estructura/script/crear_horarios.php?"+ encodeUriObject(this.form.value), "_blank");
+      this.storage.removeItemsContains(".");
+      this.toast.showInfo("Se ha ejecutado un script externo");
     }
   }
   
-
   ngOnDestroy () { this.subscriptions.unsubscribe() }
 }

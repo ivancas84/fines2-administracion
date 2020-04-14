@@ -26,34 +26,36 @@ import { CursoShowComponent } from '@component/curso-show/curso-show/curso-show.
 import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
 import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
 import { DivisionShowComponent } from '@component/division-show/division-show/division-show.component';
+import { CrearHorariosComponent } from '@component/crear-horarios/crear-horarios.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
   { path: 'asignatura-admin', component: AsignaturaAdminComponent, pathMatch: 'full' },
-  { path: 'cargo-admin', component: CargoAdminComponent, pathMatch: 'full' },
-  { path: 'centro-educativo-admin', component: CentroEducativoAdminComponent, pathMatch: 'full' },
   { path: 'carga-horaria-admin', component: CargaHorariaAdminComponent, pathMatch: 'full' },
   { path: 'carga-horaria-show', component: CargaHorariaShowComponent, pathMatch: 'full' },
-  { path: 'curso-admin', component: CursoAdminComponent, pathMatch: 'full' },
-  { path: 'curso-show', component: CursoShowComponent, pathMatch: 'full' },
+  { path: 'cargo-admin', component: CargoAdminComponent, pathMatch: 'full' },
+  { path: 'centro-educativo-admin', component: CentroEducativoAdminComponent, pathMatch: 'full' },
+  { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
   { path: 'comision-admin', component: ComisionAdminComponent, pathMatch: 'full' },
   { path: 'comision-curso-admin', component: ComisionCursoAdminComponent, pathMatch: 'full' },
   { path: 'comision-show', component: ComisionShowComponent, pathMatch: 'full' },
   { path: 'comision-detail', component: ComisionDetailComponent, pathMatch: 'full' },
-  { path: 'centro-educativo-show', component: CentroEducativoShowComponent, pathMatch: 'full' },
+  { path: 'crear-comisiones', component: CrearComisionesComponent, pathMatch: 'full' },
+  { path: 'crear-horarios', component: CrearHorariosComponent, pathMatch: 'full' },
+  { path: 'curso-admin', component: CursoAdminComponent, pathMatch: 'full' },
+  { path: 'curso-show', component: CursoShowComponent, pathMatch: 'full' },
   { path: 'designacion-admin', component: DesignacionAdminComponent, pathMatch: 'full' },
   { path: 'division-show', component: DivisionShowComponent, pathMatch: 'full' },
   { path: 'horario-admin', component: HorarioAdminComponent, pathMatch: 'full' },
   { path: 'modalidad-admin', component: ModalidadAdminComponent, pathMatch: 'full' },
+  { path: 'persona-show', component: PersonaShowComponent, pathMatch: 'full' },
+  { path: 'persona-admin', component: PersonaAdminComponent, pathMatch: 'full' },
+  { path: 'plan-admin', component: PlanAdminComponent, pathMatch: 'full' },
+  { path: 'plan-show', component: PlanShowComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },
   { path: 'tipo-sede-admin', component: TipoSedeAdminComponent, pathMatch: 'full' },
-  { path: 'plan-admin', component: PlanAdminComponent, pathMatch: 'full' },
-  { path: 'plan-show', component: PlanShowComponent, pathMatch: 'full' },
-  { path: 'persona-show', component: PersonaShowComponent, pathMatch: 'full' },
-  { path: 'persona-admin', component: PersonaAdminComponent, pathMatch: 'full' },
-  { path: 'crear-comisiones', component: CrearComisionesComponent, pathMatch: 'full' },
 ];
  
 @NgModule({

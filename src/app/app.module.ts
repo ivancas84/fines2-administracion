@@ -100,6 +100,7 @@ import { AsignaturaSearchComponent } from '@component/asignatura-show/asignatura
 import { SedeShowComponent } from '@component/sede-show/sede-show/sede-show.component';
 import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.component';
 import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comisiones.component';
+import { CrearHorariosComponent } from '@component/crear-horarios/crear-horarios.component';
 import { ComisionGridComponent } from '@component/comision-show/comision-grid/comision-grid.component';
 import { ComisionSearchComponent } from '@component/comision-show/comision-search/comision-search/comision-search.component';
 import { ComisionSearchParamsComponent } from '@component/comision-show/comision-search/comision-search-params/comision-search-params.component';
@@ -134,6 +135,7 @@ import { DivisionSearchParamsComponent } from '@component/division-show/division
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
     ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent,
+    CrearComisionesComponent, CrearHorariosComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
     DesignacionAdminComponent, DesignacionFieldsetComponent,
@@ -148,7 +150,6 @@ import { DivisionSearchParamsComponent } from '@component/division-show/division
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSedeFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
     TipoSedeShowComponent, TipoSedeTableComponent,
-    CrearComisionesComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
