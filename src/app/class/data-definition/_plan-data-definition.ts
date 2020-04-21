@@ -19,7 +19,7 @@ export class _PlanDataDefinition extends DataDefinition {
     let ret = "";
     if (row["orientacion"]) ret = ret.trim() + " " + row["orientacion"];
 
-    if (row["resolucion"]) ret = ret.trim() + " " + row["resolucion"];
+    if (row["distribucion_horaria"]) ret = ret.trim() + " " + row["distribucion_horaria"];
 
     return ret.trim();
   }
