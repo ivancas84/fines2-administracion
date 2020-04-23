@@ -1,5 +1,5 @@
 import { ComisionDataDefinition } from '@class/data-definition/comision-data-definition';
-import { CargaHorariaDataDefinition } from '@class/data-definition/carga-horaria-data-definition';
+import { AsignaturaDataDefinition } from '@class/data-definition/asignatura-data-definition';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
 export class _CursoDataDefinition extends DataDefinition {
@@ -155,22 +155,10 @@ export class _CursoDataDefinition extends DataDefinition {
       this.stg.setItem('comision' + rowCloned['comision_'].id, rowCloned['comision_']);
       delete rowCloned['comision_'];
     }
-    if(('carga_horaria_' in rowCloned)
-    && ('plan_' in rowCloned['carga_horaria_'])
+    if(('asignatura_' in rowCloned)
     ){
-      this.stg.setItem('plan' + rowCloned['carga_horaria_']['plan_'].id, rowCloned['carga_horaria_']['plan_']);
-      delete rowCloned['carga_horaria_']['plan_'];
-    }
-    if(('carga_horaria_' in rowCloned)
-    && ('asignatura_' in rowCloned['carga_horaria_'])
-    ){
-      this.stg.setItem('asignatura' + rowCloned['carga_horaria_']['asignatura_'].id, rowCloned['carga_horaria_']['asignatura_']);
-      delete rowCloned['carga_horaria_']['asignatura_'];
-    }
-    if(('carga_horaria_' in rowCloned)
-    ){
-      this.stg.setItem('carga_horaria' + rowCloned['carga_horaria_'].id, rowCloned['carga_horaria_']);
-      delete rowCloned['carga_horaria_'];
+      this.stg.setItem('asignatura' + rowCloned['asignatura_'].id, rowCloned['asignatura_']);
+      delete rowCloned['asignatura_'];
     }
     this.stg.setItem("curso" + rowCloned.id, rowCloned);
   }
@@ -186,9 +174,9 @@ export class _CursoDataDefinition extends DataDefinition {
       var e = new ComisionDataDefinition(this.stg, this.parser);
       ret = ret.trim() + " " + e.label(row.comision);
     }
-    if(row.carga_horaria) {
-      var e = new CargaHorariaDataDefinition(this.stg, this.parser);
-      ret = ret.trim() + " " + e.label(row.carga_horaria);
+    if(row.asignatura) {
+      var e = new AsignaturaDataDefinition(this.stg, this.parser);
+      ret = ret.trim() + " " + e.label(row.asignatura);
     }
     return ret.trim();
   }

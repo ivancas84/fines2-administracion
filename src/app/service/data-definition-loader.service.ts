@@ -5,7 +5,6 @@ import { ParserService } from 'src/app/core/service/parser/parser.service';
 import { DataDefinition } from 'src/app/core/class/data-definition';
 
 import { AsignaturaDataDefinition } from 'src/app/class/data-definition/asignatura-data-definition';
-import { CargaHorariaDataDefinition } from 'src/app/class/data-definition/carga-horaria-data-definition';
 import { CargoDataDefinition } from 'src/app/class/data-definition/cargo-data-definition';
 import { CentroEducativoDataDefinition } from 'src/app/class/data-definition/centro-educativo-data-definition';
 import { ComisionDataDefinition } from 'src/app/class/data-definition/comision-data-definition';
@@ -32,7 +31,6 @@ export class DataDefinitionLoaderService {
   get(name: string): DataDefinition {
     switch(name) {
       case "asignatura": { return new AsignaturaDataDefinition(this.stg, this.parser); }
-      case "carga_horaria": { return new CargaHorariaDataDefinition(this.stg, this.parser); }
       case "cargo": { return new CargoDataDefinition(this.stg, this.parser); }
       case "centro_educativo": { return new CentroEducativoDataDefinition(this.stg, this.parser); }
       case "comision": { return new ComisionDataDefinition(this.stg, this.parser); }
