@@ -1,13 +1,13 @@
 
 <ng-template #loading>No se han encontrado registros...</ng-template>
 
-<div *ngIf="data$ | async as data; else loading" class="container">
+<div *ngIf="cursos$ | async as data; else loading" class="container">
   <div *ngIf="data.length"> 
     <div *ngFor="let row of data; let i = index" class="row align-items-center border">
       <div class="col-md-4">
-        <h5>{{row.curso_.carga_horaria_.asignatura_.nombre}}</h5>
-        <small>{{row.curso_.carga_horaria_.horas_catedra}} horas cátedra</small>
-        <br><small>{{row.curso_.carga_horaria_.anio}}/{{row.curso_.carga_horaria_.semestre}} {{row.curso_.carga_horaria_.plan_.orientacion}} {{row.curso_.carga_horaria_.plan_.resolucion}}</small>          
+        <h5>{{row.curso_.asignatura_.nombre}}</h5>
+        <small>{{row.curso_.horas_catedra}} horas cátedra</small>
+        <br><small>{{row.curso_.comision_.anio}}/{{row.curso_.comision_.semestre}} {{row.curso_.comision_.plan_.orientacion}} {{row.curso_.comision_.plan_.resolucion}}</small>          
       </div>
       <div class="col-md-4">
   {{row.dia_.dia}} {{row.hora_inicio | toTime | date:"HH:mm"}} {{row.hora_fin | toTime | date:"HH:mm"}} 
