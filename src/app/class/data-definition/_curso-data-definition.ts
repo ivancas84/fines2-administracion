@@ -168,8 +168,6 @@ export class _CursoDataDefinition extends DataDefinition {
     if(!row) return null;
 
     let ret = "";
-    if (row["horario"]) ret = ret.trim() + " " + row["horario"];
-
     if(row.comision) {
       var e = new ComisionDataDefinition(this.stg, this.parser);
       ret = ret.trim() + " " + e.label(row.comision);
