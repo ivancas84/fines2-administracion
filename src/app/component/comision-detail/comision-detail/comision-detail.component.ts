@@ -17,6 +17,9 @@ export class ComisionDetailComponent extends AdminComponent {
 
   readonly entityName: string = "comision";
 
+  public optVer: boolean = true;
+  public optCrear: boolean = false;
+
   constructor(
     protected fb: FormBuilder, 
     protected route: ActivatedRoute, 
@@ -48,4 +51,3 @@ export class ComisionDetailComponent extends AdminComponent {
   }
 
 }
-
