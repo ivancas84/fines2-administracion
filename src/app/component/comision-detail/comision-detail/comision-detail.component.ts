@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { AdminComponent } from '@component/admin/admin.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-comision-detail',
@@ -35,6 +36,15 @@ export class ComisionDetailComponent extends AdminComponent {
       error => { this.toast.showDanger(JSON.stringify(error)); }
     );
     this.subscriptions.add(s);
+  }
+
+  persist(): Observable<any> {
+    /**
+     * persistencia
+     * Se define un metodo independiente para facilitar la redefinicion
+     * @return "datos de respuesta (habitualmente array de logs)"
+     */
+    return this.dd.persist("horariosComision", this.serverData())
   }
 
 }

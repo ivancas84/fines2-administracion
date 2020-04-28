@@ -11,7 +11,7 @@
         <ngb-panel id="crear-horarios" title="Crear horarios">
         <ng-template ngbPanelContent>
             <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" novalidate>
-
+                <app-crear-horarios-comision [form]="adminForm" [data$]="data$"></app-crear-horarios-comision>
                 <button type="submit" class="btn btn-primary">Aceptar</button>&nbsp;
                 <!--p>Debug Form value: {{ adminForm.value | json }}</p>
                 <p>Debug Form status: {{ adminForm.status | json }}</p-->

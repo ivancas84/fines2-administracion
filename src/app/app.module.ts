@@ -112,6 +112,7 @@ import { DivisionShowComponent } from '@component/division-show/division-show/di
 import { DivisionGridComponent } from '@component/division-show/division-grid/division-grid.component';
 import { DivisionSearchComponent } from '@component/division-show/division-search/division-search/division-search.component';
 import { DivisionSearchParamsComponent } from '@component/division-show/division-search/division-search-params/division-search-params.component';
+import { CrearHorariosComisionComponent } from '@component/comision-detail/crear-horarios-comision/crear-horarios-comision.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +135,7 @@ import { DivisionSearchParamsComponent } from '@component/division-show/division
     CentroEducativoShowComponent, CentroEducativoTableComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
-    ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent,
+    ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent, CrearHorariosComisionComponent,
     CrearComisionesComponent, CrearHorariosComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
