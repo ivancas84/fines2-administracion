@@ -1,3 +1,22 @@
-<app-comision-card [data$]="data$"></app-comision-card>
-<app-comision-horario-grid [data$]="data$"></app-comision-horario-grid> 
-<app-comision-curso-grid [data$]="data$"></app-comision-curso-grid>
+<div class="container">
+    <app-comision-card [data$]="data$"></app-comision-card>
+
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true"  activeIds="ver-horarios">
+        <ngb-panel id="ver-horarios" title="Ver horarios">
+            <ng-template ngbPanelContent>
+                <app-comision-horario-grid [data$]="data$"></app-comision-horario-grid> 
+                <app-comision-curso-grid [data$]="data$"></app-comision-curso-grid>
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel id="crear-horarios" title="Crear horarios">
+        <ng-template ngbPanelContent>
+            <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" novalidate>
+
+                <button type="submit" class="btn btn-primary">Aceptar</button>&nbsp;
+                <!--p>Debug Form value: {{ adminForm.value | json }}</p>
+                <p>Debug Form status: {{ adminForm.status | json }}</p-->
+            </form>
+        </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>
