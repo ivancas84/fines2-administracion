@@ -14,7 +14,7 @@ import { isEmptyObject } from '@function/is-empty-object.function';
 })
 export class CrearHorariosComisionComponent extends FieldsetComponent {
 
-  entityName: string = 'horario';
+  entityName: string = 'comision';
 
   optDia$: Observable<Array<any>>;
  

@@ -2,8 +2,8 @@
   <div class="form-group form-row">
     <label class="col-sm-2 col-form-label">Dias</label>
     <div class="col-sm-10">
-      <select class="form-control" formControlName="dias" [ngClass]="{'is-invalid':(dias.invalid && (dias.dirty || dias.touched))}">
-        <option [ngValue]="null">--Modalidad--</option>
+      <select multiple class="form-control" formControlName="dias" [ngClass]="{'is-invalid':(dias.invalid && (dias.dirty || dias.touched))}">
+        <option [ngValue]="null">--Dia--</option>
         <option *ngFor="let option of (optDia$ | async)" [value]="option.id" >{{option.id | label:"dia"}}</option>
       </select>
       <div class="text-danger" *ngIf="(dias.touched || dias.dirty) && dias.invalid">

@@ -42,7 +42,7 @@ export class DivisionShowComponent extends ShowComponent {
   }
 
   getCount(){ 
-    return this.dd.data("division", JSON.stringify(this.display)).pipe(
+    return this.dd.data("division", this.display).pipe(
       map(
         rows => {
           return rows.length;
@@ -54,7 +54,7 @@ export class DivisionShowComponent extends ShowComponent {
    * cantidad
    */
 
-  getData(){ return this.dd.data("division", JSON.stringify(this.display)) }
+  getData(){ return this.dd.data("division", this.display) }
       
   /**
    * datos

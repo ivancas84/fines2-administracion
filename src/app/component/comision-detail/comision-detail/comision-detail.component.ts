@@ -19,6 +19,8 @@ export class ComisionDetailComponent extends AdminComponent {
 
   public optVer: boolean = true;
   public optCrear: boolean = false;
+  public optOpciones: boolean = false;
+
 
   constructor(
     protected fb: FormBuilder, 
@@ -35,7 +37,7 @@ export class ComisionDetailComponent extends AdminComponent {
 
   ngOnInit() {
     var s = this.route.queryParams.subscribe (
-      params => { this.setDataFromParams(params); },
+      params => { console.log(params); this.setDataFromParams(params); },
       error => { this.toast.showDanger(JSON.stringify(error)); }
     );
     this.subscriptions.add(s);
@@ -50,4 +52,40 @@ export class ComisionDetailComponent extends AdminComponent {
     return this.dd.persist("horariosComision", this.serverData())
   }
 
+  getProcessedId(logs: Array<any>) {  
+    return this.adminForm.get(this.entityName).get("id").value;
+  }
+
+
+  eliminarHorarios(): void {
+    /**
+     * envio de formulario
+     */   
+    var id = this.adminForm.get(this.entityName).get("id").value;
+    this.isSubmitted = true; 
+    var s = this.dd.persist("eliminarHorariosComision", id).subscribe(
+        response => {
+          if(response && response.length){
+            this.storage.removeItemsContains(".");
+            response.forEach(
+              element => this.storage.removeItem(element)
+            );
+          }
+          this.params$.next({id:this.getProcessedId(response)}); 
+          /**
+           * por mas que sea el mismo valor, se vuelve a asignar y se recarga el formulario
+           */
+          this.toast.showSuccess("Horarios eliminados");
+          this.isSubmitted = false;
+        },
+        error => { 
+          console.log(error);
+          this.toast.showDanger(JSON.stringify(error.error)); 
+        }
+      );
+    this.subscriptions.add(s);
+  }
 }
+
+
+

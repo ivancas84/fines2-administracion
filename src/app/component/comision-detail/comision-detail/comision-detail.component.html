@@ -9,7 +9,13 @@
         </div>
     </div>
     <div class="card" >
-        <div class="card-header" (click)="optCrear = !optCrear">Crear Horarios</div>
+        <div class="card-header" (click)="optOpciones = !optOpciones">Opciones</div>
+        <div class="card-body" [hidden]="!optOpciones">
+             <button type="button" class="btn btn-danger" (click)="eliminarHorarios()">Eliminar Horarios</button>&nbsp;
+        </div>
+    </div>
+    <div class="card" >
+        <div class="card-header" (click)="optCrear = !optCrear;">Crear Horarios</div>
         <div class="card-body" [hidden]="!optCrear">
             <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" novalidate>
                 <app-crear-horarios-comision [form]="adminForm" [data$]="data$"></app-crear-horarios-comision>

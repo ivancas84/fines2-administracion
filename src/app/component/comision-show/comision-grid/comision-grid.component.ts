@@ -27,7 +27,7 @@ export class ComisionGridComponent extends ShowElementComponent implements OnIni
   }
   
   horariosComision(idsComisiones){
-    this.dd.data("horarios_comision", JSON.stringify(idsComisiones)).subscribe(
+    this.dd.data("horarios_comision", idsComisiones).subscribe(
       horario_ => {
         console.log(horario_)
         horario_.forEach(element => {
