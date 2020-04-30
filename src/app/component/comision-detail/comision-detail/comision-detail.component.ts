@@ -36,11 +36,12 @@ export class ComisionDetailComponent extends AdminComponent {
   }
 
   ngOnInit() {
-    var s = this.route.queryParams.subscribe (
-      params => { console.log(params); this.setDataFromParams(params); },
-      error => { this.toast.showDanger(JSON.stringify(error)); }
-    );
-    this.subscriptions.add(s);
+    this.subscribeQueryParams();   
+    this.initData();
+  }
+
+  initData(){
+    this.setDataFromParams(this.params$.value);
   }
 
   persist(): Observable<any> {
@@ -56,10 +57,9 @@ export class ComisionDetailComponent extends AdminComponent {
     return this.adminForm.get(this.entityName).get("id").value;
   }
 
-
   eliminarHorarios(): void {
     /**
-     * envio de formulario
+     * envio de id par eliminar horarios
      */   
     var id = this.adminForm.get(this.entityName).get("id").value;
     this.isSubmitted = true; 
@@ -80,7 +80,7 @@ export class ComisionDetailComponent extends AdminComponent {
         },
         error => { 
           console.log(error);
-          this.toast.showDanger(JSON.stringify(error.error)); 
+          this.toast.showDanger(error.error); 
         }
       );
     this.subscriptions.add(s);
