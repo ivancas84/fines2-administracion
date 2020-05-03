@@ -1,5 +1,5 @@
 import { AdminComponent } from '@component/admin/admin.component';
-import { OnInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
   selector: 'app-persona-admin',
   templateUrl: './persona-admin.component.html',
 })
-export class PersonaAdminComponent extends AdminComponent implements OnInit {
+export class PersonaAdminComponent extends AdminComponent {
 
   readonly entityName: string = "persona";
 

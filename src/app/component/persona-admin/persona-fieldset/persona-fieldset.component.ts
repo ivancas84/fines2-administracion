@@ -3,7 +3,7 @@ import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Display } from '@class/display';
 import { isEmptyObject } from '@function/is-empty-object.function';
@@ -14,8 +14,7 @@ import { isEmptyObject } from '@function/is-empty-object.function';
 })
 export class PersonaFieldsetComponent extends FieldsetComponent {
 
-  entityName: string = 'persona';
-  fieldsetName: string = 'persona';
+  readonly entityName: string = 'persona';
 
   constructor(
     protected fb: FormBuilder, 
@@ -26,26 +25,26 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({
-      id:'',
-      nombres: ['', {
-        validators: Validators.required,
+      id:null,
+      nombres: [null, {
+        validators: [Validators.required],
       }],
-      apellidos: ['', {
+      apellidos: [null, {
       }],
-      fecha_nacimiento: ['', {
+      fecha_nacimiento: [null, {
       }],
-      numero_documento: ['', {
-        validators: Validators.required,
-        asyncValidators: this.validators.unique('numero_documento', 'persona'),
+      numero_documento: [null, {
+        validators: [Validators.required],
+        asyncValidators: [this.validators.unique('numero_documento', 'persona')],
       }],
-      cuil: ['', {
-        asyncValidators: this.validators.unique('cuil', 'persona'),
+      cuil: [null, {
+        asyncValidators: [this.validators.unique('cuil', 'persona')],
       }],
-      email: ['', {
+      email: [null, {
       }],
-      genero: ['', {
+      genero: [null, {
       }],
-      apodo: ['', {
+      apodo: [null, {
       }],
     });
     return fg;

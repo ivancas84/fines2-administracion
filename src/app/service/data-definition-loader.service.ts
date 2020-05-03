@@ -13,11 +13,13 @@ import { DesignacionDataDefinition } from 'src/app/class/data-definition/designa
 import { DiaDataDefinition } from 'src/app/class/data-definition/dia-data-definition';
 import { DistribucionHorariaDataDefinition } from 'src/app/class/data-definition/distribucion-horaria-data-definition';
 import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio-data-definition';
+import { EmailDataDefinition } from 'src/app/class/data-definition/email-data-definition';
 import { HorarioDataDefinition } from 'src/app/class/data-definition/horario-data-definition';
 import { ModalidadDataDefinition } from 'src/app/class/data-definition/modalidad-data-definition';
 import { PersonaDataDefinition } from 'src/app/class/data-definition/persona-data-definition';
 import { PlanDataDefinition } from 'src/app/class/data-definition/plan-data-definition';
 import { SedeDataDefinition } from 'src/app/class/data-definition/sede-data-definition';
+import { TelefonoDataDefinition } from 'src/app/class/data-definition/telefono-data-definition';
 import { TipoSedeDataDefinition } from 'src/app/class/data-definition/tipo-sede-data-definition';
 import { TomaDataDefinition } from 'src/app/class/data-definition/toma-data-definition';
 
@@ -39,11 +41,13 @@ export class DataDefinitionLoaderService {
       case "dia": { return new DiaDataDefinition(this.stg, this.parser); }
       case "distribucion_horaria": { return new DistribucionHorariaDataDefinition(this.stg, this.parser); }
       case "domicilio": { return new DomicilioDataDefinition(this.stg, this.parser); }
+      case "email": { return new EmailDataDefinition(this.stg, this.parser); }
       case "horario": { return new HorarioDataDefinition(this.stg, this.parser); }
       case "modalidad": { return new ModalidadDataDefinition(this.stg, this.parser); }
       case "persona": { return new PersonaDataDefinition(this.stg, this.parser); }
       case "plan": { return new PlanDataDefinition(this.stg, this.parser); }
       case "sede": { return new SedeDataDefinition(this.stg, this.parser); }
+      case "telefono": { return new TelefonoDataDefinition(this.stg, this.parser); }
       case "tipo_sede": { return new TipoSedeDataDefinition(this.stg, this.parser); }
       case "toma": { return new TomaDataDefinition(this.stg, this.parser); }
     }
