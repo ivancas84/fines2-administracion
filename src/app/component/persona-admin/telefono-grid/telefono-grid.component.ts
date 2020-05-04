@@ -12,6 +12,7 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 export class TelefonoGridComponent extends ShowElementComponent implements OnInit {
   
   telefonos$: ReplaySubject<Array<object> | null> = new ReplaySubject();
+
   /**
    * telefonos$ se define a partir de data$, 
    * data$ puede sufrir constantes cambios, 
@@ -26,13 +27,11 @@ export class TelefonoGridComponent extends ShowElementComponent implements OnIni
   ngOnInit(): void {
     this.data$.subscribe(
       persona => {
-        console.log(persona)
         if(isEmptyObject(persona)) return;
         var d = new Display();
         d.setParams({persona:persona.id})
         this.dd.all("telefono",d).subscribe(
           telefonos => { 
-            console.log(telefonos);
             this.telefonos$.next(telefonos); }        
         )
       }
