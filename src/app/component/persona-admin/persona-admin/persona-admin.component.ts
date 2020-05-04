@@ -7,6 +7,9 @@ import { DataDefinitionService } from '@service/data-definition/data-definition.
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
 import { ToastService } from '@service/ng-bootstrap/toast.service';
+import { ReplaySubject } from 'rxjs';
+import { Display } from '@class/display';
+import { isEmptyObject } from '@function/is-empty-object.function';
 
 @Component({
   selector: 'app-persona-admin',
@@ -15,7 +18,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 export class PersonaAdminComponent extends AdminComponent {
 
   readonly entityName: string = "persona";
-
+  
   constructor(
     protected fb: FormBuilder, 
     protected route: ActivatedRoute, 
@@ -28,6 +31,6 @@ export class PersonaAdminComponent extends AdminComponent {
   ) {
     super(fb, route, router, location, dd, toast, validators, storage);
   }
-
+  
 }
 

@@ -1,0 +1,21 @@
+<h3>Teléfonos</h3>
+
+<ng-template #loading>
+  <div>No se han encontrado registros.</div>
+</ng-template>
+
+<div *ngIf="telefonos$ | async as data; else loading" class="container">
+  <div *ngIf="data.length"> 
+    <div *ngFor="let row of data; let i = index" class="row align-items-center border">
+      <div class="col-md-4">
+        <h5 >{{row.id | label:'telefono'}}</h5>
+          <small><a [routerLink]="['/persona-show']" [queryParams]="{id:row.persona}" >{{row.persona | label:'persona'}}</a></small>
+      </div>
+      <div class="col-md">
+{{row.tipo}} {{row.prefijo}} {{row.numero}} {{row.insertado}} {{row.eliminado}} 
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-secondary" (click)="back()">Agregar Teléfono</button>
