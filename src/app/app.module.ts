@@ -113,6 +113,7 @@ import { DivisionGridComponent } from '@component/division-show/division-grid/di
 import { DivisionSearchComponent } from '@component/division-show/division-search/division-search/division-search.component';
 import { DivisionSearchParamsComponent } from '@component/division-show/division-search/division-search-params/division-search-params.component';
 import { CrearHorariosComisionComponent } from '@component/comision-detail/crear-horarios-comision/crear-horarios-comision.component';
+import { PersonaGridComponent } from '@component/persona-show/persona-grid/persona-grid.component';
 
 @NgModule({
   declarations: [
@@ -146,7 +147,7 @@ import { CrearHorariosComisionComponent } from '@component/comision-detail/crear
     PlanAdminComponent, PlanFieldsetComponent,
     PlanShowComponent, PlanTableComponent,
     PersonaAdminComponent, PersonaFieldsetComponent,
-    PersonaShowComponent, PersonaTableComponent, PersonaSearchComponent,
+    PersonaShowComponent, PersonaTableComponent, PersonaSearchComponent, PersonaGridComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent, SedeSearchParamsComponent, SedeSearchConditionComponent,
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSedeFieldsetComponent, DesignacionTableComponent,
     TipoSedeAdminComponent, TipoSedeFieldsetComponent,
