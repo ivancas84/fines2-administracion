@@ -27,6 +27,7 @@ import { CrearComisionesComponent } from '@component/crear-comisiones/crear-comi
 import { HorarioAdminComponent } from '@component/horario-admin/horario-admin/horario-admin.component';
 import { DivisionShowComponent } from '@component/division-show/division-show/division-show.component';
 import { CrearHorariosComponent } from '@component/crear-horarios/crear-horarios.component';
+import { TelefonoAdminComponent } from '@component/telefono-admin/telefono-admin/telefono-admin.component';
 
 const routes: Routes = [
   { path: 'asignatura-show', component: AsignaturaShowComponent, pathMatch: 'full' },
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'plan-show', component: PlanShowComponent, pathMatch: 'full' },
   { path: 'sede-show', component: SedeShowComponent, pathMatch: 'full' },
   { path: 'sede-admin', component: SedeAdminComponent, pathMatch: 'full' },
+  { path: 'telefono-admin', component: TelefonoAdminComponent, pathMatch: 'full' },
   { path: 'tipo-sede-show', component: TipoSedeShowComponent, pathMatch: 'full' },
   { path: 'tipo-sede-admin', component: TipoSedeAdminComponent, pathMatch: 'full' },
 ];
