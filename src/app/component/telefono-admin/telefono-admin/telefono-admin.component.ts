@@ -28,5 +28,14 @@ export class TelefonoAdminComponent extends AdminComponent {
   ) {
     super(fb, route, router, location, dd, toast, validators, storage);
   }
+
+  ngOnInit() {
+    /**
+     * Se desactiva el registro de valores del formulario en el storage
+     * Utilizar el storage dificulta el hecho de agregar mas de un telefono a la misma persona
+     */
+    this.subscribeQueryParams();
+    this.initData();   
+  }
 }
 
