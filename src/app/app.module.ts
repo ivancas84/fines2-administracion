@@ -116,7 +116,7 @@ import { CrearHorariosComisionComponent } from '@component/comision-detail/crear
 import { PersonaGridComponent } from '@component/persona-show/persona-grid/persona-grid.component';
 import { TelefonoGridComponent } from '@component/persona-admin/telefono-grid/telefono-grid.component';
 import { TelefonoAdminComponent } from '@component/telefono-admin/telefono-admin/telefono-admin.component';
-import { TelefonoFieldsetComponent } from 'tmp/component/fieldset/telefono-fieldset/telefono-fieldset.component';
+import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fieldset/telefono-fieldset.component';
 
 @NgModule({
   declarations: [
