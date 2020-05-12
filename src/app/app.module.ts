@@ -42,6 +42,7 @@ import { ValidatorsService } from '@service/validators/validators.service';
 import { NgbIsoDateAdapter } from '@service/ng-bootstrap/ngb-iso-date-adapter';
 import { NgbDateCustomParserFormatter } from '@service/ng-bootstrap/dateformat';
 import { ParserService } from '@service/parser/parser.service';
+import { UploadComponent } from '@component/upload/upload.component';
 import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adapter';
 
 import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
@@ -129,6 +130,7 @@ import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fi
     FilterTypeaheadComponent, FieldsetTypeaheadComponent,
     ModalConfirmComponent,
     ToastsComponent,
+    UploadComponent,
 
     AsignaturaAdminComponent, AsignaturaFieldsetComponent,
     AsignaturaShowComponent, AsignaturaTableComponent, AsignaturaSearchComponent,
