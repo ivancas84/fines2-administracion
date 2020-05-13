@@ -46,6 +46,8 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
       }],
       apodo: [null, {
       }],
+      archivo: [null, {
+      }],
     });
     return fg;
   }
@@ -60,5 +62,7 @@ export class PersonaFieldsetComponent extends FieldsetComponent {
   get genero() { return this.fieldset.get('genero')}
   get apodo() { return this.fieldset.get('apodo')}
   get alta() { return this.fieldset.get('alta')}
+  get archivo() { return this.fieldset.get('archivo')}
+
 
 }
