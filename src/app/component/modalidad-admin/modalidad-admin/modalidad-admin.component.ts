@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-modalidad-admin',
   templateUrl: './modalidad-admin.component.html',
 })
-export class ModalidadAdminComponent extends AdminComponent implements OnInit {
+export class ModalidadAdminComponent extends AdminComponent {
 
   readonly entityName: string = "modalidad";
 

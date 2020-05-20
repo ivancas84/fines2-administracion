@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-curso-admin',
   templateUrl: './curso-admin.component.html',
 })
-export class CursoAdminComponent extends AdminComponent implements OnInit {
+export class CursoAdminComponent extends AdminComponent {
 
   readonly entityName: string = "curso";
 

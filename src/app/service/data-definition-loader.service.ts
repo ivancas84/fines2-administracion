@@ -14,6 +14,7 @@ import { DiaDataDefinition } from 'src/app/class/data-definition/dia-data-defini
 import { DistribucionHorariaDataDefinition } from 'src/app/class/data-definition/distribucion-horaria-data-definition';
 import { DomicilioDataDefinition } from 'src/app/class/data-definition/domicilio-data-definition';
 import { EmailDataDefinition } from 'src/app/class/data-definition/email-data-definition';
+import { FileDataDefinition } from 'src/app/class/data-definition/file-data-definition';
 import { HorarioDataDefinition } from 'src/app/class/data-definition/horario-data-definition';
 import { ModalidadDataDefinition } from 'src/app/class/data-definition/modalidad-data-definition';
 import { PersonaDataDefinition } from 'src/app/class/data-definition/persona-data-definition';
@@ -42,6 +43,7 @@ export class DataDefinitionLoaderService {
       case "distribucion_horaria": { return new DistribucionHorariaDataDefinition(this.stg, this.parser); }
       case "domicilio": { return new DomicilioDataDefinition(this.stg, this.parser); }
       case "email": { return new EmailDataDefinition(this.stg, this.parser); }
+      case "file": { return new FileDataDefinition(this.stg, this.parser); }
       case "horario": { return new HorarioDataDefinition(this.stg, this.parser); }
       case "modalidad": { return new ModalidadDataDefinition(this.stg, this.parser); }
       case "persona": { return new PersonaDataDefinition(this.stg, this.parser); }

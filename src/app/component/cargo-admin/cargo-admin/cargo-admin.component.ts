@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-cargo-admin',
   templateUrl: './cargo-admin.component.html',
 })
-export class CargoAdminComponent extends AdminComponent implements OnInit {
+export class CargoAdminComponent extends AdminComponent {
 
   readonly entityName: string = "cargo";
 

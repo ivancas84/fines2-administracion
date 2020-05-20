@@ -12,7 +12,7 @@ import { SessionStorageService } from '@service/storage/session-storage.service'
   selector: 'app-carga-horaria-admin',
   templateUrl: './carga-horaria-admin.component.html',
 })
-export class CargaHorariaAdminComponent extends AdminComponent implements OnInit {
+export class CargaHorariaAdminComponent extends AdminComponent {
 
   readonly entityName: string = "carga_horaria";
 

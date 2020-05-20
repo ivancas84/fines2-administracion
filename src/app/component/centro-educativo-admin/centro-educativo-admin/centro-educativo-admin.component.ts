@@ -15,7 +15,7 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
   selector: 'app-centro-educativo-admin',
   templateUrl: './centro-educativo-admin.component.html',
 })
-export class CentroEducativoAdminComponent extends AdminComponent implements OnInit {
+export class CentroEducativoAdminComponent extends AdminComponent {
 
   readonly entityName: string = "centro_educativo";
   domicilio$ = new ReplaySubject();
