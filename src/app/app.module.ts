@@ -49,9 +49,12 @@ import { NgbStringTimeAdapter } from '@service/ng-bootstrap/ngb-string-time-adap
 import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
 import { MenuComponent } from '@component/menu/menu.component';
 
-import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { AsignaturaAdminComponent } from '@component/asignatura-admin/asignatura-admin/asignatura-admin.component';
 import { AsignaturaFieldsetComponent } from '@component/asignatura-admin/asignatura-fieldset/asignatura-fieldset.component';
+import { ConsolidadoComponent } from '@component/consolidado/consolidado/consolidado.component';
+import { ConsolidadoTableComponent } from '@component/consolidado/consolidado-table/consolidado-table.component';
+import { ConsolidadoSearchComponent } from '@component/consolidado/consolidado-search/consolidado-search/consolidado-search.component';
+import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { SedeFieldsetComponent } from '@component/sede-admin/sede-fieldset/sede-fieldset.component';
 import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
 import { TipoSedeFieldsetComponent } from '@component/tipo-sede-admin/tipo-sede-fieldset/tipo-sede-fieldset.component';
@@ -119,6 +122,7 @@ import { PersonaGridComponent } from '@component/persona-show/persona-grid/perso
 import { TelefonoGridComponent } from '@component/persona-admin/telefono-grid/telefono-grid.component';
 import { TelefonoAdminComponent } from '@component/telefono-admin/telefono-admin/telefono-admin.component';
 import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fieldset/telefono-fieldset.component';
+import { ConsolidadoSearchParamsComponent } from '@component/consolidado/consolidado-search/consolidado-search-params/consolidado-search-params.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +148,7 @@ import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fi
     ComisionAdminComponent, ComisionFieldsetComponent, ComisionCursoAdminComponent,
     ComisionShowComponent, ComisionGridComponent, ComisionSearchComponent, ComisionSearchParamsComponent,
     ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent, CrearHorariosComisionComponent,
+    ConsolidadoComponent, ConsolidadoTableComponent, ConsolidadoSearchComponent, ConsolidadoSearchParamsComponent,
     CrearComisionesComponent, CrearHorariosComponent,
     CursoAdminComponent, CursoFieldsetComponent,
     CursoShowComponent, CursoTableComponent,
@@ -171,7 +176,7 @@ import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fi
     MessageService, DataDefinitionService, DataDefinitionLoaderService, SessionStorageService, ParserService, 
     ToastService, ValidatorsService,
     {provide: NgbDateAdapter, useClass: NgbIsoDateAdapter}, 
-    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter}, 
+    {provide: NgbTimeAdapter, useClass: NgbStringTimeAdapter},
     {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}
 
   ],

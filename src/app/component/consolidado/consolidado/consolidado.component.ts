@@ -2,14 +2,17 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ShowComponent } from '@component/show/show.component';
+import { first } from 'rxjs/operators';
 import { Display } from '@class/display';
+import { isEmptyObject } from '@function/is-empty-object.function';
 import { getSemester } from '@function/get-semester';
 
+
 @Component({
-  selector: 'app-comision-show',
-  templateUrl: './comision-show.component.html',
+  selector: 'app-consolidado',
+  templateUrl: './consolidado.component.html',
 })
-export class ComisionShowComponent extends ShowComponent {
+export class ConsolidadoComponent extends ShowComponent {
 
   readonly entityName: string = "comision";
 
@@ -23,18 +26,19 @@ export class ComisionShowComponent extends ShowComponent {
 
   initDisplay(params){
     this.display = new Display();
-    this.display.setSize(100);
     this.display.setConditionByQueryParams(params);
+    if(isEmptyObject(this.display.getOrder())) 
+      this.display.setOrder({"sed_numero":"asc", "anio":"asc", "semestre":"asc"});
     this.display.addParamIfNot("autorizada", "true");
     this.display.addParamIfNot("fecha_anio", new Date().getFullYear());
     this.display.addParamIfNot("fecha_semestre", getSemester());
     this.display.addParamIfNot("sed_centro_educativo", "1");
-    this.display.addParamIfNot("modalidad", "1");
+    this.display.addParamIfNot("modalidad", "1");  
     this.condition$.next(this.display.getCondition());
     this.params$.next(this.display.getParams());
   }
 
-
+  
 
 }
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowElementComponent } from '@component/show-element/show-element.component';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
-import { isEmptyObject } from '@function/is-empty-object.function';
-import { forkJoin, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { arrayColumn } from '@function/array-column';
 
 @Component({
@@ -10,9 +9,9 @@ import { arrayColumn } from '@function/array-column';
   templateUrl: './comision-grid.component.html',
 })
 export class ComisionGridComponent extends ShowElementComponent implements OnInit {
+ 
   readonly entityName = 'comision';
-    horario_$ = {};
-
+  horario_$ = {};
 
   constructor(protected dd: DataDefinitionService) {
     super(); 
@@ -23,13 +22,12 @@ export class ComisionGridComponent extends ShowElementComponent implements OnIni
      * Evitar error produccion: "Object is possibly 'null'"
      * Simplificar acceso desde el template
      */
-      return this.horario_$[idComision]
+    return this.horario_$[idComision]
   }
   
   horariosComision(idsComisiones){
     this.dd.data("horarios_comision", idsComisiones).subscribe(
       horario_ => {
-        console.log(horario_)
         horario_.forEach(element => {
           var v = element["comision"];
           this.horario_$[v].next(element);
@@ -42,7 +40,6 @@ export class ComisionGridComponent extends ShowElementComponent implements OnIni
     this.data$.subscribe(
       comisiones => {
         if(comisiones && comisiones.length){
-          console.log(comisiones.length);
           var idsComisiones = arrayColumn(comisiones,"id");
           idsComisiones.forEach(id => { this.horario_$[id] = new BehaviorSubject(null); });
           this.horariosComision(idsComisiones);

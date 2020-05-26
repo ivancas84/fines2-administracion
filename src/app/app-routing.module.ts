@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ConsolidadoComponent } from '@component/consolidado/consolidado/consolidado.component';
 import { SedeShowComponent } from './component/sede-show/sede-show/sede-show.component';
 import { SedeAdminComponent } from '@component/sede-admin/sede-admin/sede-admin.component';
 import { TipoSedeAdminComponent } from '@component/tipo-sede-admin/tipo-sede-admin/tipo-sede-admin.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'comision-curso-admin', component: ComisionCursoAdminComponent, pathMatch: 'full' },
   { path: 'comision-show', component: ComisionShowComponent, pathMatch: 'full' },
   { path: 'comision-detail', component: ComisionDetailComponent, pathMatch: 'full' },
+  { path: 'consolidado', component: ConsolidadoComponent, pathMatch: 'full' },
   { path: 'crear-comisiones', component: CrearComisionesComponent, pathMatch: 'full' },
   { path: 'crear-horarios', component: CrearHorariosComponent, pathMatch: 'full' },
   { path: 'curso-admin', component: CursoAdminComponent, pathMatch: 'full' },
