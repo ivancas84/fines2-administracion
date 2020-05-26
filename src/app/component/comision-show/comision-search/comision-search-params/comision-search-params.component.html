@@ -1,6 +1,42 @@
 <fieldset [formGroup]="fieldset">
   <div class="form-inline">
     <div class="form-group mb-2">
+      <label class="col-form-label">Fecha anio</label>
+      <input class="form-control" placeholder="yyyy" type="text" formControlName="fecha_anio">
+    </div>
+    <div class="form-group mb-2">
+      <label class="col-form-label">Fecha Semestre:</label>
+      <select class="form-control" formControlName="fecha_semestre">
+        <option [ngValue]="null">--Fecha Semestre--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label class="col-form-label">Centro Educativo:</label>
+      <select class="form-control" formControlName="sed_centro_educativo">
+        <option [ngValue]="null">--Centro Educativo--</option>
+        <option *ngFor="let option of (optCentroEducativo$ | async)" [value]="option.id" >{{option.id | label:"centro_educativo"}}</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label class="col-form-label">Autorizada</label>
+      <select class="form-control" formControlName="autorizada">
+        <option [ngValue]="null">--Todos--</option>
+        <option [ngValue]="'true'">Sí</option>
+        <option [ngValue]="'false'">No</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label class="col-form-label">Modalidad:</label>
+      <select class="form-control" formControlName="modalidad">
+        <option [ngValue]="null">--Modalidad--</option>
+        <option *ngFor="let option of (optModalidad$ | async)" [value]="option.id" >{{option.id | label:"modalidad"}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-inline">
+    <div class="form-group mb-2">
       <label class="col-form-label">Número sede</label>
       <input class="form-control" type="text" formControlName="sed_numero">
     </div>
@@ -38,14 +74,7 @@
             <option value="2">2</option>
       </select>
     </div>
-    <div class="form-group mb-2">
-      <label class="col-form-label">Autorizada</label>
-      <select class="form-control" formControlName="autorizada">
-        <option [ngValue]="null">--Todos--</option>
-        <option [ngValue]="'true'">Sí</option>
-        <option [ngValue]="'false'">No</option>
-      </select>
-    </div>
+
     <div class="form-group mb-2">
       <label class="col-form-label">Apertura</label>
       <select class="form-control" formControlName="apertura">
@@ -63,31 +92,11 @@
       </select>
     </div>
     <div class="form-group mb-2">
-      <label class="col-form-label">Fecha anio</label>
-      <input class="form-control" placeholder="yyyy" type="text" formControlName="fecha_anio">
-    </div>
-    <div class="form-group mb-2">
-      <label class="col-form-label">Fecha Semestre:</label>
-      <select class="form-control" formControlName="fecha_semestre">
-        <option [ngValue]="null">--Fecha Semestre--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-      </select>
-    </div>
-    <div class="form-group mb-2">
       <label class="col-form-label">Plan:</label>
       <select class="form-control" formControlName="plan">
         <option [ngValue]="null">--Plan--</option>
         <option *ngFor="let option of (optPlan$ | async)" [value]="option.id" >{{option.id | label:"plan"}}</option>
       </select>
-    </div>
-    <div class="form-group mb-2">
-      <label class="col-form-label">Modalidad:</label>
-      <select class="form-control" formControlName="modalidad">
-        <option [ngValue]="null">--Modalidad--</option>
-        <option *ngFor="let option of (optModalidad$ | async)" [value]="option.id" >{{option.id | label:"modalidad"}}</option>
-      </select>
-    </div>
-
+    </div>  
   </div>
 </fieldset>

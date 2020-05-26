@@ -28,7 +28,10 @@ export class ComisionShowComponent extends ShowComponent {
     this.display.setSize(100);
     this.display.setConditionByQueryParams(params);
     this.display.addParamIfNot("autorizada", "true");
-    this.display.addParamIfNot("fecha_anio", "2020");
+    this.display.addParamIfNot("fecha_anio", new Date().getFullYear());
+    this.display.addParamIfNot("fecha_semestre", ((new Date().getMonth()) < 6) ? 1 : 2);
+    this.display.addParamIfNot("sed_centro_educativo", "1");
+    this.display.addParamIfNot("modalidad", "1");
     this.condition$.next(this.display.getCondition());
     this.params$.next(this.display.getParams());
   }

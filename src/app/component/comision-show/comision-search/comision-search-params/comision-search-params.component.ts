@@ -17,6 +17,7 @@ export class ComisionSearchParamsComponent extends SearchParamsComponent {
 
   optPlan$: Observable<any>;
   optModalidad$: Observable<any>;
+  optCentroEducativo$: Observable<any>;
 
   constructor(
     protected fb: FormBuilder, 
@@ -27,6 +28,7 @@ export class ComisionSearchParamsComponent extends SearchParamsComponent {
   initOptions(): void {
     this.optPlan$ = this.dd.all('plan', new Display);
     this.optModalidad$ = this.dd.all('modalidad', new Display);
+    this.optCentroEducativo$ = this.dd.all('centro_educativo', new Display);
   }
 
 
@@ -46,6 +48,7 @@ export class ComisionSearchParamsComponent extends SearchParamsComponent {
       sede: null,
       plan: null,
       modalidad: null,
+      sed_centro_educativo: null,
     });
     return fg;
   }
