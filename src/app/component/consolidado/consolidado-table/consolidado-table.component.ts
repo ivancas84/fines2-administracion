@@ -63,7 +63,7 @@ export class ConsolidadoTableComponent extends ShowElementComponent implements O
   }
   
   asignarCursosAComisiones(comisiones: any){
-    if(!comisiones && !comisiones.length) return of(null);
+    if(!comisiones || !comisiones.length) return of(null);
 
     var ids = arrayColumn(comisiones,"id");
     

@@ -35,6 +35,7 @@ export class ConsolidadoSearchParamsComponent extends SearchParamsComponent {
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({
+      sed_numero: null,
       turno: null,
       division: null,
       anio: null,
