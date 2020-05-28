@@ -35,7 +35,7 @@ export class ComisionSearchParamsComponent extends SearchParamsComponent {
 
   formGroup(): FormGroup {
     let fg: FormGroup = this.fb.group({
-      sed_numero: null,
+      sed_numero_trim: null,
       turno: null,
       division: null,
       anio: null,
