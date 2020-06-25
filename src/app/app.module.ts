@@ -49,7 +49,7 @@ import { DataDefinitionLoaderService } from '@service/data-definition-loader.ser
 import { MenuComponent } from '@component/menu/menu.component';
 
 import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
-import { ComisionFieldsetComponent } from 'tmp/component/fieldset/comision-fieldset/comision-fieldset.component';
+import { ComisionFieldsetComponent } from '@component/comision-admin/comision-fieldset/comision-fieldset/comision-fieldset.component';
 import { PlanificacionFormPickComponent } from '@component/comision-admin/comision-fieldset/planificacion-form-pick/planificacion-form-pick.component';
 
 import { ConsolidadoAdminComponent } from '@component/consolidado-admin/consolidado-admin/consolidado-admin.component';
