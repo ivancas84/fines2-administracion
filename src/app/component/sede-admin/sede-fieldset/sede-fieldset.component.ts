@@ -3,10 +3,10 @@ import { FieldsetComponent } from '@component/fieldset/fieldset.component';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
 import { ValidatorsService } from '@service/validators/validators.service';
-import { forkJoin, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Display } from '@class/display';
-import { isEmptyObject } from '@function/is-empty-object.function';
+import { Router } from '@angular/router';
+import { SessionStorageService } from '@service/storage/session-storage.service';
 
 @Component({
   selector: 'app-sede-fieldset',
@@ -16,17 +16,22 @@ export class SedeFieldsetComponent extends FieldsetComponent {
 
   readonly entityName: string = 'sede';
 
+  optCentroEducativo$: Observable<Array<any>>;
   optTipoSede$: Observable<Array<any>>;
 
   constructor(
     protected fb: FormBuilder, 
     protected dd: DataDefinitionService, 
-    protected validators: ValidatorsService) {
-    super(fb, dd, validators);
+    protected validators: ValidatorsService,
+    protected router: Router, 
+    protected storage: SessionStorageService, 
+  ) {
+    super(router, storage);
   }
 
   initOptions(): void {
     this.optTipoSede$ = this.dd.all('tipo_sede', new Display);
+    this.optCentroEducativo$ = this.dd.all('centro_educativo', new Display);
   }
 
 
@@ -41,15 +46,14 @@ export class SedeFieldsetComponent extends FieldsetComponent {
       }],
       observaciones: ['', {
       }],
-      // domicilio: ['', {
-      //   validators: [Validators.required, this.validators.typeaheadSelection('domicilio')],
-      // }],
       tipo_sede: ['', {
         //validators: Validators.required,
       }],
       centro_educativo: ['', {
-        validators: [Validators.required, this.validators.typeaheadSelection('centro_educativo')],
+        validators: [Validators.required],
       }],
+    }, {
+      asyncValidators: [this.validators.uniqueMultiple('sede', ['numero', 'centro_educativo'])],
     });
     return fg;
   }

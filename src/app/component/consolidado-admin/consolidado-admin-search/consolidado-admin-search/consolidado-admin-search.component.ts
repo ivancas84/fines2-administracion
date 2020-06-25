@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { SearchComponent } from '@component/search/search.component';
 import { Router } from '@angular/router';
 
-import { SearchComponent } from '@component/search/search.component';
-
 @Component({
-  selector: 'app-sede-search',
-  templateUrl: './sede-search.component.html',
+  selector: 'app-consolidado-admin-search',
+  templateUrl: './consolidado-admin-search.component.html',
 })
-export class SedeSearchComponent extends SearchComponent {
+export class ConsolidadoAdminSearchComponent extends SearchComponent {
 
   constructor(
     protected fb: FormBuilder,
