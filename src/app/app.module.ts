@@ -49,6 +49,8 @@ import { ModalAlertComponent } from '@component/modal-alert/modal-alert.componen
 import { DataDefinitionLoaderService } from '@service/data-definition-loader.service';
 import { MenuComponent } from '@component/menu/menu.component';
 
+import { CursoHorarioLabelComponent } from '@component/label/curso-horario-label/curso-horario-label.component';
+
 import { ComisionAdminComponent } from '@component/comision-admin/comision-admin/comision-admin.component';
 import { ComisionFieldsetComponent } from '@component/comision-admin/comision-fieldset/comision-fieldset/comision-fieldset.component';
 import { PlanificacionFormPickComponent } from '@component/comision-admin/comision-fieldset/planificacion-form-pick/planificacion-form-pick.component';
@@ -78,6 +80,34 @@ import { SedeTableComponent } from '@component/sede-show/sede-table/sede-table.c
 import { SedeSearchComponent } from '@component/sede-show/sede-search/sede-search/sede-search.component';
 import { SedeSearchParamsComponent } from '@component/sede-show/sede-search/sede-search-params/sede-search-params.component';
 
+import { CalendarioAdminComponent } from '@component/calendario-admin/calendario-admin/calendario-admin.component';
+import { CalendarioFieldsetComponent } from '@component/calendario-admin/calendario-fieldset/calendario-fieldset.component';
+
+import { DetallePersonaAdminComponent } from '@component/detalle-persona-admin/detalle-persona-admin/detalle-persona-admin.component';
+import { DetallePersonaFieldsetComponent } from '@component/detalle-persona-admin/detalle-persona-fieldset/detalle-persona-fieldset.component';
+
+import { EmailAdminComponent } from '@component/email-admin/email-admin/email-admin.component';
+import { EmailFieldsetComponent } from '@component/email-admin/email-fieldset/email-fieldset.component';
+
+import { PersonaAdminComponent } from '@component/persona-admin/persona-admin/persona-admin.component';
+import { PersonaFieldsetComponent } from '@component/persona-admin/persona-fieldset/persona-fieldset.component';
+import { PersonaDomicilioFieldsetComponent } from '@component/persona-admin/persona-domicilio-fieldset/persona-domicilio-fieldset.component';
+import { EmailGridComponent } from '@component/persona-admin/email-grid/email-grid.component';
+import { DetallePersonaGridComponent } from '@component/persona-admin/detalle-persona-grid/detalle-persona-grid.component';
+
+import { PersonaShowComponent } from '@component/persona-show/persona-show/persona-show.component';
+import { PersonaGridComponent } from '@component/persona-show/persona-grid/persona-grid.component';
+import { PersonaSearchComponent } from '@component/persona-show/persona-search/persona-search.component';
+
+import { TelefonoAdminComponent } from '@component/telefono-admin/telefono-admin/telefono-admin.component';
+import { TelefonoFieldsetComponent } from '@component/telefono-admin/telefono-fieldset/telefono-fieldset.component';
+
+import { TomaAdminComponent } from '@component/toma-admin/toma-admin/toma-admin.component';
+import { TomaFieldsetComponent } from '@component/toma-admin/toma-fieldset/toma-fieldset.component';
+import { TaCursoCardComponent } from '@component/toma-admin/ta-curso-card/ta-curso-card.component';
+import { TelefonoGridComponent } from '@component/persona-admin/telefono-grid/telefono-grid.component';
+import { LabelComponent } from '@component/label/label.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,13 +122,24 @@ import { SedeSearchParamsComponent } from '@component/sede-show/sede-search/sede
     ToastsComponent,
     UploadComponent,
     DownloadComponent,
+    LabelComponent,
 
+    CursoHorarioLabelComponent,
+
+    CalendarioAdminComponent, CalendarioFieldsetComponent,
     ComisionAdminComponent, ComisionFieldsetComponent, PlanificacionFormPickComponent,
     ComisionDetailComponent, ComisionCardComponent, ComisionHorarioGridComponent, ComisionCursoGridComponent, CrearHorariosComisionComponent,
     ConsolidadoComponent, ConsolidadoTableComponent, ConsolidadoSearchComponent, ConsolidadoSearchParamsComponent, ConsolidadoSearchOrderComponent,
     ConsolidadoAdminComponent, ConsolidadoAdminTableComponent,
+    DetallePersonaAdminComponent, DetallePersonaFieldsetComponent,
+    EmailAdminComponent, EmailFieldsetComponent,
+    PersonaAdminComponent, PersonaFieldsetComponent, PersonaDomicilioFieldsetComponent, EmailGridComponent, DetallePersonaGridComponent, TelefonoGridComponent,
+    PersonaShowComponent, PersonaGridComponent, PersonaSearchComponent, 
     SedeAdminComponent, SedeFieldsetComponent, DomicilioSedeFieldsetComponent, DesignacionTableComponent,
     SedeShowComponent, SedeTableComponent, SedeSearchComponent, SedeSearchParamsComponent,
+    TelefonoAdminComponent, TelefonoFieldsetComponent,
+    TomaAdminComponent, TomaFieldsetComponent, TaCursoCardComponent,
+
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
