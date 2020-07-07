@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
-import { ValidatorsService } from '@service/validators/validators.service';
 import { SearchParamsComponent } from '@component/search-params/search-params.component';
 import { Observable } from 'rxjs';
 import { Display } from '@class/display';
 
 @Component({
-  selector: 'app-consolidado-admin-search-params',
-  templateUrl: './consolidado-admin-search-params.component.html',
+  selector: 'app-consolidado-search-params',
+  templateUrl: './consolidado-search-params.component.html',
 })
-export class ConsolidadoAdminSearchParamsComponent extends SearchParamsComponent {
+export class ConsolidadoSearchParamsComponent extends SearchParamsComponent {
 
   optPlan$: Observable<any>;
   optModalidad$: Observable<any>;

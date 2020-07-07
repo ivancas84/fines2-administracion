@@ -4,24 +4,18 @@ import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataDefinitionService } from '@service/data-definition/data-definition.service';
+import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { ValidatorsService } from '@service/validators/validators.service';
 import { SessionStorageService } from '@service/storage/session-storage.service';
-import { ReplaySubject, Observable, of } from 'rxjs';
-import { isEmptyObject } from '@function/is-empty-object.function';
-import { first, mergeMap } from 'rxjs/operators';
-import { ToastService } from '@service/ng-bootstrap/toast.service';
-import { Display } from '@class/display';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'app-sede-admin',
-    templateUrl: './sede-admin.component.html',
+  selector: 'app-detalle-persona-admin',
+  templateUrl: './detalle-persona-admin.component.html',
 })
-export class SedeAdminComponent extends AdminComponent {
+export class DetallePersonaAdminComponent extends AdminComponent {
 
-  readonly entityName: string = "sede";
-  domicilio$ = new ReplaySubject();
-  designaciones$: Observable<any>;
+  readonly entityName: string = "detalle_persona";
 
   constructor(
     protected fb: FormBuilder, 
@@ -36,11 +30,12 @@ export class SedeAdminComponent extends AdminComponent {
   ) {
     super(fb, route, router, location, dd, toast, storage, modalService);
   }
-  
-  serverData() {  
-    return this.adminForm.value;
+
+  reload(response){
+    this.removeStorage();
+    this.toast.showSuccess("Registro realizado");
+    this.back();
   }
-  
- 
- 
+
 }
+

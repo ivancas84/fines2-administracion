@@ -7,10 +7,10 @@ import { ToastService } from '@service/ng-bootstrap/toast.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-sede-search',
-  templateUrl: './sede-search.component.html',
+  selector: 'app-persona-search',
+  templateUrl: './persona-search.component.html',
 })
-export class SedeSearchComponent extends SearchComponent {
+export class PersonaSearchComponent extends SearchComponent {
 
   constructor(
     protected fb: FormBuilder,
