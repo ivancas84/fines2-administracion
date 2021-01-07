@@ -8,7 +8,7 @@
     <dl class="row">
       <dt class="col-sm-3">Comision</dt>
       <dd class="col-sm-9">
-        <a *ngIf="data.comision; else sinComision" [routerLink]="['/comision-detail']" [queryParams]="{id:data.comision}" ><app-label [id]="data.comision" [entityName]="'comision'"></app-label></a>
+        <a *ngIf="data.comision; else sinComision" [routerLink]="['/comision-detail']" [queryParams]="{id:data.comision}" ><core-label [id]="data.comision" [entityName]="'comision'"></core-label></a>
         <ng-template #sinComision>No se han encontrado registros</ng-template>
       </dd>
     </dl>
@@ -16,7 +16,7 @@
     <dl class="row">
       <dt class="col-sm-3">Asignatura</dt>
       <dd class="col-sm-9">
-        <app-label [id]="data.asignatura" [entityName]="'asignatura'"></app-label>
+        <core-label [id]="data.asignatura" [entityName]="'asignatura'"></core-label>
         <ng-template #sinAsignatura>No se han encontrado registros</ng-template>
       </dd>
     </dl>
